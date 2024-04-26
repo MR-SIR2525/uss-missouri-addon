@@ -1,0 +1,29 @@
+name: Merge to Development
+
+on:
+  push:
+    branches:
+      - resource-pack
+      - behavior-pack
+
+jobs:
+  merge-to-development:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Development Branch
+        uses: actions/checkout@v2
+        with:
+          ref: 'development'
+      - name: Merge Resource Pack
+        if: github.ref == 'refs/heads/resource-pack'
+        run: |
+          git merge --no-ff origin/resource-pack -m "Merging changes from Resource Pack into Development"
+      - name: Merge Behavior Pack
+        if: github.ref == 'refs/heads/behavior-pack'
+        run: |
+          git merge --no-ff origin/behavior-pack -m "Merging changes from Behavior Pack into Development"
+      - name: Push Changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: 'development'
