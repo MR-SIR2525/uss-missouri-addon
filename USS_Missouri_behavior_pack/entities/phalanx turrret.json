@@ -17,37 +17,20 @@
                   {"test": "is_family", "subject": "other", "value": "su57"},
                   {"test": "is_family", "subject": "other", "value": "ghast"},
                   {"test": "is_family", "subject": "other", "value": "blaze"},
+                  {"test": "is_family", "subject": "other", "value": "ender_dragon"},
 
                   // MRxSIR - entities from USS Missouri addon
                   // each missile seems to be tagged "missileactive" when launched,
                   // so target it only if it's active, aka probably in flight.
                   {
                     "all_of": [
-                      {"test": "is_family", "subject": "other", "value": "d24atompaz909"},
-                      {"test": "has_tag", "subject": "other", "value": "missileactive"}
-                    ]
-                  },
-                  {
-                    "all_of": [
-                      {"test": "is_family", "subject": "other", "value": "ironorbitflingpod_wagon"},
-                      {"test": "has_tag", "subject": "other", "value": "missileactive"}
-                    ]
-                  },
-                  {
-                    "all_of": [
-                      {"test": "is_family", "subject": "other", "value": "theregularistmissile"},
-                      {"test": "has_tag", "subject": "other", "value": "missileactive"}
-                    ]
-                  },
-                  {
-                    "all_of": [
-                      {"test": "is_family", "subject": "other", "value": "v2missile"},
-                      {"test": "has_tag", "subject": "other", "value": "missileactive"}
+                      {"test": "is_family", "subject": "other", "value": "solrrmissile"}
+                      // {"test": "has_tag", "subject": "other", "value": "missileactive"}
                     ]
                   }
                 ]
               },
-              "max_dist": 100
+              "max_dist": 125
             }
           ],
           "must_see": true,
@@ -65,7 +48,7 @@
           "priority": 2
         },
         "minecraft:follow_range": {
-          "value": 100
+          "value": 125
         },
         "minecraft:shooter": {
           "def": "us:phalanx_shell"
@@ -151,7 +134,7 @@
       "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": false,
-        "is_pushable_by_piston": false
+        "is_pushable_by_piston": true
       },
       "minecraft:scale": {
         "value": 1
@@ -171,7 +154,7 @@
       },
       "identifier": "us:phalanx_turret",
       "is_experimental": false,
-      "is_spawnable": false,
+      "is_spawnable": true,
       "is_summonable": true,
       "scripts": {
         "animate": [

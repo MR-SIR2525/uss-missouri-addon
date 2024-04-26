@@ -4,7 +4,7 @@
         "description": "§2Model Missouri by HerodrinePro124; Updated Mark12, Bofor40mm model by Creator Crafter321 by §4HerodrinePro124",
         "name": "§9USS §1Missouri",
         "uuid": "759cccb4-ad47-42f8-baff-bf8fa27ac299",
-        "version": [0, 0, 2],
+        "version": [0, 0, 3],
         "min_engine_version": [1, 8, 0]
     },
     "modules": [
@@ -12,13 +12,13 @@
             "description": "Behavior pack for §9USS §1Missouri addon.",
             "type": "data",
             "uuid": "1e6f6dd6-f3a4-4b70-b526-00550e29427a",
-            "version": [0, 0, 2]
+            "version": [0, 0, 3]
         }
     ],
     "dependencies": [
         {
             "uuid": "83c7b645-b6a7-41e3-931b-6e2530c53362",
-            "version": [0, 0, 2]
+            "version": [0, 0, 3]
         }
     ]
 }

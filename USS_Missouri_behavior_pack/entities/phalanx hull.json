@@ -7,7 +7,7 @@
             },
             "identifier": "us:phalanx",
             "is_experimental": false,
-            "is_spawnable": false,
+            "is_spawnable": true,
             "is_summonable": true,
             "scripts": {
                 "animate": [
@@ -25,7 +25,7 @@
                 "triggers": [
                     {
                         "cause": "all",
-                        "deals_damage": false
+                        "deals_damage": true  // Allow dealing damage to it
                     },
                     {
                         "cause": "fire",
@@ -33,7 +33,7 @@
                     }
                 ]
             },
-            "minecraft:fire_immune": false,
+            // "minecraft:fire_immune": false, //incorrect?
             "minecraft:health": {
                 "value": {
                     "range_max": 200,
@@ -52,7 +52,9 @@
                 "value": 0
             },
             "minecraft:movement.basic": {},
-            "minecraft:nameable": {},
+            "minecraft:nameable": {
+                "allow_name_tag_renaming": true
+            },
             "minecraft:navigation.walk": {
                 "can_float": false
             },
@@ -62,7 +64,7 @@
             },
             "minecraft:pushable": {
                 "is_pushable": false,
-                "is_pushable_by_piston": false
+                "is_pushable_by_piston": true
             },
             "minecraft:scale": {
                 "value": 1

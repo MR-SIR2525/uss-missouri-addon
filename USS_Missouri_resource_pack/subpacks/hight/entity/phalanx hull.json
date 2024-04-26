@@ -1,1 +1,0 @@
-{"format_version":"1.10.0","minecraft:client_entity":{"description":{"geometry":{"default":"geometry.phalanx_body"},"identifier":"us:phalanx","materials":{"default":"spider"},"render_controllers":["controller.render.skeleton"],"spawn_egg":{"texture":"phalanx_egg","texture_index":0},"textures":{"default":"phalanx"}}}}

@@ -1,0 +1,33 @@
+{
+  "format_version": "1.17",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "minecraft:phalanx_turret_spawn_egg"
+    },
+    "tags": ["crafting_table"],
+    "pattern": [
+      "III",
+      "#RG",
+      "III"
+    ],
+    "key": {
+      "I": {
+        "item": "minecraft:iron_block"
+      },
+      "#": {
+        "item": "minecraft:glass"
+      },
+      "R": {
+        "item": "minecraft:redstone"
+      },
+      "G": {
+        "item": "minecraft:gunpowder"
+      }
+    },
+    "result": {
+      "item": "us:phalanx_turret_spawn_egg"
+    }
+  }
+}
+// for reference
+// https://learn.microsoft.com/en-us/minecraft/creator/reference/content/recipereference/examples/recipedefinitions/minecraftrecipe_shaped?view=minecraft-bedrock-stable
