@@ -1,0 +1,39 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.control_mark7.normal": {
+			"loop": true,
+			"bones": {
+				"load": {
+					"scale": 0
+				}
+			}
+		},
+		"animation.control_mark7.press": {
+			"animation_length": 0.5,
+			"bones": {
+				"load": {
+					"scale": 0
+				},
+				"body": {
+					"scale": {
+						"0.0": [1, 1, 1],
+						"0.0417": [0.8, 0.8, 0.8],
+						"0.0833": [1, 1, 1]
+					}
+				}
+			}
+		},
+		"animation.control_mark7.load": {
+			"animation_length": 10,
+			"bones": {
+				"load": {
+					"scale": {
+						"0.0": [0, 2, 1],
+						"10.0": [7, 2, 1]
+					}
+				}
+			}
+		}
+	}
+}
