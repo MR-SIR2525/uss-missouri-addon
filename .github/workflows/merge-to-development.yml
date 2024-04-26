@@ -1,4 +1,4 @@
-name: Merge to Development
+name: Merge Resource and Behavior Packs to Development
 
 on:
   push:
@@ -7,24 +7,32 @@ on:
       - behavior-pack
 
 jobs:
-  merge-to-development:
+  merge-packs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Development Branch
         uses: actions/checkout@v2
         with:
           ref: 'development'
-      - name: Merge Changes Based on Branch
+          fetch-depth: 0 # Ensure we get all history for merges
+
+      - name: Fetch Resource Pack Changes
+        if: github.ref == 'refs/heads/resource-pack'
         run: |
-          if [[ "${{ github.ref }}" == "refs/heads/resource-pack" ]]; then
-            git fetch origin resource-pack
-            git merge --no-ff origin/resource-pack -m "Merging changes from Resource Pack into Development"
-          elif [[ "${{ github.ref }}" == "refs/heads/behavior-pack" ]]; then
-            git fetch origin behavior-pack
-            git merge --no-ff origin/behavior-pack -m "Merging changes from Behavior Pack into Development"
-          fi
-      - name: Push Changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: 'development'
+          git fetch origin resource-pack
+          git checkout origin/resource-pack -- USS_Missouri_Resource_Pack/
+          git add USS_Missouri_Resource_Pack/
+          git commit -m "Merge Resource Pack changes into Development"
+
+      - name: Fetch Behavior Pack Changes
+        if: github.ref == 'refs/heads/behavior-pack'
+        run: |
+          git fetch origin behavior-pack
+          git checkout origin/behavior-pack -- USS_Missouri_Behavior_Pack/
+          git add USS_Missouri_Behavior_Pack/
+          git commit -m "Merge Behavior Pack changes into Development"
+
+      - name: Push Changes to Development
+        run: git push origin development
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
