@@ -1,1 +1,97 @@
-{"format_version":"1.13.0","minecraft:entity":{"component_groups":{"normal":{"minecraft:type_family":{"family":["rahaim","aim2"]}}},"components":{"minecraft:collision_box":{"height":0,"width":0},"minecraft:damage_sensor":{"triggers":[{"deals_damage":false,"on_damage":{"filters":{"subject":"other","test":"is_riding","value":true}}},{"cause":"fall","deals_damage":false},{"cause":"contact","deals_damage":false}]},"minecraft:fire_immune":{},"minecraft:health":{"value":{"range_max":1000000,"range_min":1000000}},"minecraft:is_stackable":{},"minecraft:knockback_resistance":{"value":1},"minecraft:movement":{"value":0},"minecraft:movement.basic":{},"minecraft:nameable":{},"minecraft:navigation.walk":{"can_float":false},"minecraft:physics":{},"minecraft:push_through":{"value":1},"minecraft:pushable":{"is_pushable":false,"is_pushable_by_piston":false},"minecraft:scale":{"value":1},"minecraft:type_family":{"family":["rahaim","aim2"]},"minecraft:underwater_movement":{"value":0}},"description":{"identifier":"us:aim2","is_experimental":false,"is_spawnable":false,"is_summonable":true},"events":{"minecraft:entity_spawned":{"add":{"component_groups":["normal"]}}}}}
+{
+    "format_version": "1.13.0",
+    "minecraft:entity": {
+        "component_groups": {
+            "normal": {
+                "minecraft:type_family": {
+                    "family": [
+                        "rahaim",
+                        "aim2"
+                    ]
+                }
+            }
+        },
+        "components": {
+            "minecraft:collision_box": {
+                "height": 0,
+                "width": 0
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "deals_damage": false,
+                        "on_damage": {
+                            "filters": {
+                                "subject": "other",
+                                "test": "is_riding",
+                                "value": true
+                            }
+                        }
+                    },
+                    {
+                        "cause": "fall",
+                        "deals_damage": false
+                    },
+                    {
+                        "cause": "contact",
+                        "deals_damage": false
+                    }
+                ]
+            },
+            "minecraft:fire_immune": {},
+            "minecraft:health": {
+                "value": {
+                    "range_max": 1000000,
+                    "range_min": 1000000
+                }
+            },
+            "minecraft:is_stackable": {},
+            "minecraft:knockback_resistance": {
+                "value": 1
+            },
+            "minecraft:movement": {
+                "value": 0
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:nameable": {},
+            "minecraft:navigation.walk": {
+                "can_float": false
+            },
+            "minecraft:physics": {},
+            "minecraft:push_through": {
+                "value": 1
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:scale": {
+                "value": 1
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "rahaim",
+                    "aim2"
+                ]
+            },
+            "minecraft:underwater_movement": {
+                "value": 0
+            }
+        },
+        "description": {
+            "identifier": "us:aim2",
+            "is_experimental": false,
+            "is_spawnable": false,
+            "is_summonable": true
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "normal"
+                    ]
+                }
+            }
+        }
+    }
+}

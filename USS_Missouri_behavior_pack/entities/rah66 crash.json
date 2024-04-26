@@ -1,1 +1,109 @@
-{"format_version":"1.13.0","minecraft:entity":{"component_groups":{"hit":{"minecraft:variant":{"value":1}},"minecraft:exploding":{"minecraft:explode":{"causes_fire":true,"destroy_affected_by_griefing":true,"fire_affected_by_griefing":true,"fuse_length":0.02,"fuse_lit":true,"power":2}}},"components":{"minecraft:collision_box":{"height":0.1,"width":0.1},"minecraft:damage_sensor":[{"cause":"all","deals_damage":false}],"minecraft:physics":{},"minecraft:projectile":{"anchor":1,"gravity":1.0E-4,"inertia":1,"offset":[0,0,0],"on_hit":{"definition_event":{"affect_projectile":true,"event_trigger":{"event":"hit","target":"self"}},"impact_damage":{"damage":[2000,2112],"knockback":true}},"power":1,"reflectOnHurt":false,"uncertaintyBase":0.5},"minecraft:pushable":{"is_pushable":true,"is_pushable_by_piston":true},"minecraft:scale":{"value":2},"minecraft:timer":{"looping":true,"time":5,"time_down_event":{"event":"hit","target":"self"}}},"description":{"animations":{"crash":"animation.rah66_crash","crash2":"animation.rah66_crash2","hit":"animation.mark7_shell"},"identifier":"us:rah66_crash","is_experimental":false,"is_spawnable":false,"is_summonable":true,"scripts":{"animate":[{"hit":"query.variant == 1"},"crash","crash2"]}},"events":{"hit":{"add":{"component_groups":["hit","minecraft:exploding"]}}}}}
+{
+    "format_version": "1.13.0",
+    "minecraft:entity": {
+        "component_groups": {
+            "hit": {
+                "minecraft:variant": {
+                    "value": 1
+                }
+            },
+            "minecraft:exploding": {
+                "minecraft:explode": {
+                    "causes_fire": true,
+                    "destroy_affected_by_griefing": true,
+                    "fire_affected_by_griefing": true,
+                    "fuse_length": 0.02,
+                    "fuse_lit": true,
+                    "power": 2
+                }
+            }
+        },
+        "components": {
+            "minecraft:collision_box": {
+                "height": 0.1,
+                "width": 0.1
+            },
+            "minecraft:damage_sensor": [
+                {
+                    "cause": "all",
+                    "deals_damage": false
+                }
+            ],
+            "minecraft:physics": {},
+            "minecraft:projectile": {
+                "anchor": 1,
+                "gravity": 1.0E-4,
+                "inertia": 1,
+                "offset": [
+                    0,
+                    0,
+                    0
+                ],
+                "on_hit": {
+                    "definition_event": {
+                        "affect_projectile": true,
+                        "event_trigger": {
+                            "event": "hit",
+                            "target": "self"
+                        }
+                    },
+                    "impact_damage": {
+                        "damage": [
+                            2000,
+                            2112
+                        ],
+                        "knockback": true
+                    }
+                },
+                "power": 1,
+                "reflectOnHurt": false,
+                "uncertaintyBase": 0.5
+            },
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:scale": {
+                "value": 2
+            },
+            "minecraft:timer": {
+                "looping": true,
+                "time": 5,
+                "time_down_event": {
+                    "event": "hit",
+                    "target": "self"
+                }
+            }
+        },
+        "description": {
+            "animations": {
+                "crash": "animation.rah66_crash",
+                "crash2": "animation.rah66_crash2",
+                "hit": "animation.mark7_shell"
+            },
+            "identifier": "us:rah66_crash",
+            "is_experimental": false,
+            "is_spawnable": false,
+            "is_summonable": true,
+            "scripts": {
+                "animate": [
+                    {
+                        "hit": "query.variant == 1"
+                    },
+                    "crash",
+                    "crash2"
+                ]
+            }
+        },
+        "events": {
+            "hit": {
+                "add": {
+                    "component_groups": [
+                        "hit",
+                        "minecraft:exploding"
+                    ]
+                }
+            }
+        }
+    }
+}

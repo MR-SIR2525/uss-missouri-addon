@@ -1,1 +1,131 @@
-{"format_version":"1.16.0","minecraft:entity":{"component_groups":{"hit":{"minecraft:variant":{"value":1}},"minecraft:exploding":{"minecraft:explode":{"causes_fire":true,"destroy_affected_by_griefing":true,"fire_affected_by_griefing":true,"fuse_length":0.02,"fuse_lit":true,"power":6}},"normal":{"minecraft:projectile":{"anchor":1,"gravity":0.1,"inertia":1,"offset":[0,1,0],"on_hit":{"definition_event":{"affect_projectile":true,"event_trigger":{"event":"minecraft:explode","target":"self"}},"impact_damage":{"damage":[10000,12000],"knockback":true}},"power":6,"reflectOnHurt":false,"uncertaintyBase":1}}},"components":{"minecraft:collision_box":{"height":0.1,"width":0.1},"minecraft:damage_sensor":[{"cause":"all","deals_damage":false}],"minecraft:physics":{},"minecraft:projectile":{"anchor":1,"gravity":0.04,"inertia":1,"offset":[0,1,0],"on_hit":{},"power":6,"reflectOnHurt":false,"uncertaintyBase":1},"minecraft:pushable":{"is_pushable":true,"is_pushable_by_piston":true},"minecraft:scale":{"value":6},"minecraft:timer":{"looping":true,"time":0.3,"time_down_event":{"event":"normal","target":"self"}}},"description":{"animations":{"hit":"animation.mark7_shell","inwater":"controller.animation.406mm_inwater"},"identifier":"us:mark7_shell","is_experimental":false,"is_spawnable":false,"is_summonable":true,"runtime_identifier":"minecraft:snowball","scripts":{"animate":[{"hit":"query.variant ==1"},"inwater"]}},"events":{"minecraft:explode":{"add":{"component_groups":["minecraft:exploding","hit"]}},"normal":{"add":{"component_groups":["normal"]}}}}}
+{
+    "format_version": "1.16.0",
+    "minecraft:entity": {
+        "component_groups": {
+            "hit": {
+                "minecraft:variant": {
+                    "value": 1
+                }
+            },
+            "minecraft:exploding": {
+                "minecraft:explode": {
+                    "causes_fire": true,
+                    "destroy_affected_by_griefing": true,
+                    "fire_affected_by_griefing": true,
+                    "fuse_length": 0.02,
+                    "fuse_lit": true,
+                    "power": 6
+                }
+            },
+            "normal": {
+                "minecraft:projectile": {
+                    "anchor": 1,
+                    "gravity": 0.1,
+                    "inertia": 1,
+                    "offset": [
+                        0,
+                        1,
+                        0
+                    ],
+                    "on_hit": {
+                        "definition_event": {
+                            "affect_projectile": true,
+                            "event_trigger": {
+                                "event": "minecraft:explode",
+                                "target": "self"
+                            }
+                        },
+                        "impact_damage": {
+                            "damage": [
+                                10000,
+                                12000
+                            ],
+                            "knockback": true
+                        }
+                    },
+                    "power": 6,
+                    "reflectOnHurt": false,
+                    "uncertaintyBase": 1
+                }
+            }
+        },
+        "components": {
+            "minecraft:collision_box": {
+                "height": 0.1,
+                "width": 0.1
+            },
+            "minecraft:damage_sensor": [
+                {
+                    "cause": "all",
+                    "deals_damage": false
+                }
+            ],
+            "minecraft:physics": {},
+            "minecraft:projectile": {
+                "anchor": 1,
+                "gravity": 0.04,
+                "inertia": 1,
+                "offset": [
+                    0,
+                    1,
+                    0
+                ],
+                "on_hit": {},
+                "power": 6,
+                "reflectOnHurt": false,
+                "uncertaintyBase": 1
+            },
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:scale": {
+                "value": 6
+            },
+            "minecraft:timer": {
+                "looping": true,
+                "time": 0.3,
+                "time_down_event": {
+                    "event": "normal",
+                    "target": "self"
+                }
+            }
+        },
+        "description": {
+            "animations": {
+                "hit": "animation.mark7_shell",
+                "inwater": "controller.animation.406mm_inwater"
+            },
+            "identifier": "us:mark7_shell",
+            "is_experimental": false,
+            "is_spawnable": false,
+            "is_summonable": true,
+            "runtime_identifier": "minecraft:snowball",
+            "scripts": {
+                "animate": [
+                    {
+                        "hit": "query.variant ==1"
+                    },
+                    "inwater"
+                ]
+            }
+        },
+        "events": {
+            "minecraft:explode": {
+                "add": {
+                    "component_groups": [
+                        "minecraft:exploding",
+                        "hit"
+                    ]
+                }
+            },
+            "normal": {
+                "add": {
+                    "component_groups": [
+                        "normal"
+                    ]
+                }
+            }
+        }
+    }
+}

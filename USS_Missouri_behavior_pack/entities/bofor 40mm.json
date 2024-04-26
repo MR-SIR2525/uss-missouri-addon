@@ -1,1 +1,351 @@
-{"format_version":"1.8.0","minecraft:entity":{"component_groups":{"bofor:shoot_start":{"minecraft:behavior.nearest_attackable_target":{"entity_types":[{"filters":{"other_with_families":["wither","rsaircraft","phantom","jpaircraft","rsmissile","rshelicopter","su57","ghast","blaze"]},"max_dist":100}],"must_see":true,"priority":2,"reselect_targets":true},"minecraft:behavior.ranged_attack":{"attack_interval_max":0.1,"attack_interval_min":0.1,"attack_radius":100,"burst_interval":0.15,"burst_shots":4,"charge_charged_trigger":0,"charge_shoot_trigger":0,"priority":2},"minecraft:follow_range":{"value":100},"minecraft:shooter":{"def":"us:bofor_shell"},"minecraft:timer":{"looping":true,"time":0.7,"time_down_event":{"event":"reload","target":"self"}},"minecraft:variant":{"value":1}},"normal":{"minecraft:behavior.nearest_attackable_target":{"entity_types":[{"filters":{"other_with_families":["wither","rsaircraft","phantom","jpaircraft","rsmissile","rshelicopter","su57","ghast","blaze"]},"max_dist":100}],"must_see":true,"priority":2,"reselect_targets":true},"minecraft:behavior.ranged_attack":{"attack_interval_max":0.1,"attack_interval_min":0.1,"attack_radius":100,"burst_interval":0,"burst_shots":10000,"charge_charged_trigger":0,"charge_shoot_trigger":0,"priority":2},"minecraft:follow_range":{"value":100},"minecraft:shooter":{"def":"null"},"minecraft:variant":{"value":0}},"reload":{"minecraft:behavior.nearest_attackable_target":{"entity_types":[{"filters":{"other_with_families":["wither","rsaircraft","phantom","jpaircraft","rsmissile","rshelicopter","su57","ghast","blaze"]},"max_dist":100}],"must_see":true,"priority":2,"reselect_targets":true},"minecraft:behavior.ranged_attack":{"attack_interval_max":0.1,"attack_interval_min":0.1,"attack_radius":100,"burst_interval":0,"burst_shots":10000,"charge_charged_trigger":0,"charge_shoot_trigger":0,"priority":2},"minecraft:follow_range":{"value":100},"minecraft:shooter":{"def":"null"},"minecraft:timer":{"looping":true,"time":1,"time_down_event":{"event":"minecraft:entity_spawned","target":"self"}},"minecraft:variant":{"value":1}}},"components":{"minecraft:behavior.hurt_by_target":{"entity_types":{"filters":{"operator":"!=","subject":"other","test":"is_family","value":"usa"}},"priority":1},"minecraft:collision_box":{"height":1,"width":1},"minecraft:damage_sensor":{"triggers":{"cause":"all","deals_damage":false}},"minecraft:fire_immune":false,"minecraft:health":{"max":200,"value":200},"minecraft:knockback_resistance":{"value":1},"minecraft:loot":{"table":"loot_tables/entities/phalanx_turret.json"},"minecraft:nameable":{},"minecraft:navigation.walk":{"can_path_over_water":false},"minecraft:physics":{},"minecraft:pushable":{"is_pushable":false,"is_pushable_by_piston":false},"minecraft:scale":{"value":1.3},"minecraft:type_family":{"family":["bofor","usaanti-aircraft","usa"]}},"description":{"animations":{"root":"animation.bofor_root","shoot":"animation.bofor"},"identifier":"us:bofor","is_experimental":false,"is_spawnable":false,"is_summonable":true,"scripts":{"animate":[{"shoot":"query.variant ==1"},{"root":"variable.has_target"}]}},"events":{"bofor:shoot_start":{"add":{"component_groups":["bofor:shoot_start"]},"remove":{"component_groups":["reload"]}},"minecraft:entity_spawned":{"add":{"component_groups":["normal"]},"remove":{"component_groups":["reload"]}},"reload":{"add":{"component_groups":["reload"]},"remove":{"component_groups":["bofor:shoot_start"]}}}}}
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "component_groups": {
+      "bofor:shoot_start": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "entity_types": [
+            {
+              "filters": { //MRxSIR updated filter to be standard
+                "any_of": [   //tracks air mobs, tests if friendly or foe?
+                  {"test": "is_family", "subject": "other", "value": "wither"},
+                  {"test": "is_family", "subject": "other", "value": "rsaircraft"},
+                  {"test": "is_family", "subject": "other", "value": "phantom"},
+                  {"test": "is_family", "subject": "other", "value": "jpaircraft"},
+                  {"test": "is_family", "subject": "other", "value": "rsmissile"},
+                  {"test": "is_family", "subject": "other", "value": "rshelicopter"},
+                  {"test": "is_family", "subject": "other", "value": "su57"},
+                  {"test": "is_family", "subject": "other", "value": "ghast"},
+                  {"test": "is_family", "subject": "other", "value": "blaze"},
+
+                  // MRxSIR - entities from USS Missouri addon
+                  // each missile seems to be tagged "missileactive" when launched,
+                  // so target it only if it's active, aka probably in flight.
+                  {
+                    "all_of": [
+                      {"test": "is_family", "subject": "other", "value": "d24atompaz909"},
+                      {"test": "has_tag", "subject": "other", "value": "missileactive"}
+                    ]
+                  },
+                  {
+                    "all_of": [
+                      {"test": "is_family", "subject": "other", "value": "ironorbitflingpod_wagon"},
+                      {"test": "has_tag", "subject": "other", "value": "missileactive"}
+                    ]
+                  },
+                  {
+                    "all_of": [
+                      {"test": "is_family", "subject": "other", "value": "theregularistmissile"},
+                      {"test": "has_tag", "subject": "other", "value": "missileactive"}
+                    ]
+                  },
+                  {
+                    "all_of": [
+                      {"test": "is_family", "subject": "other", "value": "v2missile"},
+                      {"test": "has_tag", "subject": "other", "value": "missileactive"}
+                    ]
+                  }
+                ]
+              },
+              "max_dist": 100
+            }
+          ],
+          "must_see": true,
+          "priority": 2,
+          "reselect_targets": true
+        },
+        "minecraft:behavior.ranged_attack": {
+          "attack_interval_max": 0.1,
+          "attack_interval_min": 0.1,
+          "attack_radius": 100,
+          "burst_interval": 0.15,
+          "burst_shots": 4,
+          "charge_charged_trigger": 0,
+          "charge_shoot_trigger": 0,
+          "priority": 2
+        },
+        "minecraft:follow_range": {
+          "value": 100
+        },
+        "minecraft:shooter": {
+          "def": "us:bofor_shell"
+        },
+        "minecraft:timer": {
+          "looping": true,
+          "time": 0.7,
+          "time_down_event": {
+            "event": "reload",
+            "target": "self"
+          }
+        },
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+      "normal": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "entity_types": [
+            {
+              "filters": { //MRxSIR updated filter to be standard
+                "any_of": [   //tracks air mobs, tests if friendly or foe?
+                  {"test": "is_family", "subject": "other", "value": "wither"},
+                  {"test": "is_family", "subject": "other", "value": "rsaircraft"},
+                  {"test": "is_family", "subject": "other", "value": "phantom"},
+                  {"test": "is_family", "subject": "other", "value": "jpaircraft"},
+                  {"test": "is_family", "subject": "other", "value": "rsmissile"},
+                  {"test": "is_family", "subject": "other", "value": "rshelicopter"},
+                  {"test": "is_family", "subject": "other", "value": "su57"},
+                  {"test": "is_family", "subject": "other", "value": "ghast"},
+                  {"test": "is_family", "subject": "other", "value": "blaze"},
+
+                  // MRxSIR - entities from USS Missouri addon
+                  // each missile seems to be tagged "missileactive" when launched,
+                  // so target it only if it's active, aka probably in flight.
+                  {
+                    "all_of": [
+                      {"test": "is_family", "subject": "other", "value": "d24atompaz909"},
+                      {"test": "has_tag", "subject": "other", "value": "missileactive"}
+                    ]
+                  },
+                  {
+                    "all_of": [
+                      {"test": "is_family", "subject": "other", "value": "ironorbitflingpod_wagon"},
+                      {"test": "has_tag", "subject": "other", "value": "missileactive"}
+                    ]
+                  },
+                  {
+                    "all_of": [
+                      {"test": "is_family", "subject": "other", "value": "theregularistmissile"},
+                      {"test": "has_tag", "subject": "other", "value": "missileactive"}
+                    ]
+                  },
+                  {
+                    "all_of": [
+                      {"test": "is_family", "subject": "other", "value": "v2missile"},
+                      {"test": "has_tag", "subject": "other", "value": "missileactive"}
+                    ]
+                  }
+                ]
+              },
+              "max_dist": 100
+            }
+          ],
+          "must_see": true,
+          "priority": 2,
+          "reselect_targets": true
+        },
+        "minecraft:behavior.ranged_attack": {
+          "attack_interval_max": 0.1,
+          "attack_interval_min": 0.1,
+          "attack_radius": 100,
+          "burst_interval": 0,
+          "burst_shots": 10000,
+          "charge_charged_trigger": 0,
+          "charge_shoot_trigger": 0,
+          "priority": 2
+        },
+        "minecraft:follow_range": {
+          "value": 100
+        },
+        "minecraft:shooter": {
+          "def": "null"
+        },
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "reload": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "entity_types": [
+            {
+              "filters": { //MRxSIR updated filter to be standard
+                "any_of": [   //tracks air mobs, tests if friendly or foe?
+                  {"test": "is_family", "subject": "other", "value": "wither"},
+                  {"test": "is_family", "subject": "other", "value": "rsaircraft"},
+                  {"test": "is_family", "subject": "other", "value": "phantom"},
+                  {"test": "is_family", "subject": "other", "value": "jpaircraft"},
+                  {"test": "is_family", "subject": "other", "value": "rsmissile"},
+                  {"test": "is_family", "subject": "other", "value": "rshelicopter"},
+                  {"test": "is_family", "subject": "other", "value": "su57"},
+                  {"test": "is_family", "subject": "other", "value": "ghast"},
+                  {"test": "is_family", "subject": "other", "value": "blaze"},
+
+                  // MRxSIR - entities from USS Missouri addon
+                  // each missile seems to be tagged "missileactive" when launched,
+                  // so target it only if it's active, aka probably in flight.
+                  {
+                    "all_of": [
+                      {"test": "is_family", "subject": "other", "value": "d24atompaz909"},
+                      {"test": "has_tag", "subject": "other", "value": "missileactive"}
+                    ]
+                  },
+                  {
+                    "all_of": [
+                      {"test": "is_family", "subject": "other", "value": "ironorbitflingpod_wagon"},
+                      {"test": "has_tag", "subject": "other", "value": "missileactive"}
+                    ]
+                  },
+                  {
+                    "all_of": [
+                      {"test": "is_family", "subject": "other", "value": "theregularistmissile"},
+                      {"test": "has_tag", "subject": "other", "value": "missileactive"}
+                    ]
+                  },
+                  {
+                    "all_of": [
+                      {"test": "is_family", "subject": "other", "value": "v2missile"},
+                      {"test": "has_tag", "subject": "other", "value": "missileactive"}
+                    ]
+                  }
+                ]
+              },
+              "max_dist": 100
+            }
+          ],
+          "must_see": true,
+          "priority": 2,
+          "reselect_targets": true
+        },
+        "minecraft:behavior.ranged_attack": {
+          "attack_interval_max": 0.1,
+          "attack_interval_min": 0.1,
+          "attack_radius": 100,
+          "burst_interval": 0,
+          "burst_shots": 10000,
+          "charge_charged_trigger": 0,
+          "charge_shoot_trigger": 0,
+          "priority": 2
+        },
+        "minecraft:follow_range": {
+          "value": 100
+        },
+        "minecraft:shooter": {
+          "def": "null"
+        },
+        "minecraft:timer": {
+          "looping": true,
+          "time": 1,
+          "time_down_event": {
+            "event": "minecraft:entity_spawned",
+            "target": "self"
+          }
+        },
+        "minecraft:variant": {
+          "value": 1
+        }
+      }
+    },
+    "components": {
+      // "minecraft:movement.basic": {}, //added by MRxSIR to silence an error
+      "minecraft:behavior.hurt_by_target": {
+        "entity_types": {
+          "filters": {
+            "operator": "!=",
+            "subject": "other",
+            "test": "is_family",
+            "value": "usa"
+          }
+        },
+        "priority": 1
+      },
+      "minecraft:collision_box": {
+        "height": 1,
+        "width": 1
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:fire_immune": false,
+      "minecraft:health": {
+        "max": 200,
+        "value": 200
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/phalanx_turret.json"
+      },
+      "minecraft:nameable": {},
+      "minecraft:navigation.walk": {
+        "can_path_over_water": false
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:scale": {
+        "value": 1.3
+      },
+      "minecraft:type_family": {
+        "family": [
+          "bofor",
+          "usaanti-aircraft",
+          "usa"
+        ]
+      }
+    },
+    "description": {
+      "animations": {
+        "root": "animation.bofor_root",
+        "shoot": "animation.bofor"
+      },
+      "identifier": "us:bofor",
+      "is_experimental": false,
+      "is_spawnable": false,
+      "is_summonable": true,
+      "scripts": {
+        "animate": [
+          {
+            "shoot": "query.variant ==1"
+          },
+          {
+            "root": "variable.has_target"
+          }
+        ]
+      }
+    },
+    "events": {
+      "bofor:shoot_start": {
+        "add": {
+          "component_groups": [
+            "bofor:shoot_start"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "reload"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "normal"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "reload"
+          ]
+        }
+      },
+      "reload": {
+        "add": {
+          "component_groups": [
+            "reload"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "bofor:shoot_start"
+          ]
+        }
+      }
+    }
+  }
+}

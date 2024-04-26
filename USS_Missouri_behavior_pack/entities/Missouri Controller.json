@@ -1,1 +1,435 @@
-{"format_version":"1.13.0","minecraft:entity":{"component_groups":{"back":{"minecraft:timer":{"looping":true,"time":1,"time_down_event":{"event":"minecraft:entity_spawned","target":"self"}},"minecraft:variant":{"value":2}},"drive":{"minecraft:variant":{"value":8}},"forward":{"minecraft:timer":{"looping":true,"time":1,"time_down_event":{"event":"minecraft:entity_spawned","target":"self"}},"minecraft:variant":{"value":1}},"left":{"minecraft:timer":{"looping":true,"time":1,"time_down_event":{"event":"minecraft:entity_spawned","target":"self"}},"minecraft:variant":{"value":4}},"mark12":{"minecraft:timer":{"looping":true,"time":1,"time_down_event":{"event":"minecraft:entity_spawned","target":"self"}},"minecraft:variant":{"value":7}},"mark7":{"minecraft:timer":{"looping":true,"time":1,"time_down_event":{"event":"minecraft:entity_spawned","target":"self"}},"minecraft:variant":{"value":6}},"normal":{"minecraft:variant":{"value":0}},"right":{"minecraft:timer":{"looping":true,"time":1,"time_down_event":{"event":"minecraft:entity_spawned","target":"self"}},"minecraft:variant":{"value":3}},"rum139":{"minecraft:timer":{"looping":true,"time":1,"time_down_event":{"event":"minecraft:entity_spawned","target":"self"}},"minecraft:variant":{"value":9}},"stop":{"minecraft:timer":{"looping":true,"time":1,"time_down_event":{"event":"minecraft:entity_spawned","target":"self"}},"minecraft:variant":{"value":5}}},"components":{"minecraft:behavior.controlled_by_player":{},"minecraft:break_blocks":{"breakable_blocks":["bamboo","cactus","minecraft:leaves","turtle_egg","waterlily","minecraft:planks","minecraft:log","minecraft:hay_block","minecraft:wheat","minecraft:potatoes","minecraft:carrots","minecraft:beetroot","minecraft:melon_block","minecraft:pumpkin","minecraft:sweet_berry_bush","minecraft:cake","minecraft:brown_mushroom","minecraft:red_mushroom","minecraft:fence","minecraft:wooden_door","minecraft:glass","minecraft:glass_pane","minecraft:stained_glass","minecraft:stained_glass_pane","minecraft:wooden_slab"]},"minecraft:can_climb":{},"minecraft:collision_box":{"height":7,"width":2},"minecraft:fire_immune":{},"minecraft:healable":{"items":[{"heal_amount":20,"item":"iron_ingot"}]},"minecraft:health":{"value":{"range_max":500000,"range_min":460000}},"minecraft:input_ground_controlled":{},"minecraft:jump.static":{},"minecraft:knockback_resistance":{"value":1},"minecraft:movement":{"value":0},"minecraft:movement.basic":{},"minecraft:nameable":{},"minecraft:navigation.walk":{"can_float":true},"minecraft:physics":{},"minecraft:pushable":{"is_pushable":false,"is_pushable_by_piston":false},"minecraft:rideable":{"crouching_skip_interact":true,"family_types":["player"],"interact_text":"Into MISSOURI","rider_can_interact":true,"seat_count":1,"seats":[{"position":[0,8,-5]}]},"minecraft:scale":{"value":2.5},"minecraft:type_family":{"family":["controller","entity"]},"minecraft:underwater_movement":{"value":0}},"description":{"animations":{"back":"animation.back_root","facing":"animation.bb63_gun_facing","forward":"animation.forward_root","hasrider":"animation.bb63_has_rider","left":"animation.left_root","mark12":"animation.mark12_root","mark7":"animation.mark7_root","missouri":"controller.animation.missouri","right":"animation.right_root","rum139":"animation.rum139_root","spawn":"controller.animation.missouri_spawn","stop":"animation.stop_root"},"identifier":"bb63:controller","is_experimental":false,"is_spawnable":false,"is_summonable":true,"scripts":{"animate":[{"facing":"query.variant ==8"},{"onfire2":"query.health < 300000"},{"onfire3":"query.health < 200000"},{"onfire4":"query.health < 100000"},{"rum139":"query.variant ==9"},{"hasrider":"query.has_rider"},"missouri",{"forward":"query.variant ==1"},{"back":"query.variant ==2"},{"right":"query.variant ==3"},{"left":"query.variant ==4"},{"stop":"query.variant ==5"},{"mark7":"query.variant ==6"},{"mark12":"query.variant ==7"},"spawn"]}},"events":{"back":{"add":{"component_groups":["back"]},"remove":{"component_groups":["normal"]}},"drive":{"add":{"component_groups":["drive"]}},"forward":{"add":{"component_groups":["forward"]},"remove":{"component_groups":["normal"]}},"left":{"add":{"component_groups":["left"]},"remove":{"component_groups":["normal"]}},"mark12":{"add":{"component_groups":["mark12"]},"remove":{"component_groups":["normal"]}},"mark7":{"add":{"component_groups":["mark7"]},"remove":{"component_groups":["normal"]}},"minecraft:entity_spawned":{"add":{"component_groups":["normal"]},"remove":{"component_groups":["forward","back","right","left","stop","mark12","mark7"]}},"right":{"add":{"component_groups":["right"]},"remove":{"component_groups":["normal"]}},"rum139":{"add":{"component_groups":["rum139"]},"remove":{"component_groups":["normal"]}},"stop":{"add":{"component_groups":["null"]},"remove":{"component_groups":["forward","back"]}},"stop_right_left":{"add":{"component_groups":["null"]},"remove":{"component_groups":["right","left"]}},"un_drive":{"add":{"component_groups":["null"]},"remove":{"component_groups":["drive"]}}}}}
+{
+    "format_version": "1.13.0",
+    "minecraft:entity": {
+        "component_groups": {
+            "back": {
+                "minecraft:timer": {
+                    "looping": true,
+                    "time": 1,
+                    "time_down_event": {
+                        "event": "minecraft:entity_spawned",
+                        "target": "self"
+                    }
+                },
+                "minecraft:variant": {
+                    "value": 2
+                }
+            },
+            "drive": {
+                "minecraft:variant": {
+                    "value": 8
+                }
+            },
+            "forward": {
+                "minecraft:timer": {
+                    "looping": true,
+                    "time": 1,
+                    "time_down_event": {
+                        "event": "minecraft:entity_spawned",
+                        "target": "self"
+                    }
+                },
+                "minecraft:variant": {
+                    "value": 1
+                }
+            },
+            "left": {
+                "minecraft:timer": {
+                    "looping": true,
+                    "time": 1,
+                    "time_down_event": {
+                        "event": "minecraft:entity_spawned",
+                        "target": "self"
+                    }
+                },
+                "minecraft:variant": {
+                    "value": 4
+                }
+            },
+            "mark12": {
+                "minecraft:timer": {
+                    "looping": true,
+                    "time": 1,
+                    "time_down_event": {
+                        "event": "minecraft:entity_spawned",
+                        "target": "self"
+                    }
+                },
+                "minecraft:variant": {
+                    "value": 7
+                }
+            },
+            "mark7": {
+                "minecraft:timer": {
+                    "looping": true,
+                    "time": 1,
+                    "time_down_event": {
+                        "event": "minecraft:entity_spawned",
+                        "target": "self"
+                    }
+                },
+                "minecraft:variant": {
+                    "value": 6
+                }
+            },
+            "normal": {
+                "minecraft:variant": {
+                    "value": 0
+                }
+            },
+            "right": {
+                "minecraft:timer": {
+                    "looping": true,
+                    "time": 1,
+                    "time_down_event": {
+                        "event": "minecraft:entity_spawned",
+                        "target": "self"
+                    }
+                },
+                "minecraft:variant": {
+                    "value": 3
+                }
+            },
+            "rum139": {
+                "minecraft:timer": {
+                    "looping": true,
+                    "time": 1,
+                    "time_down_event": {
+                        "event": "minecraft:entity_spawned",
+                        "target": "self"
+                    }
+                },
+                "minecraft:variant": {
+                    "value": 9
+                }
+            },
+            "stop": {
+                "minecraft:timer": {
+                    "looping": true,
+                    "time": 1,
+                    "time_down_event": {
+                        "event": "minecraft:entity_spawned",
+                        "target": "self"
+                    }
+                },
+                "minecraft:variant": {
+                    "value": 5
+                }
+            }
+        },
+        "components": {
+            "minecraft:behavior.controlled_by_player": {},
+            "minecraft:break_blocks": {
+                "breakable_blocks": [
+                    "bamboo",
+                    "cactus",
+                    "minecraft:leaves",
+                    "turtle_egg",
+                    "waterlily",
+                    "minecraft:planks",
+                    "minecraft:log",
+                    "minecraft:hay_block",
+                    "minecraft:wheat",
+                    "minecraft:potatoes",
+                    "minecraft:carrots",
+                    "minecraft:beetroot",
+                    "minecraft:melon_block",
+                    "minecraft:pumpkin",
+                    "minecraft:sweet_berry_bush",
+                    "minecraft:cake",
+                    "minecraft:brown_mushroom",
+                    "minecraft:red_mushroom",
+                    "minecraft:fence",
+                    "minecraft:wooden_door",
+                    "minecraft:glass",
+                    "minecraft:glass_pane",
+                    "minecraft:stained_glass",
+                    "minecraft:stained_glass_pane",
+                    "minecraft:wooden_slab"
+                ]
+            },
+            "minecraft:can_climb": {},
+            "minecraft:collision_box": {
+                "height": 7,
+                "width": 2
+            },
+            "minecraft:fire_immune": {},
+            "minecraft:healable": {
+                "items": [
+                    {
+                        "heal_amount": 20,
+                        "item": "iron_ingot"
+                    }
+                ]
+            },
+            "minecraft:health": {
+                "value": {
+                    "range_max": 500000,
+                    "range_min": 460000
+                }
+            },
+            "minecraft:input_ground_controlled": {},
+            "minecraft:jump.static": {},
+            "minecraft:knockback_resistance": {
+                "value": 1
+            },
+            "minecraft:movement": {
+                "value": 0
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:nameable": {},
+            "minecraft:navigation.walk": {
+                "can_float": true
+            },
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:rideable": {
+                "crouching_skip_interact": true,
+                "family_types": [
+                    "player"
+                ],
+                "interact_text": "Into MISSOURI",
+                "rider_can_interact": true,
+                "seat_count": 1,
+                "seats": [
+                    {
+                        "position": [
+                            0,
+                            8,
+                            -5
+                        ]
+                    }
+                ]
+            },
+            "minecraft:scale": {
+                "value": 2.5
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "controller",
+                    "entity"
+                ]
+            },
+            "minecraft:underwater_movement": {
+                "value": 0
+            }
+        },
+        "description": {
+            "animations": {
+                "back": "animation.back_root",
+                "facing": "animation.bb63_gun_facing",
+                "forward": "animation.forward_root",
+                "hasrider": "animation.bb63_has_rider",
+                "left": "animation.left_root",
+                "mark12": "animation.mark12_root",
+                "mark7": "animation.mark7_root",
+                "missouri": "controller.animation.missouri",
+                "right": "animation.right_root",
+                "rum139": "animation.rum139_root",
+                "spawn": "controller.animation.missouri_spawn",
+                "stop": "animation.stop_root"
+            },
+            "identifier": "bb63:controller",
+            "is_experimental": false,
+            "is_spawnable": false,
+            "is_summonable": true,
+            "scripts": {
+                "animate": [
+                    {
+                        "facing": "query.variant ==8"
+                    },
+                    {
+                        "onfire2": "query.health < 300000"
+                    },
+                    {
+                        "onfire3": "query.health < 200000"
+                    },
+                    {
+                        "onfire4": "query.health < 100000"
+                    },
+                    {
+                        "rum139": "query.variant ==9"
+                    },
+                    {
+                        "hasrider": "query.has_rider"
+                    },
+                    "missouri",
+                    {
+                        "forward": "query.variant ==1"
+                    },
+                    {
+                        "back": "query.variant ==2"
+                    },
+                    {
+                        "right": "query.variant ==3"
+                    },
+                    {
+                        "left": "query.variant ==4"
+                    },
+                    {
+                        "stop": "query.variant ==5"
+                    },
+                    {
+                        "mark7": "query.variant ==6"
+                    },
+                    {
+                        "mark12": "query.variant ==7"
+                    },
+                    "spawn"
+                ]
+            }
+        },
+        "events": {
+            "back": {
+                "add": {
+                    "component_groups": [
+                        "back"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "normal"
+                    ]
+                }
+            },
+            "drive": {
+                "add": {
+                    "component_groups": [
+                        "drive"
+                    ]
+                }
+            },
+            "forward": {
+                "add": {
+                    "component_groups": [
+                        "forward"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "normal"
+                    ]
+                }
+            },
+            "left": {
+                "add": {
+                    "component_groups": [
+                        "left"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "normal"
+                    ]
+                }
+            },
+            "mark12": {
+                "add": {
+                    "component_groups": [
+                        "mark12"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "normal"
+                    ]
+                }
+            },
+            "mark7": {
+                "add": {
+                    "component_groups": [
+                        "mark7"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "normal"
+                    ]
+                }
+            },
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "normal"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "forward",
+                        "back",
+                        "right",
+                        "left",
+                        "stop",
+                        "mark12",
+                        "mark7"
+                    ]
+                }
+            },
+            "right": {
+                "add": {
+                    "component_groups": [
+                        "right"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "normal"
+                    ]
+                }
+            },
+            "rum139": {
+                "add": {
+                    "component_groups": [
+                        "rum139"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "normal"
+                    ]
+                }
+            },
+            "stop": {
+                "add": {
+                    "component_groups": [
+                        "null"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "forward",
+                        "back"
+                    ]
+                }
+            },
+            "stop_right_left": {
+                "add": {
+                    "component_groups": [
+                        "null"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "right",
+                        "left"
+                    ]
+                }
+            },
+            "un_drive": {
+                "add": {
+                    "component_groups": [
+                        "null"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "drive"
+                    ]
+                }
+            }
+        }
+    }
+}

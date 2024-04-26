@@ -1,1 +1,113 @@
-{"animation_controllers":{"controller.animation.127mm_inwater":{"states":{"default":{"transitions":[{"inwater":"query.is_in_water"}]},"inwater":{"on_entry":["/particle hitwater:127mm ~ ~0.1 ~","/playsound @p 127mm.inwater"],"transitions":[{"inwater_2":"variable.delay127mmbeh = 0.1; variable.previous_time127mmbeh = query.life_time; return(!q.is_riding);"}]},"inwater_2":{"on_entry":["/kill @s"],"transitions":[{"default":"null"}]}}},"controller.animation.406mm_inwater":{"states":{"default":{"transitions":[{"inwater":"query.is_in_water"}]},"inwater":{"on_entry":["/particle hitwater:406mm ~ ~0.1 ~","/playsound @p 406mm.inwater"],"transitions":[{"inwater_2":"variable.delay406mmbeh = 0.1; variable.previous_time406mmbeh = query.life_time; return(!q.is_riding);"}]},"inwater_2":{"on_entry":["/kill @s"],"transitions":[{"inwater_2":"variable.delay406mmbeh = 0.1; variable.previous_time406mmbeh = query.life_time; return"}]}}},"controller.animation.rum139":{"states":{"default":{"transitions":[{"inwater":"query.is_in_water"}]},"inwater":{"on_exit":["@s missile:in_water"],"transitions":[{"default":"!query.is_alive"}]}}},"controller.animation.shell_inwater":{"states":{"default":{"transitions":[{"inwater":"query.is_in_water"}]},"inwater":{"on_entry":["/particle shell:hitwater ~ ~0.1 ~","/kill @s"],"transitions":[{"default":"!query.is_in_water"}]}}}},"format_version":"1.10.0"}
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.127mm_inwater": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "inwater": "query.is_in_water"
+                        }
+                    ]
+                },
+                "inwater": {
+                    "on_entry": [
+                        "/particle hitwater:127mm ~ ~0.1 ~",
+                        "/playsound @p 127mm.inwater"
+                    ],
+                    "transitions": [
+                        {
+                            "inwater_2": "variable.delay406mmbeh = 0.1; variable.previous_time406mmbeh = query.life_time; !query.is_riding;"
+                        }
+                    ]
+                },
+                "inwater_2": {
+                    "on_entry": [
+                        "/kill @s"
+                    ]
+                    // MRxSIR: omit because there is not need to transition if it's to be killed
+                    // "transitions": [
+                    //     {
+                    //         "default": "null"
+                    //     }
+                    // ]
+                }
+            }
+        },
+        "controller.animation.406mm_inwater": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "inwater": "query.is_in_water"
+                        }
+                    ]
+                },
+                "inwater": {
+                    "on_entry": [
+                        "/particle hitwater:406mm ~ ~0.1 ~",
+                        "/playsound @p 406mm.inwater"
+                    ],
+                    "transitions": [
+                        {
+                            "inwater_2": "variable.delay406mmbeh = 0.1; variable.previous_time406mmbeh = query.life_time; return(!q.is_riding);"
+                        }
+                    ]
+                },
+                "inwater_2": {
+                    "on_entry": [
+                        "/kill @s"
+                    ],
+                    "transitions": [
+                        {
+                            "inwater_2": "variable.delay406mmbeh = 0.1; variable.previous_time406mmbeh = query.life_time; return"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.rum139": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "inwater": "query.is_in_water"
+                        }
+                    ]
+                },
+                "inwater": {
+                    "on_exit": [
+                        "@s missile:in_water"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!query.is_alive"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.shell_inwater": {
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "inwater": "query.is_in_water"
+                        }
+                    ]
+                },
+                "inwater": {
+                    "on_entry": [
+                        "/particle shell:hitwater ~ ~0.1 ~",
+                        "/kill @s"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!query.is_in_water"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

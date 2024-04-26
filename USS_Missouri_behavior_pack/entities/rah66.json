@@ -1,1 +1,372 @@
-{"format_version":"1.13.0","minecraft:entity":{"component_groups":{"crash":{"minecraft:transformation":{"into":"us:rah66_crash"}},"drive":{"minecraft:timer":{"looping":true,"time":4,"time_down_event":{"event":"minecraft:entity_spawned","target":"self"}},"minecraft:variant":{"value":1}},"has_rider":{"minecraft:physics":{"has_gravity":false},"minecraft:variant":{"value":5}},"machinegun:shoot":{"minecraft:spawn_entity":[{"max_wait_time":0,"min_wait_time":0,"num_to_spawn":1,"single_use":true,"spawn_entity":"us:rah66_bullet"}]},"missile:shoot":{"minecraft:spawn_entity":[{"max_wait_time":0,"min_wait_time":0,"num_to_spawn":1,"single_use":true,"spawn_entity":"us:rah66_missile","spawn_event":"random1"}]},"missile:shoot2":{"minecraft:spawn_entity":[{"max_wait_time":0,"min_wait_time":0,"num_to_spawn":1,"single_use":true,"spawn_entity":"us:rah66_missile","spawn_event":"random2"}]},"no_rider":{"minecraft:physics":{"has_gravity":true},"minecraft:variant":{"value":4}},"normal":{"minecraft:behavior.nearest_attackable_target":{"entity_types":[{"filters":{"other_with_families":["rahaim"]},"max_dist":100}],"must_see":true,"priority":2,"reselect_targets":true},"minecraft:behavior.ranged_attack":{"attack_radius":100,"burst_interval":10,"burst_shots":1,"charge_charged_trigger":100,"charge_shoot_trigger":100,"priority":2},"minecraft:collision_box":{"height":1,"width":1},"minecraft:follow_range":{"value":100},"minecraft:shooter":{"def":"null"},"minecraft:variant":{"value":0}}},"components":{"minecraft:behavior.controlled_by_player":{},"minecraft:damage_sensor":{"triggers":[{"on_damage":{"event":"crash","filters":{"all_of":[{"test":"has_damage","value":"fatal"}]}}}]},"minecraft:fire_immune":{},"minecraft:healable":{"items":[{"heal_amount":20,"item":"iron_ingot"}]},"minecraft:health":{"value":{"range_max":300,"range_min":300}},"minecraft:input_ground_controlled":{},"minecraft:is_stackable":{},"minecraft:knockback_resistance":{"value":1},"minecraft:movement":{"value":0.4},"minecraft:movement.basic":{},"minecraft:nameable":{},"minecraft:navigation.walk":{"can_float":false},"minecraft:push_through":{"value":1},"minecraft:pushable":{"is_pushable":false,"is_pushable_by_piston":true},"minecraft:rideable":{"crouching_skip_interact":true,"family_types":["player"],"interact_text":"Into RAH66","rider_can_interact":true,"seat_count":1,"seats":[{"position":[0,1.5,-1]}]},"minecraft:scale":{"value":2},"minecraft:type_family":{"family":["navy","usa","rah66","ushelicopter","usahelicopter"]},"minecraft:underwater_movement":{"value":0}},"description":{"animations":{"dead":"controller.animation.rah66_dead","inbb63":"animation.rah66_in_bb63","move":"animation.rah66_move","moving":"controller.animation.rah66_move","moving2":"controller.animation.rah662","rah66":"animation.rah66","root":"controller.animation.rah66","root2":"animation.rah66_root"},"identifier":"us:rah66","is_experimental":false,"is_spawnable":false,"is_summonable":true,"scripts":{"animate":[{"rah66":"query.variant == 1"},{"hit":"query.variant == 2"},{"crash":"query.variant == 3"},{"crash2":"query.variant == 3"},{"inbb63":"query.variant == 4"},"moving","moving2","root",{"root2":"q.has_rider"},"dead"]}},"events":{"crash":{"add":{"component_groups":["crash"]},"remove":{"component_groups":["normal"]}},"drive":{"add":{"component_groups":["drive"]},"remove":{"component_groups":["un_drive"]}},"have":{"add":{"component_groups":["has_rider","drive"]},"remove":{"component_groups":["no_rider"]}},"havent":{"add":{"component_groups":["no_rider"]},"remove":{"component_groups":["has_rider"]}},"hit":{"add":{"component_groups":["hit","minecraft:exploding"]}},"machinegun":{"add":{"component_groups":["machinegun:shoot"]}},"minecraft:entity_spawned":{"add":{"component_groups":["normal"]},"remove":{"component_groups":["drive"]}},"missile1":{"add":{"component_groups":["missile:shoot"]}},"missile2":{"add":{"component_groups":["missile:shoot2"]}},"move":{"add":{"component_groups":["move"]},"remove":{"component_groups":["un_move"]}},"un_drive":{"add":{"component_groups":["un_drive"]},"remove":{"component_groups":["drive"]}},"un_move":{"add":{"component_groups":["un_move"]},"remove":{"component_groups":["move"]}}}}}
+{
+    "format_version": "1.13.0",
+    "minecraft:entity": {
+        "component_groups": {
+            "crash": {
+                "minecraft:transformation": {
+                    "into": "us:rah66_crash"
+                }
+            },
+            "drive": {
+                "minecraft:timer": {
+                    "looping": true,
+                    "time": 4,
+                    "time_down_event": {
+                        "event": "minecraft:entity_spawned",
+                        "target": "self"
+                    }
+                },
+                "minecraft:variant": {
+                    "value": 1
+                }
+            },
+            "has_rider": {
+                "minecraft:physics": {
+                    "has_gravity": false
+                },
+                "minecraft:variant": {
+                    "value": 5
+                }
+            },
+            "machinegun:shoot": {
+                "minecraft:spawn_entity": [
+                    {
+                        "max_wait_time": 0,
+                        "min_wait_time": 0,
+                        "num_to_spawn": 1,
+                        "single_use": true,
+                        "spawn_entity": "us:rah66_bullet"
+                    }
+                ]
+            },
+            "missile:shoot": {
+                "minecraft:spawn_entity": [
+                    {
+                        "max_wait_time": 0,
+                        "min_wait_time": 0,
+                        "num_to_spawn": 1,
+                        "single_use": true,
+                        "spawn_entity": "us:rah66_missile",
+                        "spawn_event": "random1"
+                    }
+                ]
+            },
+            "missile:shoot2": {
+                "minecraft:spawn_entity": [
+                    {
+                        "max_wait_time": 0,
+                        "min_wait_time": 0,
+                        "num_to_spawn": 1,
+                        "single_use": true,
+                        "spawn_entity": "us:rah66_missile",
+                        "spawn_event": "random2"
+                    }
+                ]
+            },
+            "no_rider": {
+                "minecraft:physics": {
+                    "has_gravity": true
+                },
+                "minecraft:variant": {
+                    "value": 4
+                }
+            },
+            "normal": {
+                "minecraft:behavior.nearest_attackable_target": {
+                    "entity_types": [
+                        {
+                            "filters": {
+                                "other_with_families": [
+                                    "rahaim"
+                                ]
+                            },
+                            "max_dist": 100
+                        }
+                    ],
+                    "must_see": true,
+                    "priority": 2,
+                    "reselect_targets": true
+                },
+                "minecraft:behavior.ranged_attack": {
+                    "attack_radius": 100,
+                    "burst_interval": 10,
+                    "burst_shots": 1,
+                    "charge_charged_trigger": 100,
+                    "charge_shoot_trigger": 100,
+                    "priority": 2
+                },
+                "minecraft:collision_box": {
+                    "height": 1,
+                    "width": 1
+                },
+                "minecraft:follow_range": {
+                    "value": 100
+                },
+                "minecraft:shooter": {
+                    "def": "null"
+                },
+                "minecraft:variant": {
+                    "value": 0
+                }
+            }
+        },
+        "components": {
+            "minecraft:behavior.controlled_by_player": {},
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "on_damage": {
+                            "event": "crash",
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "has_damage",
+                                        "value": "fatal"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "minecraft:fire_immune": {},
+            "minecraft:healable": {
+                "items": [
+                    {
+                        "heal_amount": 20,
+                        "item": "iron_ingot"
+                    }
+                ]
+            },
+            "minecraft:health": {
+                "value": {
+                    "range_max": 300,
+                    "range_min": 300
+                }
+            },
+            "minecraft:input_ground_controlled": {},
+            "minecraft:is_stackable": {},
+            "minecraft:knockback_resistance": {
+                "value": 1
+            },
+            "minecraft:movement": {
+                "value": 0.4
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:nameable": {},
+            "minecraft:navigation.walk": {
+                "can_float": false
+            },
+            "minecraft:push_through": {
+                "value": 1
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:rideable": {
+                "crouching_skip_interact": true,
+                "family_types": [
+                    "player"
+                ],
+                "interact_text": "Into RAH66",
+                "rider_can_interact": true,
+                "seat_count": 1,
+                "seats": [
+                    {
+                        "position": [
+                            0,
+                            1.5,
+                            -1
+                        ]
+                    }
+                ]
+            },
+            "minecraft:scale": {
+                "value": 2
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "navy",
+                    "usa",
+                    "rah66",
+                    "ushelicopter",
+                    "usahelicopter"
+                ]
+            },
+            "minecraft:underwater_movement": {
+                "value": 0
+            }
+        },
+        "description": {
+            "animations": {
+                "dead": "controller.animation.rah66_dead",
+                "inbb63": "animation.rah66_in_bb63",
+                "move": "animation.rah66_move",
+                "moving": "controller.animation.rah66_move",
+                "moving2": "controller.animation.rah662",
+                "rah66": "animation.rah66",
+                "root": "controller.animation.rah66",
+                "root2": "animation.rah66_root"
+            },
+            "identifier": "us:rah66",
+            "is_experimental": false,
+            "is_spawnable": false,
+            "is_summonable": true,
+            "scripts": {
+                "animate": [
+                    {
+                        "rah66": "query.variant == 1"
+                    },
+                    {
+                        "hit": "query.variant == 2"
+                    },
+                    {
+                        "crash": "query.variant == 3"
+                    },
+                    {
+                        "crash2": "query.variant == 3"
+                    },
+                    {
+                        "inbb63": "query.variant == 4"
+                    },
+                    "moving",
+                    "moving2",
+                    "root",
+                    {
+                        "root2": "q.has_rider"
+                    },
+                    "dead"
+                ]
+            }
+        },
+        "events": {
+            "crash": {
+                "add": {
+                    "component_groups": [
+                        "crash"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "normal"
+                    ]
+                }
+            },
+            "drive": {
+                "add": {
+                    "component_groups": [
+                        "drive"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "un_drive"
+                    ]
+                }
+            },
+            "have": {
+                "add": {
+                    "component_groups": [
+                        "has_rider",
+                        "drive"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "no_rider"
+                    ]
+                }
+            },
+            "havent": {
+                "add": {
+                    "component_groups": [
+                        "no_rider"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "has_rider"
+                    ]
+                }
+            },
+            "hit": {
+                "add": {
+                    "component_groups": [
+                        "hit",
+                        "minecraft:exploding"
+                    ]
+                }
+            },
+            "machinegun": {
+                "add": {
+                    "component_groups": [
+                        "machinegun:shoot"
+                    ]
+                }
+            },
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "normal"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "drive"
+                    ]
+                }
+            },
+            "missile1": {
+                "add": {
+                    "component_groups": [
+                        "missile:shoot"
+                    ]
+                }
+            },
+            "missile2": {
+                "add": {
+                    "component_groups": [
+                        "missile:shoot2"
+                    ]
+                }
+            },
+            "move": {
+                "add": {
+                    "component_groups": [
+                        "move"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "un_move"
+                    ]
+                }
+            },
+            "un_drive": {
+                "add": {
+                    "component_groups": [
+                        "un_drive"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "drive"
+                    ]
+                }
+            },
+            "un_move": {
+                "add": {
+                    "component_groups": [
+                        "un_move"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "move"
+                    ]
+                }
+            }
+        }
+    }
+}

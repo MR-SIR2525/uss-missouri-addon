@@ -1,1 +1,68 @@
-{"format_version":"1.8.0","minecraft:entity":{"components":{"minecraft:collision_box":{"height":0.3,"width":1.7},"minecraft:custom_hit_test":{"hitboxes":[{"height":5,"pivot":[0,-1,0],"width":38}]},"minecraft:fall_damage":{"value":0},"minecraft:fire_immune":false,"minecraft:health":{"max":500000,"value":460000},"minecraft:is_stackable":{},"minecraft:knockback_resistance":{"value":1},"minecraft:movement":{"value":0},"minecraft:movement.basic":{},"minecraft:navigation.walk":{"can_path_over_water":true},"minecraft:physics":{},"minecraft:pushable":{"is_pushable":false,"is_pushable_by_piston":false},"minecraft:scale":{"value":6},"minecraft:type_family":{"family":["hitbox"]},"minecraft:underwater_movement":{"value":0},"minecraft:variant":{"value":0}},"description":{"identifier":"bb63:hitbox3","is_experimental":false,"is_spawnable":false,"is_summonable":true}}}
+{
+    "format_version": "1.8.0",
+    "minecraft:entity": {
+        "components": {
+            "minecraft:collision_box": {
+                "height": 0.3,
+                "width": 1.7
+            },
+            "minecraft:custom_hit_test": {
+                "hitboxes": [
+                    {
+                        "height": 5,
+                        "pivot": [
+                            0,
+                            -1,
+                            0
+                        ],
+                        "width": 38
+                    }
+                ]
+            },
+            "minecraft:fall_damage": {
+                "value": 0
+            },
+            "minecraft:fire_immune": false,
+            "minecraft:health": {
+                "max": 500000,
+                "value": 460000
+            },
+            "minecraft:is_stackable": {},
+            "minecraft:knockback_resistance": {
+                "value": 1
+            },
+            "minecraft:movement": {
+                "value": 0
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:navigation.walk": {
+                "can_path_over_water": true
+            },
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:scale": {
+                "value": 6
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "hitbox"
+                ]
+            },
+            "minecraft:underwater_movement": {
+                "value": 0
+            },
+            "minecraft:variant": {
+                "value": 0
+            }
+        },
+        "description": {
+            "identifier": "bb63:hitbox3",
+            "is_experimental": false,
+            "is_spawnable": false,
+            "is_summonable": true
+        }
+    }
+}
