@@ -1,0 +1,47 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "rah66:wing",
+			"basic_render_parameters": {
+				"material": "particles_blend",
+				"texture": "rah66_wing"
+			}
+		},
+		"components": {
+			"minecraft:emitter_local_space": {
+				"position": true,
+				"rotation": true
+			},
+			"minecraft:emitter_rate_instant": {
+				"num_particles": 1
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 0.1
+			},
+			"minecraft:emitter_shape_point": {},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": 0.1
+			},
+			"minecraft:particle_initial_speed": 0,
+			"minecraft:particle_motion_dynamic": {},
+			"minecraft:particle_appearance_billboard": {
+				"size": [2.8, 2.8],
+				"facing_camera_mode": "direction_y",
+				"direction": {
+					"mode": "custom",
+					"custom_direction": [-1, 0, 0]
+				},
+				"uv": {
+					"texture_width": 1023,
+					"texture_height": 986,
+					"uv": [0, 20],
+					"uv_size": [1023, 986]
+				}
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": [1, 0.9451, 0, 1]
+			}
+		}
+	}
+}
