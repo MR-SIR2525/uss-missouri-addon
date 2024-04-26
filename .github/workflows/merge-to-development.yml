@@ -14,14 +14,15 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: 'development'
-      - name: Merge Resource Pack
-        if: github.ref == 'refs/heads/resource-pack'
+      - name: Merge Changes Based on Branch
         run: |
-          git merge --no-ff origin/resource-pack -m "Merging changes from Resource Pack into Development"
-      - name: Merge Behavior Pack
-        if: github.ref == 'refs/heads/behavior-pack'
-        run: |
-          git merge --no-ff origin/behavior-pack -m "Merging changes from Behavior Pack into Development"
+          if [[ "${{ github.ref }}" == "refs/heads/resource-pack" ]]; then
+            git fetch origin resource-pack
+            git merge --no-ff origin/resource-pack -m "Merging changes from Resource Pack into Development"
+          elif [[ "${{ github.ref }}" == "refs/heads/behavior-pack" ]]; then
+            git fetch origin behavior-pack
+            git merge --no-ff origin/behavior-pack -m "Merging changes from Behavior Pack into Development"
+          fi
       - name: Push Changes
         uses: ad-m/github-push-action@master
         with:
