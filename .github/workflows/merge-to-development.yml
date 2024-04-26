@@ -20,7 +20,7 @@ jobs:
         if: github.ref == 'refs/heads/resource-pack'
         run: |
           git fetch origin resource-pack
-          git checkout origin/resource-pack -- USS_Missouri_Resource_Pack/
+          git checkout origin/resource-pack -- USS_Missouri_resource_pack/
           git add USS_Missouri_Resource_Pack/
           git commit -m "Merge Resource Pack changes into Development"
 
@@ -28,7 +28,7 @@ jobs:
         if: github.ref == 'refs/heads/behavior-pack'
         run: |
           git fetch origin behavior-pack
-          git checkout origin/behavior-pack -- USS_Missouri_Behavior_Pack/
+          git checkout origin/behavior-pack -- USS_Missouri_behavior_pack/
           git add USS_Missouri_Behavior_Pack/
           git commit -m "Merge Behavior Pack changes into Development"
 
