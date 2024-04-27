@@ -1,1 +1,213 @@
-{"format_version":"1.14.0","sound_definitions":{"127mm.explosion":{"category":"neutral","max_distance":70,"sounds":[{"name":"sounds/127mm","volume":1}]},"127mm.inwater":{"category":"neutral","max_distance":30,"sounds":[{"name":"sounds/127mm_inwater","volume":1}]},"406mm.explosion":{"category":"neutral","max_distance":100,"sounds":[{"name":"sounds/127mm","volume":1.5}]},"406mm.inwater":{"category":"neutral","max_distance":40,"sounds":[{"name":"sounds/406mm_inwater","volume":1}]},"all_hands_prepare_for_battle_the_engines_are_on_bridge_control":{"category":"music","max_distance":50,"sounds":["sounds/voice/all_hands_prepare_for_battle_the_engines_are_on_bridge_control","sounds/voice/null"],"stream":true},"bb63.back":{"category":"music","max_distance":50,"sounds":["sounds/voice/a_stern_1_5_knot","sounds/voice/half_a_stern","sounds/voice/null","sounds/voice/stand_by_both_engines"],"stream":true},"bb63.move":{"category":"music","max_distance":50,"sounds":["sounds/voice/full_ahead","sounds/voice/null","sounds/voice/ahead_2_5_knot","sounds/voice/maintain_a_heading_at_0_9_3_at_1_5_knot"],"stream":true},"bb63.stop":{"category":"music","max_distance":50,"sounds":["sounds/voice/stop_engine_ver1","sounds/voice/stop_engine_ver2","sounds/voice/null"],"stream":true},"bofor.shoot":{"category":"neutral","max_distance":50,"sounds":[{"name":"sounds/bofor","volume":1}]},"mark12.shoot":{"category":"neutral","max_distance":40,"sounds":[{"name":"sounds/mark12","volume":1}]},"mark7.shoot":{"category":"neutral","max_distance":70,"sounds":[{"name":"sounds/mark7","volume":2}]},"rah66.missile":{"category":"neutral","max_distance":40,"sounds":[{"name":"sounds/vehicles/rah66_missile","volume":1}]},"rah66.move":{"category":"neutral","max_distance":60,"sounds":[{"name":"sounds/vehicles/rah66_move","volume":1}]},"rah66.shoot":{"category":"neutral","max_distance":100,"sounds":[{"name":"sounds/vehicles/rah66_shoot","volume":2}]},"rah66.take_off":{"category":"music","max_distance":40,"sounds":["sounds/voice/helicopter_in_the_line_up","sounds/voice/take_off_helicopter_taking_off_assuming_combat_position"],"stream":true},"rum139.move":{"category":"neutral","max_distance":20,"sounds":[{"name":"sounds/vehicles/rum139","volume":1.5}]},"rum139.move2":{"category":"neutral","max_distance":20,"sounds":[{"name":"sounds/vehicles/rum139_2","volume":1}]},"shell.damage":{"category":"neutral","max_distance":40,"sounds":[{"name":"sounds/vehicles/hit3","volume":2}]},"shell.hit":{"category":"neutral","max_distance":30,"sounds":["sounds/vehicles/hit1","sounds/vehicles/hit2"]},"us.phalanxshoot":{"category":"neutral","max_distance":100,"sounds":[{"name":"sounds/vehicles/phalanxshoot","volume":2}]},"us.phalanxstartshoot":{"category":"neutral","max_distance":100,"sounds":[{"name":"sounds/vehicles/startshoot","volume":1.5}]}}}
+{
+    "format_version": "1.14.0",
+    "sound_definitions": {
+        "127mm.explosion": {
+            "category": "neutral",
+            "max_distance": 70,
+            "sounds": [
+                {
+                    "name": "sounds/127mm",
+                    "volume": 1
+                }
+            ]
+        },
+        "127mm.inwater": {
+            "category": "neutral",
+            "max_distance": 30,
+            "sounds": [
+                {
+                    "name": "sounds/127mm_inwater",
+                    "volume": 1
+                }
+            ]
+        },
+        "406mm.explosion": {
+            "category": "neutral",
+            "max_distance": 100,
+            "sounds": [
+                {
+                    "name": "sounds/127mm",
+                    "volume": 1.5
+                }
+            ]
+        },
+        "406mm.inwater": {
+            "category": "neutral",
+            "max_distance": 40,
+            "sounds": [
+                {
+                    "name": "sounds/406mm_inwater",
+                    "volume": 1
+                }
+            ]
+        },
+        "all_hands_prepare_for_battle_the_engines_are_on_bridge_control": {
+            "category": "music",
+            "max_distance": 50,
+            "sounds": [
+                "sounds/voice/all_hands_prepare_for_battle_the_engines_are_on_bridge_control",
+                "sounds/voice/null"
+            ],
+            "stream": true
+        },
+        "bb63.back": {
+            "category": "music",
+            "max_distance": 50,
+            "sounds": [
+                "sounds/voice/a_stern_1_5_knot",
+                "sounds/voice/half_a_stern",
+                "sounds/voice/null",
+                "sounds/voice/stand_by_both_engines"
+            ],
+            "stream": true
+        },
+        "bb63.move": {
+            "category": "music",
+            "max_distance": 50,
+            "sounds": [
+                "sounds/voice/full_ahead",
+                "sounds/voice/null",
+                "sounds/voice/ahead_2_5_knot",
+                "sounds/voice/maintain_a_heading_at_0_9_3_at_1_5_knot"
+            ],
+            "stream": true
+        },
+        "bb63.stop": {
+            "category": "music",
+            "max_distance": 50,
+            "sounds": [
+                "sounds/voice/stop_engine_ver1",
+                "sounds/voice/stop_engine_ver2",
+                "sounds/voice/null"
+            ],
+            "stream": true
+        },
+        "bofor.shoot": {
+            "category": "neutral",
+            "max_distance": 50,
+            "sounds": [
+                {
+                    "name": "sounds/bofor",
+                    "volume": 1
+                }
+            ]
+        },
+        "mark12.shoot": {
+            "category": "neutral",
+            "max_distance": 40,
+            "sounds": [
+                {
+                    "name": "sounds/mark12",
+                    "volume": 1
+                }
+            ]
+        },
+        "mark7.shoot": {
+            "category": "neutral",
+            "max_distance": 70,
+            "sounds": [
+                {
+                    "name": "sounds/mark7",
+                    "volume": 2
+                }
+            ]
+        },
+        "rah66.missile": {
+            "category": "neutral",
+            "max_distance": 40,
+            "sounds": [
+                {
+                    "name": "sounds/vehicles/rah66_missile",
+                    "volume": 1
+                }
+            ]
+        },
+        "rah66.move": {
+            "category": "neutral",
+            "max_distance": 60,
+            "sounds": [
+                {
+                    "name": "sounds/vehicles/rah66_move",
+                    "volume": 1
+                }
+            ]
+        },
+        "rah66.shoot": {
+            "category": "neutral",
+            "max_distance": 100,
+            "sounds": [
+                {
+                    "name": "sounds/vehicles/rah66_shoot",
+                    "volume": 2
+                }
+            ]
+        },
+        "rah66.take_off": {
+            "category": "music",
+            "max_distance": 40,
+            "sounds": [
+                "sounds/voice/helicopter_in_the_line_up",
+                "sounds/voice/take_off_helicopter_taking_off_assuming_combat_position"
+            ],
+            "stream": true
+        },
+        "rum139.move": {
+            "category": "neutral",
+            "max_distance": 20,
+            "sounds": [
+                {
+                    "name": "sounds/vehicles/rum139",
+                    "volume": 1.5
+                }
+            ]
+        },
+        "rum139.move2": {
+            "category": "neutral",
+            "max_distance": 20,
+            "sounds": [
+                {
+                    "name": "sounds/vehicles/rum139_2",
+                    "volume": 1
+                }
+            ]
+        },
+        "shell.damage": {
+            "category": "neutral",
+            "max_distance": 40,
+            "sounds": [
+                {
+                    "name": "sounds/vehicles/hit3",
+                    "volume": 2
+                }
+            ]
+        },
+        "shell.hit": {
+            "category": "neutral",
+            "max_distance": 30,
+            "sounds": [
+                "sounds/vehicles/hit1",
+                "sounds/vehicles/hit2"
+            ]
+        },
+        "us.phalanxshoot": {
+            "category": "neutral",
+            "max_distance": 100,
+            "sounds": [
+                {
+                    "name": "sounds/vehicles/phalanxshoot",
+                    "volume": 1.5
+                }
+            ]
+        },
+        "us.phalanxstartshoot": {
+            "category": "neutral",
+            "max_distance": 100,
+            "sounds": [
+                {
+                    "name": "sounds/vehicles/startshoot",
+                    "volume": 1.5
+                }
+            ]
+        }
+    }
+}
