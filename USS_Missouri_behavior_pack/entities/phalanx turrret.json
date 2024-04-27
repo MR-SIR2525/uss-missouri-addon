@@ -19,7 +19,7 @@
                   {"test": "is_family", "subject": "other", "value": "blaze"},
                   {"test": "is_family", "subject": "other", "value": "ender_dragon"},
 
-                  // MRxSIR - entities from USS Missouri addon
+                  // MRxSIR - entities from MrHusana909's Long Range Rockets
                   // each missile seems to be tagged "missileactive" when launched,
                   // so target it only if it's active, aka probably in flight.
                   {
@@ -116,7 +116,7 @@
           }
         ]
       },
-      "minecraft:fire_immune": false,
+      // "minecraft:fire_immune": false,
       "minecraft:health": {
         "max": 200,
         "value": 200
@@ -127,14 +127,15 @@
       "minecraft:loot": {
         "table": "loot_tables/entities/phalanx_turret.json"
       },
-      "minecraft:nameable": {},
+      "minecraft:nameable": {
+      },
       "minecraft:navigation.walk": {
         "can_path_over_water": false
       },
       "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": false,
-        "is_pushable_by_piston": true
+        "is_pushable_by_piston": true    //MRxSIR added pushable
       },
       "minecraft:scale": {
         "value": 1
@@ -144,6 +145,37 @@
           "phalanx",
           "usaanti-aircraft",
           "usa"
+        ]
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "on_interact": {    //MRxSIR added ability to heal phalanx by 15 hp with iron ingot
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "domain": "hand",
+                    "subject": "other",
+                    "value": "iron_ingot"
+                  },
+                  {
+                    "test": "is_missing_health",
+                    "value": true
+                  }
+                ]
+              }
+            },
+            "use_item": true,
+            "health_amount": 15,
+            "play_sounds": "irongolem.repair",
+            "interact_text": "action.interact.repair"
+          }
         ]
       }
     },
