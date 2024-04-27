@@ -1,0 +1,18 @@
+{
+    "format_version": 1,
+    "header": {
+        "description": "",
+        "name": "§9USS §1Missouri Custom Water",
+        "uuid": "4ab07e2b-597b-4e00-954f-ce13da04ecae",
+        "version": [1, 0, 0],
+        "min_engine_version": [1, 8, 0]
+    },
+    "modules": [
+        {
+            "description": "Spinoff of water texture from §2Model Missouri by HerodrinePro124; Mark12,Borfor40mm model by Creator Crafter321 by §4HerodrinePro124",
+            "type": "resources",
+            "uuid": "0e19372c-a0a9-4bfe-911e-a0bd5cff426a",
+            "version": [1, 0, 0]
+        }
+    ]
+}

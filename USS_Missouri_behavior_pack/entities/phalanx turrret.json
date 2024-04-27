@@ -95,10 +95,10 @@
               }
             }
           },
-          // {
-          //   "cause": "all",
-          //   "deals_damage": true
-          // },
+          {
+            "cause": "all",
+            "deals_damage": true
+          },
           {
             "cause": "fall",
             "deals_damage": false

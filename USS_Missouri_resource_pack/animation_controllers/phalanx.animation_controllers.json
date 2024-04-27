@@ -1,1 +1,76 @@
-{"animation_controllers":{"controller.animation.phalanx_shoot":{"states":{"default":{"animations":["normal"],"transitions":[{"shoot":"variable.has_target"}]},"shoot":{"particle_effects":[{"effect":"phalanx_shoot","locator":"phalanxshoot"}],"transitions":[{"default":"!variable.has_target"}]}}},"controller.animation.phalanx_shoot_sound":{"states":{"default":{"animations":["normal"],"transitions":[{"start":"query.has_target"}]},"endshoot":{"animations":["endshoot"],"transitions":[{"default":"!variable.has_target"}]},"shoot":{"animations":["shoot"],"transitions":[{"endshoot":"!variable.has_target"}]},"start":{"animations":["startshoot"],"transitions":[{"shoot":"query.has_target"}]}}}},"format_version":"1.10.0"}
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.phalanx_shoot": {
+            "states": {
+                "default": {
+                    "animations": [
+                        "normal"
+                    ],
+                    "transitions": [
+                        {
+                            "shoot": "variable.has_target"
+                        }
+                    ]
+                },
+                "shoot": {
+                    "particle_effects": [
+                        {
+                            "effect": "phalanx_shoot",
+                            "locator": "phalanxshoot"
+                        }
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!variable.has_target"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.phalanx_shoot_sound": {
+            "states": {
+                "default": {
+                    "animations": [
+                        "normal"
+                    ],
+                    "transitions": [
+                        {
+                            "start": "query.has_target"
+                        }
+                    ]
+                },
+                "endshoot": {
+                    "animations": [
+                        "endshoot"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!variable.has_target"
+                        }
+                    ]
+                },
+                "shoot": {
+                    "animations": [
+                        "shoot"
+                    ],
+                    "transitions": [
+                        {
+                            "endshoot": "!variable.has_target"
+                        }
+                    ]
+                },
+                "start": {
+                    "animations": [
+                        "startshoot"
+                    ],
+                    "transitions": [
+                        {
+                            "shoot": "query.has_target"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
