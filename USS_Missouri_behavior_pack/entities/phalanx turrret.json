@@ -1,6 +1,24 @@
 {
   "format_version": "1.13.0",
   "minecraft:entity": {
+    "description": {
+      "animations": {
+        "fix": "animation.fix_lag",
+        "shoot": "animation.shoot_glow"
+      },
+      "identifier": "us:phalanx_turret",
+      "is_experimental": false,
+      "is_spawnable": true,
+      "is_summonable": true,
+      "scripts": {
+        "animate": [
+          {
+            "shoot": "variable.has_target"
+          },
+          "fix"
+        ]
+      }
+    },
     "component_groups": {
       "auto_mode": {
         "minecraft:behavior.nearest_attackable_target": {
@@ -48,7 +66,7 @@
           "priority": 2
         },
         "minecraft:follow_range": {
-          "value": 125
+          "value": 100
         },
         "minecraft:shooter": {
           "def": "us:phalanx_shell"
@@ -222,24 +240,6 @@
             "play_sounds": "irongolem.repair",
             "interact_text": "action.interact.repair"
           }
-        ]
-      }
-    },
-    "description": {
-      "animations": {
-        "fix": "animation.fix_lag",
-        "shoot": "animation.shoot_glow"
-      },
-      "identifier": "us:phalanx_turret",
-      "is_experimental": false,
-      "is_spawnable": true,
-      "is_summonable": true,
-      "scripts": {
-        "animate": [
-          {
-            "shoot": "variable.has_target"
-          },
-          "fix"
         ]
       }
     },
