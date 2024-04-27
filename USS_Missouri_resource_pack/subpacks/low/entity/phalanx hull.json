@@ -13,8 +13,8 @@
                 "controller.render.skeleton"
             ],
             "spawn_egg": {
-                "texture": "minecraft:spawn_egg",
-                "texture_index": 0  //probably gonna look like a chicken spawn egg...
+                "texture": "phalanx_hull_spawn_egg",
+                "texture_index": 0
             },
             "textures": {
                 "default": "phalanx"

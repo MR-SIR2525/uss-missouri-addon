@@ -22,18 +22,94 @@
                 "width": 0.1
             },
             "minecraft:damage_sensor": {
-                "triggers": [
-                    {
-                        "cause": "all",
-                        "deals_damage": true  // Allow dealing damage to it
-                    },
-                    {
-                        "cause": "fire",
-                        "deals_damage": false
+                "triggers": [   // MRxSIR: same as phalanx turret
+                  {
+                    "deals_damage": false, // MRxSIR: no damage when...
+                    "on_damage": {
+                      "filters": {
+                        "all_of": [   // player is driving the boat
+                          {
+                            "subject": "player",
+                            "test": "is_riding",
+                            "value": true
+                          },
+                          {
+                            "subject": "player",
+                            "test": "on_ground",
+                            "value": false
+                          }
+                        ]
+                      }
                     }
+                  },
+                  {
+                    "cause": "all",
+                    "deals_damage": true
+                  },
+                  {
+                    "cause": "fall",
+                    "deals_damage": false
+                  },
+                  {
+                    "cause": "drowning",
+                    "deals_damage": false
+                  },
+                  {
+                    "cause": "fire",
+                    "deals_damage": false
+                  },
+                  {
+                    "cause": "temperature",
+                    "deals_damage": false
+                  },
+                  {
+                    "cause": "contact",
+                    "deals_damage": false
+                  },
+                  {
+                    "cause": "freezing",
+                    "deals_damage": false
+                  },
+                  {
+                    "cause": "magic",
+                    "deals_damage": false
+                  },
+                  {
+                    "cause": "suffocation",
+                    "deals_damage": false
+                  },
+                  {
+                    "cause": "thorns",
+                    "deals_damage": false
+                  },
+        
+                  {
+                    "cause": "us:mark7_shell",
+                    "deals_damage": false
+                  },
+                  {
+                    "cause": "us:mark7_shell2",
+                    "deals_damage": false
+                  },
+                  {
+                    "cause": "us:mark7_shell3",
+                    "deals_damage": false
+                  },
+                  {
+                    "cause": "us:mark12_shell",
+                    "deals_damage": false
+                  },
+                  {
+                    "cause": "us:phalanx_shell",
+                    "deals_damage": false
+                  },
+                  {
+                    "cause": "us:bofor_shell",
+                    "deals_damage": false
+                  }
                 ]
-            },
-            // "minecraft:fire_immune": false, //incorrect?
+              },
+              // "minecraft:fire_immune": false,
             "minecraft:health": {
                 "value": {
                     "range_max": 200,
