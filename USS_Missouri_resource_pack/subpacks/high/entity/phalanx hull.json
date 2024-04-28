@@ -13,7 +13,7 @@
                 "controller.render.skeleton"
             ],
             "spawn_egg": {
-                "texture": "phalanx_hull_spawn_egg",
+                "texture": "phalanx_spawn_egg",
                 "texture_index": 0
             },
             "textures": {

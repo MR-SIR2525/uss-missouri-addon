@@ -5,7 +5,7 @@
             "animations": {
                 "spawn": "animation.spawn_turret"
             },
-            "identifier": "us:phalanx",
+            "identifier": "us:phalanx",  // why is this not phalanx hull??
             "is_experimental": false,
             "is_spawnable": true,
             "is_summonable": true,
@@ -149,6 +149,7 @@
                 "family": [
                     "us",
                     "phalanx2",
+                    "phalanx_hull",
                     "anti-aircraft"
                 ]
             },

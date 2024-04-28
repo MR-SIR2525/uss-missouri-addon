@@ -65,12 +65,12 @@ item.spawn_egg.entity.lamborghini:gallardo_purple.name=Lamborghini Gallardo Purp
 entity.lamborghini:gallardo_cyan.name=Lamborghini Gallardo Cyan
 item.spawn_egg.entity.lamborghini:gallardo_cyan.name=Lamborghini Gallardo Cyan
 
-//Items
+## Items
 
 item.compound.salt.name=Ivory Tusk
 item.compound.sodiumoxide.name=Stinky Cheese
 
-//Spawn Eggs//
+## Spawn Eggs
 
 item.spawn_egg.entity.animal:bear.name=Spawn Bear
 item.spawn_egg.entity.animal:buffalo.name=Spawn Buffalo
@@ -108,7 +108,7 @@ item.spawn_egg.entity.animal:tiger.name=Spawn Tiger
 item.spawn_egg.entity.animal:ender_creeper.name=Spawn Ender Creeper
 item.spawn_egg.entity.animal:ender_skeleton.name=Spawn Ender Skeleton
 
-//Entities//
+## Entities
 
 entity.animal:bear.name=Bear
 entity.animal:buffalo.name=Buffalo
@@ -146,7 +146,7 @@ entity.animal:tiger.name=Tiger
 entity.animal:ender_creeper.name=Ender Creeper
 entity.animal:ender_skeleton.name=Ender Skeleton
 
-//new furni//
+## new furni
 action.hint.exit.cat=Now you can rotate it	#
 action.hint.exit.unknown=Now you can rotate it	#
 action.interact.rotar=Rotate	#
@@ -184,7 +184,7 @@ item.spawn_egg.entity.pa:pcdos.name=PA-Ordenador
 item.spawn_egg.entity.pa:lavavo.name=PA-Sink
 item.spawn_egg.entity.pa:ventilador.name=PA-Ceiling fan
 item.spawn_egg.entity.pa:mpeluches.name=PA-Teddies machine
-///
+## ///
 item.spawn_egg.entity.pa:pizza.name=PA-Pizza
 item.spawn_egg.entity.pa:satanic.name=PA-Satanic Ritual
 item.spawn_egg.entity.pa:brinca.name=PA-Trampoline

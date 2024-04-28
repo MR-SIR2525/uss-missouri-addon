@@ -22,6 +22,10 @@
     "component_groups": {
       "auto_mode": {
         "minecraft:behavior.nearest_attackable_target": {
+          "must_see": true,
+          "must_see_forget_duration": 15.0, //If "must_see" = true, time before forgetting target
+          "priority": 2,
+          "reselect_targets": true,
           "entity_types": [
             {
               "filters": { //MRxSIR updated filter to be standard
@@ -50,10 +54,7 @@
               },
               "max_dist": 125
             }
-          ],
-          "must_see": true,
-          "priority": 2,
-          "reselect_targets": true
+          ]
         },
         "minecraft:behavior.ranged_attack": {
           "attack_interval_max": 0.1,
