@@ -2,17 +2,20 @@
   "format_version": "1.17",
   "minecraft:recipe_shaped": {
     "description": {
-      "identifier": "minecraft:phalanx_hull_spawn_egg"
+      "identifier": "minecraft:phalanx_spawn_egg" //becauese the hull is "phalanx", idk why
     },
     "tags": ["crafting_table"],
     "pattern": [
       "   ",
       "   ",
-      " I "
+      "###"
     ],
     "key": {
       "I": {
         "item": "minecraft:iron_block"
+      },
+      "#": {
+        "item": "minecraft:iron_ingot"
       }
     },
     "result": {
