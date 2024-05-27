@@ -209,7 +209,7 @@
                 }
             ]
         },
-        "us.phalanxstopshoot": {
+        "us.phalanxstopshoot": {    //makes the sound last after firing, aka weird.
             "category": "neutral",
             "max_distance": 100,
             "sounds": [
