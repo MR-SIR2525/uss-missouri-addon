@@ -111,10 +111,10 @@
               },
               // "minecraft:fire_immune": false,
             "minecraft:health": {
-                "value": {
-                    "range_max": 200,
-                    "range_min": 200
-                }
+              "value": {
+                "range_max": 130,   //lowered from 200
+                "range_min": 130
+              }
             },
             "minecraft:is_stackable": {},
             "minecraft:jump.static": {},

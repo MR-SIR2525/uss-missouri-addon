@@ -196,11 +196,6 @@
       },
       "minecraft:nameable": {
       },
-      "minecraft:movement.basic": { //try out?
-      },
-      "minecraft:navigation.walk": {
-        "can_path_over_water": false
-      },
       "minecraft:physics": {
       },
       "minecraft:pushable": {
