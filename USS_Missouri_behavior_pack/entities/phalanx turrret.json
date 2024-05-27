@@ -19,6 +19,7 @@
         ]
       }
     },
+
     "component_groups": {
       "auto_mode": {
         "minecraft:behavior.nearest_attackable_target": {
@@ -195,10 +196,13 @@
       },
       "minecraft:nameable": {
       },
+      "minecraft:movement.basic": { //try out?
+      },
       "minecraft:navigation.walk": {
         "can_path_over_water": false
       },
-      "minecraft:physics": {},
+      "minecraft:physics": {
+      },
       "minecraft:pushable": {
         "is_pushable": false,
         "is_pushable_by_piston": true    //MRxSIR added pushable
