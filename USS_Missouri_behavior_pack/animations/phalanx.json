@@ -57,13 +57,13 @@
                     "/fill ~~~ ~~~ light_block 15"
                 ],
                 "0.1": [
-                    "/fill ~5 ~5 ~5 ~-5 ~ ~-5 air 0 replace light_block 0"
+                    "/fill ~5 ~5 ~5 ~-5 ~ ~-5 air 0 replace light_block 15"
                 ],
                 "0.15": [
-                    "/fill ~ ~ ~ ~ ~ ~ air 0 replace light_block 0"
+                    "/fill ~ ~ ~ ~ ~ ~ air 0 replace light_block 15"
                 ],
                 "0.2": [
-                    "/fill ~5 ~5 ~5 ~-5 ~ ~-5 air 0 replace light_block 0"
+                    "/fill ~5 ~5 ~5 ~-5 ~ ~-5 air 0 replace light_block 15"
                 ]
             }
         }
