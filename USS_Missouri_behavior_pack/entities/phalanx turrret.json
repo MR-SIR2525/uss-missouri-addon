@@ -2,14 +2,14 @@
   "format_version": "1.13.0",
   "minecraft:entity": {
     "description": {
-      "animations": {
-        "fix": "animation.fix_lag",
-        "shoot": "animation.shoot_glow"
-      },
       "identifier": "us:phalanx_turret",
       "is_experimental": false,
       "is_spawnable": true,
       "is_summonable": true,
+      "animations": {
+        "fix": "animation.fix_lag",
+        "shoot": "animation.shoot_glow"
+      },
       "scripts": {
         "animate": [
           {
@@ -77,6 +77,7 @@
         }
       }
     },
+
     "components": {
       "minecraft:behavior.hurt_by_target": {
         "entity_types": {
@@ -183,8 +184,8 @@
       },
       // "minecraft:fire_immune": false,
       "minecraft:health": {
-        "max": 200,
-        "value": 200
+        "max": 130,   //lowered from 200
+        "value": 130
       },
       "minecraft:knockback_resistance": {
         "value": 1
@@ -244,17 +245,14 @@
         ]
       }
     },
+
     "events": {
       "minecraft:entity_spawned": {
         "add": {
-          "component_groups": [
-            "auto_mode"
-          ]
+          "component_groups": ["auto_mode"]
         },
         "remove": {
-          "component_groups": [
-            "shoot"
-          ]
+          "component_groups": ["shoot"] //what does this do? There is no "shoot" component group
         }
       }
     }
