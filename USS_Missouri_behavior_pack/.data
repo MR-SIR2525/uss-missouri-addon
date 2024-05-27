@@ -1,1 +1,236 @@
-{"items":[{"credit":null,"item_name":"Arrow_projectile","item_icon":"projectile/icons/arrow.png","item_texture":"/storage/emulated/0/Documents/Addons Maker/§9USS §1Missouri/§9USS §1Missouri_resource_pack/textures/items/arrow.png","item_skins_dir":"projectile/arrows/skins","item_icons_dir":"projectile/arrows/icons","item_entity_dir":"projectile/file/arrow.json","version_item":null,"item_skin":"/storage/emulated/0/Documents/Addons Maker/§9USS §1Missouri/§9USS §1Missouri_resource_pack/textures/entity/arrows.png","itemSkin3D":null,"entities":{"format_version":"1.10.0","minecraft:entity":{"description":{"identifier":"minecraft:arrow","is_spawnable":false,"is_summonable":true,"is_experimental":false},"component_groups":{"minecraft:hard_arrow":{"minecraft:projectile":{"onHit":{"definition_event":{"affectProjectile":true,"eventTrigger":{"event":"minecraft:explode","target":"self"}}},"hitSound":"bow.hit","power":1.6,"gravity":0.05,"uncertaintyBase":16,"uncertaintyMultiplier":4,"anchor":1,"shouldbounce":true,"offset":[0,-0.1,0]}},"minecraft:player_arrow":{"minecraft:projectile":{"onHit":{"definition_event":{"affectProjectile":true,"eventTrigger":{"event":"minecraft:explode","target":"self"}}},"hitSound":"bow.hit","power":5.0,"gravity":0.05,"uncertaintyBase":1,"uncertaintyMultiplier":0,"anchor":1,"shouldbounce":true,"offset":[0,-0.1,0]}},"minecraft:pillager_arrow":{"minecraft:projectile":{"onHit":{"definition_event":{"affectProjectile":true,"eventTrigger":{"event":"minecraft:explode","target":"self"}}},"hitSound":"bow.hit","power":1.6,"gravity":0.05,"uncertaintyBase":16,"uncertaintyMultiplier":4,"anchor":1,"shouldbounce":true,"offset":[0,-0.1,0]}},"minecraft:exploding":{"minecraft:explode":{"fuseLength":0,"fuseLit":true,"power":1,"causesFire":false,"fireAffectedByGriefing":true,"destroyAffectedByGriefing":true}}},"components":{"minecraft:collision_box":{"width":0.25,"height":0.25},"minecraft:projectile":{"onHit":{"definition_event":{"affectProjectile":true,"eventTrigger":{"event":"minecraft:explode","target":"self"}}},"hitSound":"bow.hit","power":1.6,"gravity":0.05,"uncertaintyBase":16,"uncertaintyMultiplier":4,"anchor":1,"shouldbounce":true,"offset":[0,-0.1,0],"on_hit":{"definition_event":{"affectProjectile":true,"eventTrigger":{"event":"minecraft:explode","target":"self"}}}},"minecraft:physics":{}},"events":{"minecraft:entity_spawned":{"sequence":[{"filters":{"test":"is_difficulty","value":"hard"},"add":{"component_groups":["minecraft:hard_arrow"]}},{"filters":{"test":"is_family","subject":"other","value":"player"},"add":{"component_groups":["minecraft:player_arrow"]}},{"filters":{"test":"is_family","subject":"other","value":"pillager"},"add":{"component_groups":["minecraft:pillager_arrow"]}}]},"minecraft:explode":{"add":{"component_groups":["minecraft:exploding"]}}}}},"item_entity_texture":["entity/arrows.png","items/arrow.png"],"effects":null,"json_object":null,"data":{"randomizeOnHit":false,"listFuncOnHit":null},"dataModel":{"model":null},"dataModelBullet":null,"dataAnimation":null,"mobLoot":null,"mobEquipment":null,"mobTrade":null,"multipleSkins":null,"premium":false,"disable":false,"isNewMob":null,"isRuntimeIDEnable":null,"baseID":null,"tag":null,"itemBuilding":null,"craftMap":null}],"addonName":"§9USS §1Missouri","authorName":"§4HerodrinePro124","description":"§2Model Missouri by HerodrinePro124; Mark12,Borfor40mm model by Creator Crafter321","mImageUrl":"/storage/emulated/0/Documents/Addons Maker/§9USS §1Missouri/§9USS §1Missouri_behavior_pack/pack_icon.png","addonUrl":"/storage/emulated/0/Documents/Addons Maker/§9USS §1Missouri_1658926777202.mcaddon","donwloadUrl":null,"unique":"f1bf13d8-d128-43cd-9e2a-3a73ce46bdee","sdk30NewPath":null}
+{
+    "items": [
+        {
+            "credit": null,
+            "item_name": "Arrow_projectile",
+            "item_icon": "projectile/icons/arrow.png",
+            "item_texture": "/storage/emulated/0/Documents/Addons Maker/§9USS §1Missouri/§9USS §1Missouri_resource_pack/textures/items/arrow.png",
+            "item_skins_dir": "projectile/arrows/skins",
+            "item_icons_dir": "projectile/arrows/icons",
+            "item_entity_dir": "projectile/file/arrow.json",
+            "version_item": null,
+            "item_skin": "/storage/emulated/0/Documents/Addons Maker/§9USS §1Missouri/§9USS §1Missouri_resource_pack/textures/entity/arrows.png",
+            "itemSkin3D": null,
+            "entities": {
+                "format_version": "1.10.0",
+                "minecraft:entity": {
+                    "description": {
+                        "identifier": "minecraft:arrow",
+                        "is_spawnable": false,
+                        "is_summonable": true,
+                        "is_experimental": false
+                    },
+                    "component_groups": {
+                        "minecraft:hard_arrow": {
+                            "minecraft:projectile": {
+                                "onHit": {
+                                    "definition_event": {
+                                        "affectProjectile": true,
+                                        "eventTrigger": {
+                                            "event": "minecraft:explode",
+                                            "target": "self"
+                                        }
+                                    }
+                                },
+                                "hitSound": "bow.hit",
+                                "power": 1.6,
+                                "gravity": 0.05,
+                                "uncertaintyBase": 16,
+                                "uncertaintyMultiplier": 4,
+                                "anchor": 1,
+                                "shouldbounce": true,
+                                "offset": [
+                                    0,
+                                    -0.1,
+                                    0
+                                ]
+                            }
+                        },
+                        "minecraft:player_arrow": {
+                            "minecraft:projectile": {
+                                "onHit": {
+                                    "definition_event": {
+                                        "affectProjectile": true,
+                                        "eventTrigger": {
+                                            "event": "minecraft:explode",
+                                            "target": "self"
+                                        }
+                                    }
+                                },
+                                "hitSound": "bow.hit",
+                                "power": 5.0,
+                                "gravity": 0.05,
+                                "uncertaintyBase": 1,
+                                "uncertaintyMultiplier": 0,
+                                "anchor": 1,
+                                "shouldbounce": true,
+                                "offset": [
+                                    0,
+                                    -0.1,
+                                    0
+                                ]
+                            }
+                        },
+                        "minecraft:pillager_arrow": {
+                            "minecraft:projectile": {
+                                "onHit": {
+                                    "definition_event": {
+                                        "affectProjectile": true,
+                                        "eventTrigger": {
+                                            "event": "minecraft:explode",
+                                            "target": "self"
+                                        }
+                                    }
+                                },
+                                "hitSound": "bow.hit",
+                                "power": 1.6,
+                                "gravity": 0.05,
+                                "uncertaintyBase": 16,
+                                "uncertaintyMultiplier": 4,
+                                "anchor": 1,
+                                "shouldbounce": true,
+                                "offset": [
+                                    0,
+                                    -0.1,
+                                    0
+                                ]
+                            }
+                        },
+                        "minecraft:exploding": {
+                            "minecraft:explode": {
+                                "fuseLength": 0,
+                                "fuseLit": true,
+                                "power": 1,
+                                "causesFire": false,
+                                "fireAffectedByGriefing": true,
+                                "destroyAffectedByGriefing": true
+                            }
+                        }
+                    },
+                    "components": {
+                        "minecraft:collision_box": {
+                            "width": 0.25,
+                            "height": 0.25
+                        },
+                        "minecraft:projectile": {
+                            "onHit": {
+                                "definition_event": {
+                                    "affectProjectile": true,
+                                    "eventTrigger": {
+                                        "event": "minecraft:explode",
+                                        "target": "self"
+                                    }
+                                }
+                            },
+                            "hitSound": "bow.hit",
+                            "power": 1.6,
+                            "gravity": 0.05,
+                            "uncertaintyBase": 16,
+                            "uncertaintyMultiplier": 4,
+                            "anchor": 1,
+                            "shouldbounce": true,
+                            "offset": [
+                                0,
+                                -0.1,
+                                0
+                            ],
+                            "on_hit": {
+                                "definition_event": {
+                                    "affectProjectile": true,
+                                    "eventTrigger": {
+                                        "event": "minecraft:explode",
+                                        "target": "self"
+                                    }
+                                }
+                            }
+                        },
+                        "minecraft:physics": {}
+                    },
+                    "events": {
+                        "minecraft:entity_spawned": {
+                            "sequence": [
+                                {
+                                    "filters": {
+                                        "test": "is_difficulty",
+                                        "value": "hard"
+                                    },
+                                    "add": {
+                                        "component_groups": [
+                                            "minecraft:hard_arrow"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "filters": {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "player"
+                                    },
+                                    "add": {
+                                        "component_groups": [
+                                            "minecraft:player_arrow"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "filters": {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "value": "pillager"
+                                    },
+                                    "add": {
+                                        "component_groups": [
+                                            "minecraft:pillager_arrow"
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "minecraft:explode": {
+                            "add": {
+                                "component_groups": [
+                                    "minecraft:exploding"
+                                ]
+                            }
+                        }
+                    }
+                }
+            },
+            "item_entity_texture": [
+                "entity/arrows.png",
+                "items/arrow.png"
+            ],
+            "effects": null,
+            "json_object": null,
+            "data": {
+                "randomizeOnHit": false,
+                "listFuncOnHit": null
+            },
+            "dataModel": {
+                "model": null
+            },
+            "dataModelBullet": null,
+            "dataAnimation": null,
+            "mobLoot": null,
+            "mobEquipment": null,
+            "mobTrade": null,
+            "multipleSkins": null,
+            "premium": false,
+            "disable": false,
+            "isNewMob": null,
+            "isRuntimeIDEnable": null,
+            "baseID": null,
+            "tag": null,
+            "itemBuilding": null,
+            "craftMap": null
+        }
+    ],
+    "addonName": "§9USS §1Missouri",
+    "authorName": "§4HerodrinePro124",
+    "description": "§2Model Missouri by HerodrinePro124; Mark12,Borfor40mm model by Creator Crafter321",
+    "mImageUrl": "/storage/emulated/0/Documents/Addons Maker/§9USS §1Missouri/§9USS §1Missouri_behavior_pack/pack_icon.png",
+    "addonUrl": "/storage/emulated/0/Documents/Addons Maker/§9USS §1Missouri_1658926777202.mcaddon",
+    "donwloadUrl": null,
+    "unique": "f1bf13d8-d128-43cd-9e2a-3a73ce46bdee",
+    "sdk30NewPath": null
+}
