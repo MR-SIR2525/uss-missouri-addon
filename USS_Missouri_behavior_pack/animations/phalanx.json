@@ -52,17 +52,18 @@
             "animation_length": 0.2,
             "loop": true,
             "timeline": {
+                //used to be fire, but that would burn loot when phalanx was killed
                 "0.0": [
-                    "/fill ~~~ ~~~ fire"
+                    "/fill ~~~ ~~~ light_block 15"
                 ],
                 "0.1": [
-                    "/fill ~5 ~5 ~5 ~-5 ~ ~-5 air 0 replace fire 0"
+                    "/fill ~5 ~5 ~5 ~-5 ~ ~-5 air 0 replace light_block 0"
                 ],
                 "0.15": [
-                    "/fill ~ ~ ~ ~ ~ ~ air 0 replace fire 0"
+                    "/fill ~ ~ ~ ~ ~ ~ air 0 replace light_block 0"
                 ],
                 "0.2": [
-                    "/fill ~5 ~5 ~5 ~-5 ~ ~-5 air 0 replace fire 0"
+                    "/fill ~5 ~5 ~5 ~-5 ~ ~-5 air 0 replace light_block 0"
                 ]
             }
         }
