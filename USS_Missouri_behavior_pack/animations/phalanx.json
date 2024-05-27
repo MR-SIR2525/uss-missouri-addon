@@ -54,16 +54,16 @@
             "timeline": {
                 //used to be fire, but that would burn loot when phalanx was killed
                 "0.0": [
-                    "/fill ~~~ ~~~ light_block 15"
+                    "/fill ~~~ ~~~ light_block[\"block_light_level\"=10]"
                 ],
                 "0.1": [
-                    "/fill ~5 ~5 ~5 ~-5 ~ ~-5 air 0 replace light_block 15"
+                    "/fill ~5 ~5 ~5 ~-5 ~ ~-5 air replace light_block"
                 ],
                 "0.15": [
-                    "/fill ~ ~ ~ ~ ~ ~ air 0 replace light_block 15"
+                    "/fill ~~~ ~~~ air replace light_block"
                 ],
                 "0.2": [
-                    "/fill ~5 ~5 ~5 ~-5 ~ ~-5 air 0 replace light_block 15"
+                    "/fill ~5 ~5 ~5 ~-5 ~ ~-5 air replace light_block"
                 ]
             }
         }
