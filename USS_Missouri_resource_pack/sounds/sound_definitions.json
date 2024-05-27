@@ -208,6 +208,16 @@
                     "volume": 1.5
                 }
             ]
+        },
+        "us.phalanxstopshoot": {
+            "category": "neutral",
+            "max_distance": 100,
+            "sounds": [
+                {
+                    "name": "sounds/vehicles/phalanxstopshoot",
+                    "volume": 1.1
+                }
+            ]
         }
     }
 }

@@ -39,9 +39,9 @@
                 ]
             },
             "sound_effects": {
-                "phalanx.endshoot": "us.phalanxendshoot",
                 "phalanx.shoot": "us.phalanxshoot",
-                "phalanx.startshoot": "us.phalanxstartshoot"
+                "phalanx.startshoot": "us.phalanxstartshoot",
+                "phalanx.endshoot": "us.phalanxendshoot"
             },
             "spawn_egg": {
                 "texture": "phalanx_turret_spawn_egg",
