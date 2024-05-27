@@ -194,8 +194,8 @@
             "max_distance": 100,
             "sounds": [
                 {
-                    "name": "sounds/vehicles/phalanxshoot",
-                    "volume": 1.5
+                    "name": "sounds/vehicles/phalanxshoot",     //cram firing sound
+                    "volume": 0.75
                 }
             ]
         },
