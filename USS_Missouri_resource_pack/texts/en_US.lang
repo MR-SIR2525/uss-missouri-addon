@@ -108,8 +108,8 @@ item.spawn_egg.entity.animal:tiger.name=Spawn Tiger
 item.spawn_egg.entity.animal:ender_creeper.name=Spawn Ender Creeper
 item.spawn_egg.entity.animal:ender_skeleton.name=Spawn Ender Skeleton
 
-item.spawn_egg.entity.us:phalanx_turret.name=Spawn Hopper Marker
-item.spawn_egg.entity.us:phalanx_spawn_egg.name=Spawn Phalanx Base
+item.spawn_egg.entity.us:phalanx_turret.name=Phalanx Turret
+item.spawn_egg.entity.us:phalanx.name=Phalanx Base
 
 ## Entities
 
