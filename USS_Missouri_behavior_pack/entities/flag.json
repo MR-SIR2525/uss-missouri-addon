@@ -159,10 +159,7 @@
             },
             "minecraft:fire_immune": {},
             "minecraft:health": {
-                "value": {
-                    "range_max": 80,
-                    "range_value": 80
-                }
+                "value": 80
             },
             "minecraft:jump.static": {},
             "minecraft:knockback_resistance": {
