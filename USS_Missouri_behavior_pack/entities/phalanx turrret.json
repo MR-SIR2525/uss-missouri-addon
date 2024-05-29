@@ -91,12 +91,12 @@
         },
         "priority": 1
       },
-      "minecraft:behavior.look_at_target": {  //see if it works correctly
-        "look_distance": 100,
-        "probability": 0.10,
-        "angle_of_view_vertical": 360,
-        "angle_of_view_horizontal": 360
-      },
+      // "minecraft:behavior.look_at_target": {  //see if it works correctly
+      //   "look_distance": 100,
+      //   "probability": 0.10,
+      //   "angle_of_view_vertical": 360,
+      //   "angle_of_view_horizontal": 360
+      // },
       "minecraft:collision_box": {
         "height": 2.1,
         "width": 0.5               // MRxSIR: 1 to 0.5
