@@ -1,545 +1,545 @@
 {
-    "animations": {
-        "animation.back_root": {
-            "animation_length": 2,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/event entity @e[type=us:missouri] back"
-                ]
-            }
-        },
-        "animation.bb63_back": {
-            "animation_length": 0.01,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/tp @s ^ ^ ^-0.1"
-                ]
-            }
-        },
-        "animation.bb63_forward": {
-            "animation_length": 0.01,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/tp @s ^ ^ ^0.2"
-                ]
-            }
-        },
-        "animation.bb63_has_rider": {
-            "animation_length": 1.0E-7,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/execute @e[name=maingunaim2] ~~~ tp @s ^ ^ ^0.5 facing @e[name=maingunaim,c=1]",
-                    "/execute @e[name=maingun] ~~~ tp @s ^ ^ ^ facing @e[name=maingunaim2]",
-                    "/execute @e[name=maingun2] ~~~ tp @s ^ ^ ^ facing @e[name=maingunaim2]",
-                    "/execute @e[name=maingun3] ~~~ tp @s ^ ^ ^ facing @e[name=maingunaim2]",
-                    "/execute @e[type=us:mark12] ~~~ tp @s ^ ^ ^ facing @e[name=maingunaim]",
-                    "/execute @e[type=bb63:controller] ~~~ tp @s ^ ^ ^ facing @e[name=maingunaim]",
-                    "/execute @p[r=30]~~~ tp @e[name=maingunaim] ^ ^4 ^65"
-                ]
-            }
-        },
-        "animation.bb63_left": {
-            "animation_length": 0.01,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/tp @s ^ ^ ^ ~-0.2"
-                ]
-            }
-        },
-        "animation.bb63_menu": {
-            "animation_length": 2,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/tag @p[r=15] add uss:bb63"
-                ]
-            }
-        },
-        "animation.bb63_right": {
-            "animation_length": 0.01,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/tp @s ^ ^ ^ ~0.2"
-                ]
-            }
-        },
-        "animation.bb63_root": {
-            "animation_length": 1.0E-7,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/execute @s ~~~ tp @e[name=maingun,r=20] ^ ^3 ^13.9",
-                    "/execute @s ~~~ tp @e[name=bofor,r=70] ^2.4 ^2 ^-43.1",
-                    "/execute @s ~~~ tp @e[name=bofor2,r=70] ^-0.5 ^2 ^-43.1",
-                    "/execute @s ~~~ tp @e[type=bb63:controller] ^ ^ ^",
-                    "/execute @e[type=us:phalanx_turret] ~~~ tp @s ^ ^ ^ facing @e[family=rsmissile]",
-                    "/execute @e[type=us:bofor] ~~~ tp @s ^ ^ ^ facing @e[family=rsmissile]",
-                    "/execute @e[type=us:phalanx_turret] ~~~ tp @s ^ ^ ^ facing @e[family=rsaircraft]",
-                    "/execute @e[type=us:bofor] ~~~ tp @s ^ ^ ^ facing @e[family=rsaircraft]",
-                    "/execute @e[type=us:phalanx_turret] ~~~ tp @s ^ ^ ^ facing @e[family=jpaircraft]",
-                    "/execute @e[type=us:bofor] ~~~ tp @s ^ ^ ^ facing @e[family=jpaircraft]",
-                    "/execute @e[type=us:phalanx_turret] ~~~ tp @s ^ ^ ^ facing @e[type=phantom]",
-                    "/execute @e[type=us:bofor] ~~~ tp @s ^ ^ ^ facing @e[type=phantom]",
-                    "/execute @e[type=us:phalanx_turret] ~~~ tp @s ^ ^ ^ facing @e[type=ghast]",
-                    "/execute @e[type=us:bofor] ~~~ tp @s ^ ^ ^ facing @e[type=ghast]",
-                    "/execute @e[type=us:phalanx_turret] ~~~ tp @s ^ ^ ^ facing @e[type=blaze]",
-                    "/execute @e[type=us:bofor] ~~~ tp @s ^ ^ ^ facing @e[type=blaze]",
-                    "/execute @s ~~~ tp @e[name=maingun2,r=30] ^ ^1.7 ^21.4",
-                    "/execute @s ~~~ tp @e[name=maingun3,r=40] ^ ^1.7 ^-22.1",
-                    "/execute @s ~~~ tp @e[name=aim3] ^ ^3 ^-24",
-                    "/execute @s ~~~ tp @e[name=aim2] ^ ^3 ^24",
-                    "/execute @s ~~~ tp @e[name=aim] ^ ^5 ^16",
-                    "/execute @s ~~~ tp @e[name=mark12gun] ^4.3 ^2.8 ^0.6",
-                    "/execute @s ~~~ tp @e[name=mark12aim] ^4.3 ^2.8 ^2",
-                    "/execute @s ~~~ tp @e[name=mark12gun2] ^-4.3 ^2.8 ^0.6",
-                    "/execute @s ~~~ tp @e[name=mark12aim2] ^-4.3 ^2.8 ^2",
-                    "/execute @s ~~~ tp @e[name=mark12gun3] ^2.78 ^3.6 ^3.58",
-                    "/execute @s ~~~ tp @e[name=mark12aim3] ^2.78 ^3.6 ^5",
-                    "/execute @s ~~~ tp @e[name=mark12gun4] ^-2.78 ^3.6 ^3.58",
-                    "/execute @s ~~~ tp @e[name=mark12aim4] ^-2.78 ^3.6 ^5",
-                    "/execute @s ~~~ tp @e[name=mark12gun5] ^4.3 ^2.8 ^-7.6",
-                    "/execute @s ~~~ tp @e[name=mark12aim5] ^4.3 ^2.8 ^-9",
-                    "/execute @s ~~~ tp @e[name=mark12aim6] ^-4.3 ^2.8 ^-9",
-                    "/execute @s ~~~ tp @e[name=mark12gun6] ^-4.3 ^2.8 ^-7.6",
-                    "/execute @s ~~~ tp @e[name=aabody] ^1.4 ^6.4 ^4",
-                    "/execute @s ~~~ tp @e[name=aaturret] ^1.4 ^6.4 ^4",
-                    "/execute @s ~~~ tp @e[name=aaaim] ^3 ^6.4 ^4",
-                    "/execute @s ~~~ tp @e[name=aabody2] ^-1.4 ^6.4 ^4",
-                    "/execute @s ~~~ tp @e[name=aaturret2] ^-1.4 ^6.4 ^4",
-                    "/execute @s ~~~ tp @e[name=aaaim2] ^-3 ^6.4 ^4",
-                    "/execute @s ~~~ tp @e[name=aabody3] ^2.2 ^6.4 ^-7",
-                    "/execute @s ~~~ tp @e[name=aaturret3] ^2.2 ^6.4 ^-7",
-                    "/execute @s ~~~ tp @e[name=aaaim3] ^3.5 ^6.4 ^-7",
-                    "/execute @s ~~~ tp @e[name=aabody4] ^-2.2 ^6.4 ^-7",
-                    "/execute @s ~~~ tp @e[name=aaturret4] ^-2.2 ^6.4 ^-7",
-                    "/execute @s ~~~ tp @e[name=aaaim4] ^-3.5 ^6.4 ^-7"
-                ]
-            }
-        },
-        "animation.bb63_shoot": {
-            "animation_length": 10,
-            "loop": true,
-            "timeline": {}
-        },
-        "animation.bb63_spawn": {
-            "animation_length": 1,
-            "loop": false,
-            "timeline": {
-                "0.0": [
-                    "/summon us:mark7 ~~~ bb63 maingun",
-                    "/summon us:bofor ~~~ minecraft:entity_spawned bofor",
-                    "/summon us:bofor ~~~ minecraft:entity_spawned bofor2",
-                    "/summon us:mark7 ~~~ bb63 maingun2",
-                    "/summon us:mark7 ~~~ bb63 maingun3",
-                    "/summon us:mark12 ~~~ bb63 mark12gun",
-                    "/summon us:mark12 ~~~ bb63 mark12gun2",
-                    "/summon us:mark12 ~~~ bb63 mark12gun3",
-                    "/summon us:mark12 ~~~ bb63 mark12gun4",
-                    "/summon us:mark12 ~~~ bb63 mark12gun5",
-                    "/summon us:mark12 ~~~ bb63 mark12gun6",
-                    "/summon us:phalanx ~~~ minecraft:entity_spawned aabody",
-                    "/summon us:phalanx ~~~ minecraft:entity_spawned aabody2",
-                    "/summon us:phalanx ~~~ minecraft:entity_spawned aabody3",
-                    "/summon us:phalanx ~~~ minecraft:entity_spawned aabody4",
-                    "/summon us:phalanx_turret ~~~ minecraft:entity_spawned aaturret",
-                    "/summon us:phalanx_turret ~~~ minecraft:entity_spawned aaturret2",
-                    "/summon us:phalanx_turret ~~~ minecraft:entity_spawned aaturret3",
-                    "/summon us:phalanx_turret ~~~ minecraft:entity_spawned aaturret4",
-                    "/summon us:rah66 ~~~ minecraft:entity_spawned helicopter"
-                ]
-            }
-        },
-        "animation.bofor_root": {
-            "animation_length": 2,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/event entity @s bofor:shoot_start"
-                ],
-                "0.01": [
-                    "/fill ~~~ ~~~ light_block 9"
-                ],
-                "0.1": [
-                    "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air 0 replace light_block 9",
-                    "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air 0 replace light_block 9",
-                    "/fill ~4 ~ ~4 ~1 ~ ~1 air 0 replace light_block 9",
-                    "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air 0 replace light_block 9",
-                    "/fill ~4 ~ ~-4 ~1 ~ ~-1 air 0 replace light_block 9",
-                    "/fill ~-4 ~ ~4 ~-1 ~ ~1 air 0 replace light_block 9",
-                    "/fill ~-4 ~ ~ ~-1 ~ ~ air 0 replace light_block 9",
-                    "/fill ~4 ~ ~ ~1 ~ ~ air 0 replace light_block 9",
-                    "/fill ~ ~ ~-4 ~ ~ ~-1 air 0 replace light_block 9",
-                    "/fill ~ ~ ~4 ~ ~ ~1 air 0 replace light_block 9"
-                ],
-                "0.25": [
-                    "/fill ~~~ ~~~ light_block 9"
-                ],
-                "0.35": [
-                    "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air 0 replace light_block 9",
-                    "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air 0 replace light_block 9",
-                    "/fill ~4 ~ ~4 ~1 ~ ~1 air 0 replace light_block 9",
-                    "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air 0 replace light_block 9",
-                    "/fill ~4 ~ ~-4 ~1 ~ ~-1 air 0 replace light_block 9",
-                    "/fill ~-4 ~ ~4 ~-1 ~ ~1 air 0 replace light_block 9",
-                    "/fill ~-4 ~ ~ ~-1 ~ ~ air 0 replace light_block 9",
-                    "/fill ~4 ~ ~ ~1 ~ ~ air 0 replace light_block 9",
-                    "/fill ~ ~ ~-4 ~ ~ ~-1 air 0 replace light_block 9",
-                    "/fill ~ ~ ~4 ~ ~ ~1 air 0 replace light_block 9"
-                ],
-                "0.5": [
-                    "/fill ~~~ ~~~ light_block 9"
-                ],
-                "0.6": [
-                    "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air 0 replace light_block 9",
-                    "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air 0 replace light_block 9",
-                    "/fill ~4 ~ ~4 ~1 ~ ~1 air 0 replace light_block 9",
-                    "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air 0 replace light_block 9",
-                    "/fill ~4 ~ ~-4 ~1 ~ ~-1 air 0 replace light_block 9",
-                    "/fill ~-4 ~ ~4 ~-1 ~ ~1 air 0 replace light_block 9",
-                    "/fill ~-4 ~ ~ ~-1 ~ ~ air 0 replace light_block 9",
-                    "/fill ~4 ~ ~ ~1 ~ ~ air 0 replace light_block 9",
-                    "/fill ~ ~ ~-4 ~ ~ ~-1 air 0 replace light_block 9",
-                    "/fill ~ ~ ~4 ~ ~ ~1 air 0 replace light_block 9"
-                ],
-                "0.75": [
-                    "/fill ~~~ ~~~ light_block 9"
-                ],
-                "0.85": [
-                    "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air 0 replace light_block 9",
-                    "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air 0 replace light_block 9",
-                    "/fill ~4 ~ ~4 ~1 ~ ~1 air 0 replace light_block 9",
-                    "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air 0 replace light_block 9",
-                    "/fill ~4 ~ ~-4 ~1 ~ ~-1 air 0 replace light_block 9",
-                    "/fill ~-4 ~ ~4 ~-1 ~ ~1 air 0 replace light_block 9",
-                    "/fill ~-4 ~ ~ ~-1 ~ ~ air 0 replace light_block 9",
-                    "/fill ~4 ~ ~ ~1 ~ ~ air 0 replace light_block 9",
-                    "/fill ~ ~ ~-4 ~ ~ ~-1 air 0 replace light_block 9",
-                    "/fill ~ ~ ~4 ~ ~ ~1 air 0 replace light_block 9"
-                ]
-            }
-        },
-        "animation.control_mark7": {
-            "animation_length": 7,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/event entity @e[type=us:mark7,r=60] maingun:shoot_start"
-                ]
-            }
-        },
-        "animation.forward_root": {
-            "animation_length": 2,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/event entity @e[type=us:missouri] forward"
-                ]
-            }
-        },
-        "animation.left_root": {
-            "animation_length": 2,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/event entity @e[type=us:missouri] left"
-                ]
-            }
-        },
-        "animation.mark12_root": {
-            "animation_length": 2,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/event entity @e[type=us:mark12] maingun:shoot_start"
-                ]
-            }
-        },
-        "animation.mark12_shell": {
-            "animation_length": 1,
-            "loop": false,
-            "timeline": {
-                "0.0": [
-                    "/particle mark12:explosion ~ ~0.1 ~",
-                    "/playsound 127mm.explosion @a[r=50]",
-                    "/camerashake add @p 0.04 0.03 rotational",
-                    "/particle shell:2112damage ~ ~4 ~"
-                ]
-            }
-        },
-        "animation.mark7_aim": {
-            "animation_length": 1,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/playnanimation @p[r=1] mark7"
-                ]
-            }
-        },
-        "animation.mark7_controller": {
-            "animation_length": 1.0E-7,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/execute @p[r=2] ~~~ tp @e[type=us:aim,r=10] ^ ^4.9 ^3",
-                    "/tp @s ^ ^ ^"
-                ]
-            }
-        },
-        "animation.mark7_firing": {
-            "animation_length": 7,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/setblock ~ ~ ~ light_block 12 keep"
-                ],
-                "0.1": [
-                    "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air 0 replace light_block 12",
-                    "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air 0 replace light_block 12",
-                    "/fill ~4 ~ ~4 ~1 ~ ~1 air 0 replace light_block 12",
-                    "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air 0 replace light_block 12",
-                    "/fill ~4 ~ ~-4 ~1 ~ ~-1 air 0 replace light_block 12",
-                    "/fill ~-4 ~ ~4 ~-1 ~ ~1 air 0 replace light_block 12",
-                    "/fill ~-4 ~ ~ ~-1 ~ ~ air 0 replace light_block 12",
-                    "/fill ~4 ~ ~ ~1 ~ ~ air 0 replace light_block 12",
-                    "/fill ~ ~ ~-4 ~ ~ ~-1 air 0 replace light_block 12",
-                    "/fill ~ ~ ~4 ~ ~ ~1 air 0 replace light_block 12"
-                ],
-                "0.15": [
-                    "/setblock ~ ~ ~ light_block 12 keep"
-                ],
-                "0.25": [
-                    "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air 0 replace light_block 12",
-                    "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air 0 replace light_block 12",
-                    "/fill ~4 ~ ~4 ~1 ~ ~1 air 0 replace light_block 12",
-                    "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air 0 replace light_block 12",
-                    "/fill ~4 ~ ~-4 ~1 ~ ~-1 air 0 replace light_block 12",
-                    "/fill ~-4 ~ ~4 ~-1 ~ ~1 air 0 replace light_block 12",
-                    "/fill ~-4 ~ ~ ~-1 ~ ~ air 0 replace light_block 12",
-                    "/fill ~4 ~ ~ ~1 ~ ~ air 0 replace light_block 12",
-                    "/fill ~ ~ ~-4 ~ ~ ~-1 air 0 replace light_block 12",
-                    "/fill ~ ~ ~4 ~ ~ ~1 air 0 replace light_block 12"
-                ],
-                "0.35": [
-                    "/setblock ~ ~ ~ light_block 12 keep"
-                ],
-                "0.45": [
-                    "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air 0 replace light_block 12",
-                    "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air 0 replace light_block 12",
-                    "/fill ~4 ~ ~4 ~1 ~ ~1 air 0 replace light_block 12",
-                    "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air 0 replace light_block 12",
-                    "/fill ~4 ~ ~-4 ~1 ~ ~-1 air 0 replace light_block 12",
-                    "/fill ~-4 ~ ~4 ~-1 ~ ~1 air 0 replace light_block 12",
-                    "/fill ~-4 ~ ~ ~-1 ~ ~ air 0 replace light_block 12",
-                    "/fill ~4 ~ ~ ~1 ~ ~ air 0 replace light_block 12",
-                    "/fill ~ ~ ~-4 ~ ~ ~-1 air 0 replace light_block 12",
-                    "/fill ~ ~ ~4 ~ ~ ~1 air 0 replace light_block 12"
-                ]
-            }
-        },
-        "animation.mark7_root": {
-            "animation_length": 2,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/event entity @e[type=us:mark7] maingun:shoot_start"
-                ]
-            }
-        },
-        "animation.mark7_shell": {
-            "animation_length": 1,
-            "loop": false,
-            "timeline": {
-                "0.0": [
-                    "/particle mark7:explosion ~ ~0.1 ~",
-                    "/particle shell:12000damage ~ ~4 ~",
-                    "/playsound 406mm.explosion @a[r=50]",
-                    "/camerashake add @p 0.1 0.01"
-                ]
-            }
-        },
-        "animation.missile_move": {
-            "animation_length": 1.0E-7,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/tp @s ^ ^ ^3",
-                    "/tp @s ^ ^ ^ facing @e[family=monster,c=1]",
-                    "/tp @s ^ ^ ^ facing @e[family=russian,c=1]",
-                    "/tp @s ^ ^ ^ facing @e[family=russia,c=1]",
-                    "/tp @s ^ ^ ^ facing @e[family=russiantank,c=1]",
-                    "/tp @s ^ ^ ^ facing @e[family=russiatank,c=1]",
-                    "/tp @s ^ ^ ^ facing @e[family=russiananti-aircraft,c=1]",
-                    "/playanimation @s target"
-                ]
-            }
-        },
-        "animation.missile_target": {
-            "animation_length": 1,
-            "loop": false,
-            "timeline": {
-                "0.0": [
-                    "/playsound rum139.move2 @a[r=30]"
-                ]
-            }
-        },
-        "animation.missouri_crash": {
-            "animation_length": 1,
-            "loop": false,
-            "timeline": {
-                "0.0": [
-                    "/particle mark7:explosion ^ ^2 ^",
-                    "/playsound 406mm.explosion @a[r=50]",
-                    "/camerashake add @p 0.2 0.01 rotational"
-                ],
-                "0.2": [
-                    "/particle mark7:explosion ^ ^2 ^-20",
-                    "/playsound 406mm.explosion @a[r=50]",
-                    "/camerashake add @p 0.2 0.01 rotational"
-                ],
-                "0.4": [
-                    "/particle mark7:explosion ^ ^2 ^22",
-                    "/playsound 406mm.explosion @a[r=50]",
-                    "/camerashake add @p 0.2 0.01 rotational"
-                ],
-                "0.6": [
-                    "/particle mark7:explosion ^ ^5 ^-2",
-                    "/playsound 406mm.explosion @a[r=50]",
-                    "/camerashake add @p 0.2 0.01 rotational"
-                ],
-                "0.65": [
-                    "/particle mark7:explosion ^ ^2 ^-30",
-                    "/playsound 406mm.explosion @a[r=50]",
-                    "/camerashake add @p 0.2 0.01 rotational"
-                ]
-            }
-        },
-        "animation.missouri_onfire1": {
-            "animation_length": 0.1,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/execute @e[type=us:missouri,r=10] ~~~ particle rah66:crash ^3 ^1.9 ^25"
-                ]
-            }
-        },
-        "animation.missouri_onfire2": {
-            "animation_length": 0.1,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/execute @e[type=us:missouri,r=10] ~~~ particle rah66:crash ^ ^8 ^-1.8"
-                ]
-            }
-        },
-        "animation.missouri_onfire3": {
-            "animation_length": 0.1,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/execute @e[type=us:missouri,r=10] ~~~ particle rah66:crash ^-3 ^1.9 ^-30"
-                ]
-            }
-        },
-        "animation.missouri_onfire4": {
-            "animation_length": 0.1,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/execute @e[type=us:missouri,r=10] ~~~ particle rah66:crash ^ ^2.2 ^40"
-                ]
-            }
-        },
-        "animation.rah66": {
-            "animation_length": 1.0E-7,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/tp @s ^^0.2 ^"
-                ]
-            }
-        },
-        "animation.rah66_crash": {
-            "animation_length": 1.0E-4,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/particle rah66:crash ~ ~1 ~"
-                ]
-            }
-        },
-        "animation.rah66_crash2": {
-            "animation_length": 0.1,
-            "loop": false,
-            "timeline": {
-                "0.0": [
-                    "/playsound 127mm.explosion @a[r=50]",
-                    "/particle mark12:explosion ~ ~0.5 ~"
-                ]
-            }
-        },
-        "animation.rah66_in_bb63": {
-            "animation_length": 1.0E-5,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/execute @e[type=us:missouri,r=50] ~~~ tp @e[name=helicopter] ^ ^2 ^-37 facing @e[type=us:missouri,r=50]"
-                ]
-            }
-        },
-        "animation.rah66_root": {
-            "animation_length": 0.1,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/execute @p[tag=rah66] ~~~ tp @e[type=us:aim2,r=30] ^ ^ ^10"
-                ]
-            }
-        },
-        "animation.right_root": {
-            "animation_length": 2,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/event entity @e[type=us:missouri] right"
-                ]
-            }
-        },
-        "animation.rum139": {
-            "animation_length": 1,
-            "loop": false,
-            "timeline": {
-                "0.0": [
-                    "/particle mark7:explosion ~ ~0.1 ~",
-                    "/particle shell:5200damage ~ ~4 ~",
-                    "/playsound 406mm.explosion @a[r=50]",
-                    "/camerashake add @p 0.1 0.01"
-                ]
-            }
-        },
-        "animation.rum139_root": {
-            "animation_length": 2,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/event entity @e[type=us:rum139] firing"
-                ]
-            }
-        },
-        "animation.stop_root": {
-            "animation_length": 2,
-            "loop": true,
-            "timeline": {
-                "0.0": [
-                    "/event entity @e[type=us:missouri] stop"
-                ]
-            }
-        }
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.back_root": {
+      "animation_length": 2,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/event entity @e[type=us:missouri] back"
+        ]
+      }
     },
-    "format_version": "1.10.0"
+    "animation.bb63_back": {
+      "animation_length": 0.01,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/tp @s ^ ^ ^-0.1"
+        ]
+      }
+    },
+    "animation.bb63_forward": {
+      "animation_length": 0.01,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/tp @s ^ ^ ^0.2"
+        ]
+      }
+    },
+    "animation.bb63_has_rider": {
+      "animation_length": 1.0E-7,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/execute @e[name=maingunaim2] ~~~ tp @s ^ ^ ^0.5 facing @e[name=maingunaim,c=1]",
+          "/execute @e[name=maingun] ~~~ tp @s ^ ^ ^ facing @e[name=maingunaim2]",
+          "/execute @e[name=maingun2] ~~~ tp @s ^ ^ ^ facing @e[name=maingunaim2]",
+          "/execute @e[name=maingun3] ~~~ tp @s ^ ^ ^ facing @e[name=maingunaim2]",
+          "/execute @e[type=us:mark12] ~~~ tp @s ^ ^ ^ facing @e[name=maingunaim]",
+          "/execute @e[type=bb63:controller] ~~~ tp @s ^ ^ ^ facing @e[name=maingunaim]",
+          "/execute @p[r=30]~~~ tp @e[name=maingunaim] ^ ^4 ^65"
+        ]
+      }
+    },
+    "animation.bb63_left": {
+      "animation_length": 0.01,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/tp @s ^ ^ ^ ~-0.2"
+        ]
+      }
+    },
+    "animation.bb63_menu": {
+      "animation_length": 2,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/tag @p[r=15] add uss:bb63"
+        ]
+      }
+    },
+    "animation.bb63_right": {
+      "animation_length": 0.01,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/tp @s ^ ^ ^ ~0.2"
+        ]
+      }
+    },
+    "animation.bb63_root": {
+      "animation_length": 1.0E-7,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/execute @s ~~~ tp @e[name=maingun,r=20] ^ ^3 ^13.9",
+          "/execute @s ~~~ tp @e[name=bofor,r=70] ^2.4 ^2 ^-43.1",
+          "/execute @s ~~~ tp @e[name=bofor2,r=70] ^-0.5 ^2 ^-43.1",
+          "/execute @s ~~~ tp @e[type=bb63:controller] ^ ^ ^",
+          "/execute @e[type=us:phalanx_turret] ~~~ tp @s ^ ^ ^ facing @e[family=rsmissile]",
+          "/execute @e[type=us:bofor] ~~~ tp @s ^ ^ ^ facing @e[family=rsmissile]",
+          "/execute @e[type=us:phalanx_turret] ~~~ tp @s ^ ^ ^ facing @e[family=rsaircraft]",
+          "/execute @e[type=us:bofor] ~~~ tp @s ^ ^ ^ facing @e[family=rsaircraft]",
+          "/execute @e[type=us:phalanx_turret] ~~~ tp @s ^ ^ ^ facing @e[family=jpaircraft]",
+          "/execute @e[type=us:bofor] ~~~ tp @s ^ ^ ^ facing @e[family=jpaircraft]",
+          "/execute @e[type=us:phalanx_turret] ~~~ tp @s ^ ^ ^ facing @e[type=phantom]",
+          "/execute @e[type=us:bofor] ~~~ tp @s ^ ^ ^ facing @e[type=phantom]",
+          "/execute @e[type=us:phalanx_turret] ~~~ tp @s ^ ^ ^ facing @e[type=ghast]",
+          "/execute @e[type=us:bofor] ~~~ tp @s ^ ^ ^ facing @e[type=ghast]",
+          "/execute @e[type=us:phalanx_turret] ~~~ tp @s ^ ^ ^ facing @e[type=blaze]",
+          "/execute @e[type=us:bofor] ~~~ tp @s ^ ^ ^ facing @e[type=blaze]",
+          "/execute @s ~~~ tp @e[name=maingun2,r=30] ^ ^1.7 ^21.4",
+          "/execute @s ~~~ tp @e[name=maingun3,r=40] ^ ^1.7 ^-22.1",
+          "/execute @s ~~~ tp @e[name=aim3] ^ ^3 ^-24",
+          "/execute @s ~~~ tp @e[name=aim2] ^ ^3 ^24",
+          "/execute @s ~~~ tp @e[name=aim] ^ ^5 ^16",
+          "/execute @s ~~~ tp @e[name=mark12gun] ^4.3 ^2.8 ^0.6",
+          "/execute @s ~~~ tp @e[name=mark12aim] ^4.3 ^2.8 ^2",
+          "/execute @s ~~~ tp @e[name=mark12gun2] ^-4.3 ^2.8 ^0.6",
+          "/execute @s ~~~ tp @e[name=mark12aim2] ^-4.3 ^2.8 ^2",
+          "/execute @s ~~~ tp @e[name=mark12gun3] ^2.78 ^3.6 ^3.58",
+          "/execute @s ~~~ tp @e[name=mark12aim3] ^2.78 ^3.6 ^5",
+          "/execute @s ~~~ tp @e[name=mark12gun4] ^-2.78 ^3.6 ^3.58",
+          "/execute @s ~~~ tp @e[name=mark12aim4] ^-2.78 ^3.6 ^5",
+          "/execute @s ~~~ tp @e[name=mark12gun5] ^4.3 ^2.8 ^-7.6",
+          "/execute @s ~~~ tp @e[name=mark12aim5] ^4.3 ^2.8 ^-9",
+          "/execute @s ~~~ tp @e[name=mark12aim6] ^-4.3 ^2.8 ^-9",
+          "/execute @s ~~~ tp @e[name=mark12gun6] ^-4.3 ^2.8 ^-7.6",
+          "/execute @s ~~~ tp @e[name=aabody] ^1.4 ^6.4 ^4",
+          "/execute @s ~~~ tp @e[name=aaturret] ^1.4 ^6.4 ^4",
+          "/execute @s ~~~ tp @e[name=aaaim] ^3 ^6.4 ^4",
+          "/execute @s ~~~ tp @e[name=aabody2] ^-1.4 ^6.4 ^4",
+          "/execute @s ~~~ tp @e[name=aaturret2] ^-1.4 ^6.4 ^4",
+          "/execute @s ~~~ tp @e[name=aaaim2] ^-3 ^6.4 ^4",
+          "/execute @s ~~~ tp @e[name=aabody3] ^2.2 ^6.4 ^-7",
+          "/execute @s ~~~ tp @e[name=aaturret3] ^2.2 ^6.4 ^-7",
+          "/execute @s ~~~ tp @e[name=aaaim3] ^3.5 ^6.4 ^-7",
+          "/execute @s ~~~ tp @e[name=aabody4] ^-2.2 ^6.4 ^-7",
+          "/execute @s ~~~ tp @e[name=aaturret4] ^-2.2 ^6.4 ^-7",
+          "/execute @s ~~~ tp @e[name=aaaim4] ^-3.5 ^6.4 ^-7"
+        ]
+      }
+    },
+    "animation.bb63_shoot": {
+      "animation_length": 10,
+      "loop": true,
+      "timeline": {}
+    },
+    "animation.bb63_spawn": {
+      "animation_length": 1,
+      "loop": false,
+      "timeline": {
+        "0.0": [
+          "/summon us:mark7 ~~~ bb63 maingun",
+          "/summon us:bofor ~~~ minecraft:entity_spawned bofor",
+          "/summon us:bofor ~~~ minecraft:entity_spawned bofor2",
+          "/summon us:mark7 ~~~ bb63 maingun2",
+          "/summon us:mark7 ~~~ bb63 maingun3",
+          "/summon us:mark12 ~~~ bb63 mark12gun",
+          "/summon us:mark12 ~~~ bb63 mark12gun2",
+          "/summon us:mark12 ~~~ bb63 mark12gun3",
+          "/summon us:mark12 ~~~ bb63 mark12gun4",
+          "/summon us:mark12 ~~~ bb63 mark12gun5",
+          "/summon us:mark12 ~~~ bb63 mark12gun6",
+          "/summon us:phalanx ~~~ minecraft:entity_spawned aabody",
+          "/summon us:phalanx ~~~ minecraft:entity_spawned aabody2",
+          "/summon us:phalanx ~~~ minecraft:entity_spawned aabody3",
+          "/summon us:phalanx ~~~ minecraft:entity_spawned aabody4",
+          "/summon us:phalanx_turret ~~~ minecraft:entity_spawned aaturret",
+          "/summon us:phalanx_turret ~~~ minecraft:entity_spawned aaturret2",
+          "/summon us:phalanx_turret ~~~ minecraft:entity_spawned aaturret3",
+          "/summon us:phalanx_turret ~~~ minecraft:entity_spawned aaturret4",
+          "/summon us:rah66 ~~~ minecraft:entity_spawned helicopter"
+        ]
+      }
+    },
+    "animation.bofor_root": {
+      "animation_length": 2,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/event entity @s bofor:shoot_start"
+        ],
+        "0.01": [
+          "/fill ~~~ ~~~ light_block 9"
+        ],
+        "0.1": [
+          "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air 0 replace light_block 9",
+          "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air 0 replace light_block 9",
+          "/fill ~4 ~ ~4 ~1 ~ ~1 air 0 replace light_block 9",
+          "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air 0 replace light_block 9",
+          "/fill ~4 ~ ~-4 ~1 ~ ~-1 air 0 replace light_block 9",
+          "/fill ~-4 ~ ~4 ~-1 ~ ~1 air 0 replace light_block 9",
+          "/fill ~-4 ~ ~ ~-1 ~ ~ air 0 replace light_block 9",
+          "/fill ~4 ~ ~ ~1 ~ ~ air 0 replace light_block 9",
+          "/fill ~ ~ ~-4 ~ ~ ~-1 air 0 replace light_block 9",
+          "/fill ~ ~ ~4 ~ ~ ~1 air 0 replace light_block 9"
+        ],
+        "0.25": [
+          "/fill ~~~ ~~~ light_block 9"
+        ],
+        "0.35": [
+          "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air 0 replace light_block 9",
+          "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air 0 replace light_block 9",
+          "/fill ~4 ~ ~4 ~1 ~ ~1 air 0 replace light_block 9",
+          "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air 0 replace light_block 9",
+          "/fill ~4 ~ ~-4 ~1 ~ ~-1 air 0 replace light_block 9",
+          "/fill ~-4 ~ ~4 ~-1 ~ ~1 air 0 replace light_block 9",
+          "/fill ~-4 ~ ~ ~-1 ~ ~ air 0 replace light_block 9",
+          "/fill ~4 ~ ~ ~1 ~ ~ air 0 replace light_block 9",
+          "/fill ~ ~ ~-4 ~ ~ ~-1 air 0 replace light_block 9",
+          "/fill ~ ~ ~4 ~ ~ ~1 air 0 replace light_block 9"
+        ],
+        "0.5": [
+          "/fill ~~~ ~~~ light_block 9"
+        ],
+        "0.6": [
+          "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air 0 replace light_block 9",
+          "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air 0 replace light_block 9",
+          "/fill ~4 ~ ~4 ~1 ~ ~1 air 0 replace light_block 9",
+          "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air 0 replace light_block 9",
+          "/fill ~4 ~ ~-4 ~1 ~ ~-1 air 0 replace light_block 9",
+          "/fill ~-4 ~ ~4 ~-1 ~ ~1 air 0 replace light_block 9",
+          "/fill ~-4 ~ ~ ~-1 ~ ~ air 0 replace light_block 9",
+          "/fill ~4 ~ ~ ~1 ~ ~ air 0 replace light_block 9",
+          "/fill ~ ~ ~-4 ~ ~ ~-1 air 0 replace light_block 9",
+          "/fill ~ ~ ~4 ~ ~ ~1 air 0 replace light_block 9"
+        ],
+        "0.75": [
+          "/fill ~~~ ~~~ light_block 9"
+        ],
+        "0.85": [
+          "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air 0 replace light_block 9",
+          "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air 0 replace light_block 9",
+          "/fill ~4 ~ ~4 ~1 ~ ~1 air 0 replace light_block 9",
+          "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air 0 replace light_block 9",
+          "/fill ~4 ~ ~-4 ~1 ~ ~-1 air 0 replace light_block 9",
+          "/fill ~-4 ~ ~4 ~-1 ~ ~1 air 0 replace light_block 9",
+          "/fill ~-4 ~ ~ ~-1 ~ ~ air 0 replace light_block 9",
+          "/fill ~4 ~ ~ ~1 ~ ~ air 0 replace light_block 9",
+          "/fill ~ ~ ~-4 ~ ~ ~-1 air 0 replace light_block 9",
+          "/fill ~ ~ ~4 ~ ~ ~1 air 0 replace light_block 9"
+        ]
+      }
+    },
+    "animation.control_mark7": {
+      "animation_length": 7,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/event entity @e[type=us:mark7,r=60] maingun:shoot_start"
+        ]
+      }
+    },
+    "animation.forward_root": {
+      "animation_length": 2,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/event entity @e[type=us:missouri] forward"
+        ]
+      }
+    },
+    "animation.left_root": {
+      "animation_length": 2,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/event entity @e[type=us:missouri] left"
+        ]
+      }
+    },
+    "animation.mark12_root": {
+      "animation_length": 2,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/event entity @e[type=us:mark12] maingun:shoot_start"
+        ]
+      }
+    },
+    "animation.mark12_shell": {
+      "animation_length": 1,
+      "loop": false,
+      "timeline": {
+        "0.0": [
+          "/particle mark12:explosion ~ ~0.1 ~",
+          "/playsound 127mm.explosion @a[r=50]",
+          "/camerashake add @p 0.04 0.03 rotational",
+          "/particle shell:2112damage ~ ~4 ~"
+        ]
+      }
+    },
+    "animation.mark7_aim": {
+      "animation_length": 1,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/playnanimation @p[r=1] mark7"
+        ]
+      }
+    },
+    "animation.mark7_controller": {
+      "animation_length": 1.0E-7,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/execute @p[r=2] ~~~ tp @e[type=us:aim,r=10] ^ ^4.9 ^3",
+          "/tp @s ^ ^ ^"
+        ]
+      }
+    },
+    "animation.mark7_firing": {
+      "animation_length": 7,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/setblock ~ ~ ~ light_block 12 keep"
+        ],
+        "0.1": [
+          "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air 0 replace light_block 12",
+          "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air 0 replace light_block 12",
+          "/fill ~4 ~ ~4 ~1 ~ ~1 air 0 replace light_block 12",
+          "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air 0 replace light_block 12",
+          "/fill ~4 ~ ~-4 ~1 ~ ~-1 air 0 replace light_block 12",
+          "/fill ~-4 ~ ~4 ~-1 ~ ~1 air 0 replace light_block 12",
+          "/fill ~-4 ~ ~ ~-1 ~ ~ air 0 replace light_block 12",
+          "/fill ~4 ~ ~ ~1 ~ ~ air 0 replace light_block 12",
+          "/fill ~ ~ ~-4 ~ ~ ~-1 air 0 replace light_block 12",
+          "/fill ~ ~ ~4 ~ ~ ~1 air 0 replace light_block 12"
+        ],
+        "0.15": [
+          "/setblock ~ ~ ~ light_block 12 keep"
+        ],
+        "0.25": [
+          "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air 0 replace light_block 12",
+          "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air 0 replace light_block 12",
+          "/fill ~4 ~ ~4 ~1 ~ ~1 air 0 replace light_block 12",
+          "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air 0 replace light_block 12",
+          "/fill ~4 ~ ~-4 ~1 ~ ~-1 air 0 replace light_block 12",
+          "/fill ~-4 ~ ~4 ~-1 ~ ~1 air 0 replace light_block 12",
+          "/fill ~-4 ~ ~ ~-1 ~ ~ air 0 replace light_block 12",
+          "/fill ~4 ~ ~ ~1 ~ ~ air 0 replace light_block 12",
+          "/fill ~ ~ ~-4 ~ ~ ~-1 air 0 replace light_block 12",
+          "/fill ~ ~ ~4 ~ ~ ~1 air 0 replace light_block 12"
+        ],
+        "0.35": [
+          "/setblock ~ ~ ~ light_block 12 keep"
+        ],
+        "0.45": [
+          "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air 0 replace light_block 12",
+          "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air 0 replace light_block 12",
+          "/fill ~4 ~ ~4 ~1 ~ ~1 air 0 replace light_block 12",
+          "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air 0 replace light_block 12",
+          "/fill ~4 ~ ~-4 ~1 ~ ~-1 air 0 replace light_block 12",
+          "/fill ~-4 ~ ~4 ~-1 ~ ~1 air 0 replace light_block 12",
+          "/fill ~-4 ~ ~ ~-1 ~ ~ air 0 replace light_block 12",
+          "/fill ~4 ~ ~ ~1 ~ ~ air 0 replace light_block 12",
+          "/fill ~ ~ ~-4 ~ ~ ~-1 air 0 replace light_block 12",
+          "/fill ~ ~ ~4 ~ ~ ~1 air 0 replace light_block 12"
+        ]
+      }
+    },
+    "animation.mark7_root": {
+      "animation_length": 2,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/event entity @e[type=us:mark7] maingun:shoot_start"
+        ]
+      }
+    },
+    "animation.mark7_shell": {
+      "animation_length": 1,
+      "loop": false,
+      "timeline": {
+        "0.0": [
+          "/particle mark7:explosion ~ ~0.1 ~",
+          "/particle shell:12000damage ~ ~4 ~",
+          "/playsound 406mm.explosion @a[r=50]",
+          "/camerashake add @p 0.1 0.01"
+        ]
+      }
+    },
+    "animation.missile_move": {
+      "animation_length": 1.0E-7,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/tp @s ^ ^ ^3",
+          "/tp @s ^ ^ ^ facing @e[family=monster,c=1]",
+          "/tp @s ^ ^ ^ facing @e[family=russian,c=1]",
+          "/tp @s ^ ^ ^ facing @e[family=russia,c=1]",
+          "/tp @s ^ ^ ^ facing @e[family=russiantank,c=1]",
+          "/tp @s ^ ^ ^ facing @e[family=russiatank,c=1]",
+          "/tp @s ^ ^ ^ facing @e[family=russiananti-aircraft,c=1]",
+          "/playanimation @s target"
+        ]
+      }
+    },
+    "animation.missile_target": {
+      "animation_length": 1,
+      "loop": false,
+      "timeline": {
+        "0.0": [
+          "/playsound rum139.move2 @a[r=30]"
+        ]
+      }
+    },
+    "animation.missouri_crash": {
+      "animation_length": 1,
+      "loop": false,
+      "timeline": {
+        "0.0": [
+          "/particle mark7:explosion ^ ^2 ^",
+          "/playsound 406mm.explosion @a[r=50]",
+          "/camerashake add @p 0.2 0.01 rotational"
+        ],
+        "0.2": [
+          "/particle mark7:explosion ^ ^2 ^-20",
+          "/playsound 406mm.explosion @a[r=50]",
+          "/camerashake add @p 0.2 0.01 rotational"
+        ],
+        "0.4": [
+          "/particle mark7:explosion ^ ^2 ^22",
+          "/playsound 406mm.explosion @a[r=50]",
+          "/camerashake add @p 0.2 0.01 rotational"
+        ],
+        "0.6": [
+          "/particle mark7:explosion ^ ^5 ^-2",
+          "/playsound 406mm.explosion @a[r=50]",
+          "/camerashake add @p 0.2 0.01 rotational"
+        ],
+        "0.65": [
+          "/particle mark7:explosion ^ ^2 ^-30",
+          "/playsound 406mm.explosion @a[r=50]",
+          "/camerashake add @p 0.2 0.01 rotational"
+        ]
+      }
+    },
+    "animation.missouri_onfire1": {
+      "animation_length": 0.1,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/execute @e[type=us:missouri,r=10] ~~~ particle rah66:crash ^3 ^1.9 ^25"
+        ]
+      }
+    },
+    "animation.missouri_onfire2": {
+      "animation_length": 0.1,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/execute @e[type=us:missouri,r=10] ~~~ particle rah66:crash ^ ^8 ^-1.8"
+        ]
+      }
+    },
+    "animation.missouri_onfire3": {
+      "animation_length": 0.1,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/execute @e[type=us:missouri,r=10] ~~~ particle rah66:crash ^-3 ^1.9 ^-30"
+        ]
+      }
+    },
+    "animation.missouri_onfire4": {
+      "animation_length": 0.1,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/execute @e[type=us:missouri,r=10] ~~~ particle rah66:crash ^ ^2.2 ^40"
+        ]
+      }
+    },
+    "animation.rah66": {
+      "animation_length": 1.0E-7,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/tp @s ^^0.2 ^"
+        ]
+      }
+    },
+    "animation.rah66_crash": {
+      "animation_length": 1.0E-4,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/particle rah66:crash ~ ~1 ~"
+        ]
+      }
+    },
+    "animation.rah66_crash2": {
+      "animation_length": 0.1,
+      "loop": false,
+      "timeline": {
+        "0.0": [
+          "/playsound 127mm.explosion @a[r=50]",
+          "/particle mark12:explosion ~ ~0.5 ~"
+        ]
+      }
+    },
+    "animation.rah66_in_bb63": {
+      "animation_length": 1.0E-5,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/execute @e[type=us:missouri,r=50] ~~~ tp @e[name=helicopter] ^ ^2 ^-37 facing @e[type=us:missouri,r=50]"
+        ]
+      }
+    },
+    "animation.rah66_root": {
+      "animation_length": 0.1,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/execute @p[tag=rah66] ~~~ tp @e[type=us:aim2,r=30] ^ ^ ^10"
+        ]
+      }
+    },
+    "animation.right_root": {
+      "animation_length": 2,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/event entity @e[type=us:missouri] right"
+        ]
+      }
+    },
+    "animation.rum139": {
+      "animation_length": 1,
+      "loop": false,
+      "timeline": {
+        "0.0": [
+          "/particle mark7:explosion ~ ~0.1 ~",
+          "/particle shell:5200damage ~ ~4 ~",
+          "/playsound 406mm.explosion @a[r=50]",
+          "/camerashake add @p 0.1 0.01"
+        ]
+      }
+    },
+    "animation.rum139_root": {
+      "animation_length": 2,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/event entity @e[type=us:rum139] firing"
+        ]
+      }
+    },
+    "animation.stop_root": {
+      "animation_length": 2,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/event entity @e[type=us:missouri] stop"
+        ]
+      }
+    }
+  }
 }
