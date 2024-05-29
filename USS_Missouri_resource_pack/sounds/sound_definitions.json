@@ -206,6 +206,10 @@
                 {
                     "name": "sounds/vehicles/startshoot",
                     "volume": 1.5
+                },
+                {
+                    "name": "sounds/vehicles/brttt-a-10",
+                    "volume": 2
                 }
             ]
         },
