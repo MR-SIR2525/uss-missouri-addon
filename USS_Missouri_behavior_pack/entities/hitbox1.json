@@ -1,64 +1,65 @@
 {
-    "format_version": "1.8.0",
-    "minecraft:entity": {
-        "components": {
-            "minecraft:collision_box": {
-                "height": 4,
-                "width": 0.1
-            },
-            "minecraft:fall_damage": {
-                "value": 0
-            },
-            "minecraft:fire_immune": false,
-            "minecraft:health": {
-                "max": 500000,
-                "value": 460000
-            },
-            "minecraft:knockback_resistance": {
-                "value": 1
-            },
-            "minecraft:movement": {
-                "value": 0
-            },
-            "minecraft:movement.basic": {},
-            "minecraft:navigation.walk": {
-                "can_path_over_water": true
-            },
-            "minecraft:physics": {},
-            "minecraft:pushable": {
-                "is_pushable": false,
-                "is_pushable_by_piston": false
-            },
-            "minecraft:scale": {
-                "value": 1
-            },
-            "minecraft:type_family": {
-                "family": [
-                    "hitbox"
-                ]
-            },
-            "minecraft:underwater_movement": {
-                "value": 0
-            },
-            "minecraft:variant": {
-                "value": 0
-            }
-        },
-        "description": {
-            "animations": {
-                "land": "animation.land"
-            },
-            "identifier": "bb63:hitbox",
-            "is_experimental": false,
-            "is_spawnable": false,
-            "is_summonable": true,
-            "scripts": {
-                "animate": [
-                    {
-                        "land": "!query.is_in_water"
-                    }
-                ]
-            }
-        }
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "animations": {
+        "land": "animation.land"
+      },
+      "identifier": "bb63:hitbox",
+      "is_experimental": false,
+      "is_spawnable": false,
+      "is_summonable": true,
+      "scripts": {
+        "animate": [
+          {
+            "land": "!query.is_in_water"
+          }
+        ]
+      }
+    },
+
+    "components": {
+      "minecraft:collision_box": {
+        "height": 4,
+        "width": 0.1
+      },
+      "minecraft:fall_damage": {
+        "value": 0
+      },
+      // "minecraft:fire_immune" {}    (so it's not fire immune then)
+      "minecraft:health": {
+        "max": 500000,
+        "value": 460000
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:movement": {
+        "value": 0
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:scale": {
+        "value": 1
+      },
+      "minecraft:type_family": {
+        "family": [
+          "hitbox"
+        ]
+      },
+      "minecraft:underwater_movement": {
+        "value": 0
+      },
+      "minecraft:variant": {
+        "value": 0
+      }
     }
+  }
 }
