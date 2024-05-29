@@ -195,7 +195,7 @@
             "sounds": [
                 {
                     "name": "sounds/vehicles/phalanxshoot",     //cram firing sound
-                    "volume": 0.75
+                    "volume": 0.6
                 }
             ]
         },
@@ -206,10 +206,6 @@
                 {
                     "name": "sounds/vehicles/startshoot",
                     "volume": 1.5
-                },
-                {
-                    "name": "sounds/vehicles/brttt-a-10",
-                    "volume": 2
                 }
             ]
         },
