@@ -76,6 +76,12 @@
         "minecraft:variant": {
           "value": 0
         }
+      },
+
+      "force_despawn": {
+        "minecraft:instant_despawn": {
+          "remove_child_entities": false
+        }
       }
     },
 
@@ -262,6 +268,19 @@
         "remove": {
           "component_groups": ["shoot"] //what does this do? There is no "shoot" component group
         }
+      },
+
+      "disarm": {
+        "remove": {"component_groups": ["auto_mode"]}
+      },
+
+      "arm": {
+        "add": {"component_groups": ["auto_mode"]}
+      },
+
+      "force_despawn": {
+        "add": {
+          "component_groups": ["force_despawn"]
       }
     }
   }
