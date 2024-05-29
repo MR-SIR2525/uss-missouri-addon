@@ -28,7 +28,7 @@
                     "/particle shell:hit3 ~ ~0.1 ~",
                     "/playsound shell.hit @a[r=30]",
                     "/fill ~~~ ~~~ fire",
-                    "/particle shell:10damage ~ ~2 ~",
+                    // "/particle shell:10damage ~ ~2 ~",   //I don't like it so muted it.
                     "/playsound shell.damage @a[tag=bb63]"
                 ]
             }
@@ -49,21 +49,22 @@
             }
         },
         "animation.shoot_glow": {
-            "animation_length": 0.2,
+            "animation_length": 0.5,
             "loop": true,
             "timeline": {
                 //used to be fire, but that would burn loot when phalanx was killed
+                //back to fire...  animation seems to fast to do anything tho.
                 "0.0": [
-                    "/fill ~~~ ~~~ light_block[\"block_light_level\"=10]"
+                    "/fill ~~~ ~~~ fire]"
                 ],
-                "0.1": [
-                    "/fill ~5 ~5 ~5 ~-5 ~ ~-5 air replace light_block"
+                "0.45": [
+                    "/fill ~5 ~5 ~5 ~-5 ~ ~-5 air replace fire"
                 ],
-                "0.15": [
-                    "/fill ~~~ ~~~ air replace light_block"
+                "0.49": [
+                    "/fill ~~~ ~~~ air replace fire"
                 ],
-                "0.2": [
-                    "/fill ~5 ~5 ~5 ~-5 ~ ~-5 air replace light_block"
+                "0.5": [
+                    "/fill ~5 ~5 ~5 ~-5 ~ ~-5 air replace fire"
                 ]
             }
         }

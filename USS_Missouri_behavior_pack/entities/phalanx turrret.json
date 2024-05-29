@@ -58,11 +58,11 @@
           ]
         },
         "minecraft:behavior.ranged_attack": {
-          "attack_interval_max": 0.1,
-          "attack_interval_min": 0.1,
+          "attack_interval_max": 5.0,   //was 0.1
+          "attack_interval_min": 5.0,   //was 0.1
           "attack_radius": 100,
           "burst_interval": 0.05,
-          "burst_shots": 10000,
+          "burst_shots": 1000,          //was 10000
           "charge_charged_trigger": 0,
           "charge_shoot_trigger": 0,
           "priority": 2
@@ -281,6 +281,7 @@
       "force_despawn": {
         "add": {
           "component_groups": ["force_despawn"]
+        }
       }
     }
   }
