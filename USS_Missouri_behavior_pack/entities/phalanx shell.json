@@ -23,6 +23,9 @@
       }
     },
 
+    // reference for minecraft:projectile:
+    // https://learn.microsoft.com/en-us/minecraft/creator/reference/content/entityreference/examples/entitycomponents/minecraftcomponent_projectile?view=minecraft-bedrock-stable
+
     "component_groups": {
       "despawn": {
         "minecraft:despawn": {}
@@ -33,32 +36,33 @@
         }
       },
       "minecraft:exploding": {
+        // https://learn.microsoft.com/en-us/minecraft/creator/reference/content/entityreference/examples/entitycomponents/minecraftcomponent_explode?view=minecraft-bedrock-stable
         "minecraft:explode": {
-          "causesFire": false,
-          "destroyAffectedByGriefing": true,
-          "fireAffectedByGriefing": true,
-          "fuseLength": 0.1,
-          "fuseLit": true,
+          "causes_fire": false,
+          "destroy_affected_by_griefing": true,
+          "fire_affected_by_griefing": true,
+          "fuse_length": 0.1,
+          "fuse_lit": true,
           "power": 0
         }
       },
       "normal": {
         "minecraft:projectile": {
           "anchor": 2,
-          "catchFire": false,
-          "destroyOnHurt": false,
+          "catch_fire": false,
+          "destroy_on_hurt": false,
           "gravity": 0.002,
           "inertia": 1,
           "liquid_inertia": 1,
           "offset": [
             0,
-            0.05,
+            0.15,
             0
           ],
-          "onHit": {},
+          "on_hit": {},
           "particle": "explode",
           "power": 6,
-          "reflectOnHurt": false,
+          "reflect_on_hurt": false,
           "semi_random_diff_damage": false,
           "uncertainty_base": 2
         },
@@ -74,17 +78,17 @@
       "normal2": {
         "minecraft:projectile": {
           "anchor": 2,
-          "catchFire": false,
-          "destroyOnHurt": false,
+          "catch_fire": false,
+          "destroy_on_hurt": false,
           "gravity": 0.002,
           "inertia": 1,
           "liquid_inertia": 1,
-          "offset": [
+          "offset": [   //"...from the entity's anchor where the projectile will spawn."
             0,
-            0.05,
+            0.15,
             0
           ],
-          "onHit": {
+          "on_hit": {                   // was "onHit" (incorrect?)
             "definition_event": {
               "affect_projectile": true,
               "event_trigger": {
@@ -106,7 +110,7 @@
           },
           "particle": "explode",
           "power": 4,
-          "reflectOnHurt": false,
+          "reflect_on_hurt": false,
           "semi_random_diff_damage": false,
           "uncertainty_base": 2
         }
