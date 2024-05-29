@@ -1,6 +1,28 @@
 {
   "format_version": "1.12.0",
   "minecraft:entity": {
+    "description": {
+      "animations": {
+        "hit": "animation.shell_hit",
+        "inwater": "controller.animation.shell_inwater",
+        "shell": "animation.shell_flying"
+      },
+      "identifier": "us:phalanx_shell",
+      "is_experimental": false,
+      "is_spawnable": false,
+      "is_summonable": true,
+      "runtime_identifier": "minecraft:arrow",
+      "scripts": {
+        "animate": [
+          "shell",
+          {
+            "hit": "query.variant ==1"
+          },
+          "inwater"
+        ]
+      }
+    },
+
     "component_groups": {
       "despawn": {
         "minecraft:despawn": {}
@@ -90,6 +112,7 @@
         }
       }
     },
+    
     "components": {
       "minecraft:collision_box": {
         // "height": -0.2,
@@ -130,27 +153,7 @@
         "value": 0
       }
     },
-    "description": {
-      "animations": {
-        "hit": "animation.shell_hit",
-        "inwater": "controller.animation.shell_inwater",
-        "shell": "animation.shell_flying"
-      },
-      "identifier": "us:phalanx_shell",
-      "is_experimental": false,
-      "is_spawnable": false,
-      "is_summonable": true,
-      "runtime_identifier": "minecraft:arrow",
-      "scripts": {
-        "animate": [
-          "shell",
-          {
-            "hit": "query.variant ==1"
-          },
-          "inwater"
-        ]
-      }
-    },
+    
     "events": {
       "despawn": {
         "add": {
