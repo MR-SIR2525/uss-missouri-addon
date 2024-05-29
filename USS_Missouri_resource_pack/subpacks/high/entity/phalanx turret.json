@@ -41,7 +41,7 @@
             "sound_effects": {
                 "phalanx.shoot": "us.phalanxshoot",
                 "phalanx.startshoot": "us.phalanxstartshoot"
-                // "phalanx.endshoot": "us.phalanxendshoot"     //makes sound take too long
+                // "phalanx.endshoot": "us.phalanxendshoot"     //makes sound linger too long
             },
             "spawn_egg": {
                 "texture": "phalanx_turret_spawn_egg",
