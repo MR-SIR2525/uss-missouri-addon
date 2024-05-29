@@ -1,161 +1,161 @@
 {
-    "format_version": "1.13.0",
-    "minecraft:entity": {
-        "description": {
-            "animations": {
-                "spawn": "animation.spawn_turret"
-            },
-            "identifier": "us:phalanx",  // why is this not phalanx hull??
-            "is_experimental": false,
-            "is_spawnable": true,
-            "is_summonable": true,
-            "scripts": {
-                "animate": [
-                    "spawn"
-                ]
-            }
-        },
-        "components": {
-            "minecraft:can_climb": {},
-            "minecraft:collision_box": {
-                "height": 0,
-                "width": 0.1
-            },
-            "minecraft:damage_sensor": {
-                "triggers": [   // MRxSIR: same as phalanx turret
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "us:phalanx", // why is this not phalanx hull??
+      "is_experimental": false,
+      "is_spawnable": true,
+      "is_summonable": true,
+      "scripts": {
+        "animate": [
+          "spawn"
+        ]
+      },
+      "animations": {
+        "spawn": "animation.spawn_turret"
+      }
+    },
+    
+    "components": {
+      "minecraft:can_climb": {},
+      "minecraft:collision_box": {
+        "height": 0,
+        "width": 0.1
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [ // MRxSIR: same as phalanx turret
+          {
+            "deals_damage": false, // MRxSIR: no damage when...
+            "on_damage": {
+              "filters": {
+                "all_of": [ // player is driving the boat
                   {
-                    "deals_damage": false, // MRxSIR: no damage when...
-                    "on_damage": {
-                      "filters": {
-                        "all_of": [   // player is driving the boat
-                          {
-                            "subject": "player",
-                            "test": "is_riding",
-                            "value": true
-                          },
-                          {
-                            "subject": "player",
-                            "test": "on_ground",
-                            "value": false
-                          }
-                        ]
-                      }
-                    }
+                    "subject": "player",
+                    "test": "is_riding",
+                    "value": true
                   },
                   {
-                    "cause": "all",
-                    "deals_damage": true
-                  },
-                  {
-                    "cause": "fall",
-                    "deals_damage": false
-                  },
-                  {
-                    "cause": "drowning",
-                    "deals_damage": false
-                  },
-                  {
-                    "cause": "fire",
-                    "deals_damage": false
-                  },
-                  {
-                    "cause": "temperature",
-                    "deals_damage": false
-                  },
-                  {
-                    "cause": "contact",
-                    "deals_damage": false
-                  },
-                  {
-                    "cause": "freezing",
-                    "deals_damage": false
-                  },
-                  {
-                    "cause": "magic",
-                    "deals_damage": false
-                  },
-                  {
-                    "cause": "suffocation",
-                    "deals_damage": false
-                  },
-                  {
-                    "cause": "thorns",
-                    "deals_damage": false
-                  },
-        
-                  {
-                    "cause": "us:mark7_shell",
-                    "deals_damage": false
-                  },
-                  {
-                    "cause": "us:mark7_shell2",
-                    "deals_damage": false
-                  },
-                  {
-                    "cause": "us:mark7_shell3",
-                    "deals_damage": false
-                  },
-                  {
-                    "cause": "us:mark12_shell",
-                    "deals_damage": false
-                  },
-                  {
-                    "cause": "us:phalanx_shell",
-                    "deals_damage": false
-                  },
-                  {
-                    "cause": "us:bofor_shell",
-                    "deals_damage": false
+                    "subject": "player",
+                    "test": "on_ground",
+                    "value": false
                   }
                 ]
-              },
-              // "minecraft:fire_immune": false,
-            "minecraft:health": {
-              "value": {
-                "range_max": 130,   //lowered from 200
-                "range_min": 130
               }
-            },
-            "minecraft:is_stackable": {},
-            "minecraft:jump.static": {},
-            "minecraft:knockback_resistance": {
-                "value": 1
-            },
-            "minecraft:loot": {
-                "table": "loot_tables/entities/phalanx_hull.json"
-            },
-            "minecraft:movement": {
-                "value": 0
-            },
-            "minecraft:movement.basic": {},
-            "minecraft:nameable": {
-                "allow_name_tag_renaming": true
-            },
-            "minecraft:navigation.walk": {
-                "can_float": false
-            },
-            "minecraft:physics": {},
-            "minecraft:push_through": {
-                "value": 1
-            },
-            "minecraft:pushable": {
-                "is_pushable": false,
-                "is_pushable_by_piston": true
-            },
-            "minecraft:scale": {
-                "value": 1
-            },
-            "minecraft:type_family": {
-                "family": [
-                    "us",
-                    "phalanx2",
-                    "phalanx_hull",
-                    "anti-aircraft"
-                ]
-            },
-            "minecraft:underwater_movement": {
-                "value": 0.02
             }
+          },
+          {
+            "cause": "all",
+            "deals_damage": true
+          },
+          {
+            "cause": "fall",
+            "deals_damage": false
+          },
+          {
+            "cause": "drowning",
+            "deals_damage": false
+          },
+          {
+            "cause": "fire",
+            "deals_damage": false
+          },
+          {
+            "cause": "temperature",
+            "deals_damage": false
+          },
+          {
+            "cause": "contact",
+            "deals_damage": false
+          },
+          {
+            "cause": "freezing",
+            "deals_damage": false
+          },
+          {
+            "cause": "magic",
+            "deals_damage": false
+          },
+          {
+            "cause": "suffocation",
+            "deals_damage": false
+          },
+          {
+            "cause": "thorns",
+            "deals_damage": false
+          },
+          {
+            "cause": "us:mark7_shell",
+            "deals_damage": false
+          },
+          {
+            "cause": "us:mark7_shell2",
+            "deals_damage": false
+          },
+          {
+            "cause": "us:mark7_shell3",
+            "deals_damage": false
+          },
+          {
+            "cause": "us:mark12_shell",
+            "deals_damage": false
+          },
+          {
+            "cause": "us:phalanx_shell",
+            "deals_damage": false
+          },
+          {
+            "cause": "us:bofor_shell",
+            "deals_damage": false
+          }
+        ]
+      },
+      // "minecraft:fire_immune": false,
+      "minecraft:health": {
+        "value": {
+          "range_max": 130, //lowered from 200
+          "range_min": 130
         }
+      },
+      "minecraft:is_stackable": {},
+      "minecraft:jump.static": {},
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/phalanx_hull.json"
+      },
+      "minecraft:movement": {
+        "value": 0
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:nameable": {
+        "allow_name_tag_renaming": true
+      },
+      "minecraft:navigation.walk": {
+        "can_float": false
+      },
+      "minecraft:physics": {},
+      "minecraft:push_through": {
+        "value": 1
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:scale": {
+        "value": 1
+      },
+      "minecraft:type_family": {
+        "family": [
+          "us",
+          "phalanx2",
+          "phalanx_hull",
+          "anti-aircraft"
+        ]
+      },
+      "minecraft:underwater_movement": {
+        "value": 0.02
+      }
     }
+  }
 }
