@@ -1,1 +1,25 @@
-{"animation_controllers":{"controller.animation.rah66":{"states":{"default":{"on_entry":["@s un_drive"],"transitions":[{"drive":"query.has_rider"}]},"drive":{"on_entry":["/effect @s levitation 20 2 true"],"transitions":[{"default":"!query.has_rider"}]}}}},"format_version":"1.10.0"}
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.rah66": {
+      "states": {
+        "default": {
+          "on_entry": ["@s un_drive"],
+          "transitions": [
+            {
+              "drive": "query.has_rider"
+            }
+          ]
+        },
+        "drive": {
+          "on_entry": ["/effect @s levitation 20 2 true"],
+          "transitions": [
+            {
+              "default": "!query.has_rider"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

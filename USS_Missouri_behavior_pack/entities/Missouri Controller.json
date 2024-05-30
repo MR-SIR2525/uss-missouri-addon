@@ -260,7 +260,7 @@
         ],
         "interact_text": "Into MISSOURI",
         "rider_can_interact": true,
-        "seat_count": 1,
+        "seat_count": 1,  //consider raising this to 2
         "seats": [
           {
             "position": [
