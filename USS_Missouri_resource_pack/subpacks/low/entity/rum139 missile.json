@@ -42,12 +42,8 @@
                 "move2": "rum139.move2",
                 "spawn": "rum139.move"
             },
-            // "spawn_egg": {
-            //     "texture": "null",
-            //     "texture_index": 0
-            // },
             "textures": {
-                "default": "rum139"
+                "default": "textures/entity/rum139"
             }
         }
     }

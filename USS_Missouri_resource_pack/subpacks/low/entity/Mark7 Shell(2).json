@@ -29,13 +29,9 @@
                     "moving"
                 ]
             },
-            "spawn_egg": {
-                "texture": "spawn_egg",
-                "texture_index": 69
-            },
             "textures": {
-                "default": "mark7_shell",
-                "move": "mark7_shell"
+                "default": "textures/entity/mark7_shell",
+                "move": "textures/entity/mark7_shell"
             }
         }
     }

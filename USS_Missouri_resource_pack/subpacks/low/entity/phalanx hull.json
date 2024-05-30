@@ -21,7 +21,7 @@
             //     "overlay_color": "#e2e2e2"
             // },
             "textures": {
-                "default": "phalanx"
+                "default": "textures/entity/phalanx"
             }
         }
     }

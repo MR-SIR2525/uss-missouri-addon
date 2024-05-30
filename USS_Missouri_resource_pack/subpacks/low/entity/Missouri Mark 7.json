@@ -33,7 +33,7 @@
                 "texture_index": 0
             },
             "textures": {
-                "default": "mark7"
+                "default": "textures/entity/mark7"
             }
         }
     }

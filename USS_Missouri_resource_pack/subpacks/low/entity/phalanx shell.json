@@ -21,12 +21,8 @@
                     "move"
                 ]
             },
-            // "spawn_egg": {                   // this isn't spawnable so... why spawn egg?
-            //     "texture": "spawn_egg",
-            //     "texture_index": 69
-            // },
             "textures": {
-                "default": "phalanx_shell"
+                "default": "textures/entity/phalanx_shell"
             }
         }
     }
