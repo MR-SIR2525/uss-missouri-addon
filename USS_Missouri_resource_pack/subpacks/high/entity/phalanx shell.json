@@ -21,12 +21,12 @@
                     "move"
                 ]
             },
-            "spawn_egg": {
-                "texture": "spawn_egg",
-                "texture_index": 69
-            },
+            // "spawn_egg": {
+            //     "texture": "spawn_egg",
+            //     "texture_index": 69
+            // },
             "textures": {
-                "default": "phalanx_shell"
+                "default": "textures/entity/phalanx_shell"
             }
         }
     }

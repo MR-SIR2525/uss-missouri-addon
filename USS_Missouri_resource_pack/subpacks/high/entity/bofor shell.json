@@ -24,12 +24,12 @@
                     "move"
                 ]
             },
-            "spawn_egg": {
-                "texture": "spawn_egg",
-                "texture_index": 69
-            },
+            // "spawn_egg": {
+            //     "texture": "spawn_egg",
+            //     "texture_index": 69
+            // },
             "textures": {
-                "default": "mark7_shell"
+                "default": "textures/entity/mark7_shell"
             }
         }
     }

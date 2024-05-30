@@ -25,6 +25,9 @@
         "rah66:xm301": {
             "textures": "textures/items/rah66_xm301"
         },
+        "phalanx_spawn_egg": {
+            "textures": "textures/items/phalanx_spawn_egg"
+        },
         "phalanx_turret_spawn_egg": {
             "textures": "textures/items/phalanx_turret_spawn_egg"
         },

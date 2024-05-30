@@ -34,7 +34,7 @@
                 "texture_index": 0
             },
             "textures": {
-                "default": "mark12"
+                "default": "textures/entity/mark12"
             }
         }
     }

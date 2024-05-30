@@ -19,14 +19,14 @@
                 "animate": [
                     "normal"
                 ]
-            },
-            "spawn_egg": {
-                "texture": "null",
-                "texture_index": 0
-            },
-            "textures": {
-                "default": "null"
             }
+            // "spawn_egg": {
+            //     "texture": "null",
+            //     "texture_index": 0
+            // },
+            // "textures": {
+            //     "default": "null"
+            // }
         }
     }
 }

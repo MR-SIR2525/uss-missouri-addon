@@ -13,15 +13,15 @@
                 "controller.render.skeleton"
             ],
             "spawn_egg": {
-                "texture": "phalanx_spawn_egg",
-                "texture_index": 0
+                "texture": "phalanx_spawn_egg"
+                // "texture_index": 0
             },
             // "spawn_egg": {
             //     "base_color": "#232515",
             //     "overlay_color": "#e2e2e2"
             // },
             "textures": {
-                "default": "phalanx"
+                "default": "textures/entity/phalanx"
             }
         }
     }

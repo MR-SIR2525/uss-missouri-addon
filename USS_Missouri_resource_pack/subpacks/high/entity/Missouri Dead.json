@@ -17,7 +17,7 @@
                 "overlay_color": "#181818"
             },
             "textures": {
-                "default": "bb63_dead"
+                "default": "textures/entity/bb63_dead"
             }
         }
     }

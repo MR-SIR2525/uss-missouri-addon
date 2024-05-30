@@ -22,12 +22,12 @@
                     "rum139"
                 ]
             },
-            "spawn_egg": {
-                "texture": "null",
-                "texture_index": 0
-            },
+            // "spawn_egg": {
+            //     "texture": "null",
+            //     "texture_index": 0
+            // },
             "textures": {
-                "default": "rum139"
+                "default": "textures/entity/rum139"
             }
         }
     }
