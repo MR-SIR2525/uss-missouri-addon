@@ -12,13 +12,13 @@
             "description": "RP. §2Model Missouri by HerodrinePro124; Mark12,Borfor40mm model by Creator Crafter321 by §4HerodrinePro124",
             "type": "resources",
             "uuid": "97e0c797-4616-4bec-a07f-714ef9f2444f",
-            "version": [0, 0, 403]
+            "version": [0, 0, 404]
         }
     ],
     "dependencies": [
         {
             "uuid": "759cccb4-ad47-42f8-baff-bf8fa27ac299",
-            "version": [0, 0, 403]
+            "version": [0, 0, 404]
         }
     ],
     "subpacks": [
