@@ -2,16 +2,16 @@
   "format_version": "1.12.0",
   "minecraft:entity": {
     "description": {
-      "animations": {
-        "hit": "animation.shell_hit",
-        "inwater": "controller.animation.shell_inwater",
-        "shell": "animation.shell_flying"
-      },
       "identifier": "us:phalanx_shell",
       "is_experimental": false,
       "is_spawnable": false,
       "is_summonable": true,
       "runtime_identifier": "minecraft:arrow",
+      "animations": {
+        "hit": "animation.shell_hit",
+        "inwater": "controller.animation.shell_inwater",
+        "shell": "animation.shell_flying"
+      },
       "scripts": {
         "animate": [
           "shell",
