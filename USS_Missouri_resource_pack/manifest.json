@@ -4,7 +4,7 @@
         "description": "Resource pack. §2Model Missouri by HerodrinePro124; Mark12,Borfor40mm model by Creator Crafter321 by §4HerodrinePro124. Updated by MRxSIR in 2024",
         "name": "§9USS §1Missouri Resource Pack updated by MRxSIR",
         "uuid": "83c7b645-b6a7-41e3-931b-6e2530c53362",
-        "version": [0, 0, 401],
+        "version": [0, 0, 402],
         "min_engine_version": [1, 8, 0]
     },
     "modules": [
@@ -12,13 +12,13 @@
             "description": "RP. §2Model Missouri by HerodrinePro124; Mark12,Borfor40mm model by Creator Crafter321 by §4HerodrinePro124",
             "type": "resources",
             "uuid": "97e0c797-4616-4bec-a07f-714ef9f2444f",
-            "version": [0, 0, 401]
+            "version": [0, 0, 402]
         }
     ],
     "dependencies": [
         {
             "uuid": "759cccb4-ad47-42f8-baff-bf8fa27ac299",
-            "version": [0, 0, 401]
+            "version": [0, 0, 402]
         }
     ],
     "subpacks": [
