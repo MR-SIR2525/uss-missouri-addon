@@ -1,6 +1,27 @@
 {
   "format_version": "1.13.0",
   "minecraft:entity": {
+    "description": {
+      "identifier": "us:bofor",
+      "is_experimental": false,
+      "is_spawnable": false,
+      "is_summonable": true,
+      "animations": {
+        "root": "animation.bofor_root",
+        "shoot": "animation.bofor"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "shoot": "query.variant ==1"
+          },
+          {
+            "root": "variable.has_target"
+          }
+        ]
+      }
+    },
+
     "component_groups": {
       "bofor:shoot_start": {
         "minecraft:behavior.nearest_attackable_target": {
@@ -289,26 +310,7 @@
         ]
       }
     },
-    "description": {
-      "animations": {
-        "root": "animation.bofor_root",
-        "shoot": "animation.bofor"
-      },
-      "identifier": "us:bofor",
-      "is_experimental": false,
-      "is_spawnable": false,
-      "is_summonable": true,
-      "scripts": {
-        "animate": [
-          {
-            "shoot": "query.variant ==1"
-          },
-          {
-            "root": "variable.has_target"
-          }
-        ]
-      }
-    },
+    
     "events": {
       "bofor:shoot_start": {
         "add": {
