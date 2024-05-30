@@ -32,19 +32,19 @@
       },
       "minecraft:exploding": {
         "minecraft:explode": {
-          "causesFire": false,
-          "destroyAffectedByGriefing": true,
-          "fireAffectedByGriefing": true,
-          "fuseLength": 0.1,
-          "fuseLit": true,
+          "causes_fire": false,
+          "destroy_affected_by_griefing": true,
+          "fire_affected_by_griefing": true,
+          "fuse_length": 0.1,
+          "fuse_lit": true,
           "power": 0
         }
       },
       "normal": {
         "minecraft:projectile": {
           "anchor": 2,
-          "catchFire": false,
-          "destroyOnHurt": false,
+          "catch_fire": false,
+          "destroy_on_hurt": false,
           "gravity": 0.003,
           "inertia": 1,
           "liquid_inertia": 1,
@@ -53,10 +53,10 @@
             0.5,
             0
           ],
-          "onHit": {},
+          "on_hit": {},
           "particle": "explode",
           "power": 6,
-          "reflectOnHurt": false,
+          "reflect_on_hurt": false,
           "semi_random_diff_damage": false,
           "uncertainty_base": 1
         },
@@ -72,8 +72,8 @@
       "normal2": {
         "minecraft:projectile": {
           "anchor": 2,
-          "catchFire": true,
-          "destroyOnHurt": false,
+          "catch_fire": true,
+          "destroy_on_hurt": false,
           "gravity": 0.002,
           "inertia": 1,
           "liquid_inertia": 1,
@@ -82,7 +82,7 @@
             0.05,
             0
           ],
-          "onHit": {
+          "on_hit": {
             "definition_event": {
               "affect_projectile": true,
               "event_trigger": {
@@ -104,7 +104,7 @@
           },
           "particle": "explode",
           "power": 5,
-          "reflectOnHurt": false,
+          "reflect_on_hurt": false,
           "semi_random_diff_damage": false,
           "uncertainty_base": 1
         }
