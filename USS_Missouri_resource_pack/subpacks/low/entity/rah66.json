@@ -1,1 +1,58 @@
-{"format_version":"1.10.0","minecraft:client_entity":{"description":{"animations":{"fly":"animation.rah66.fly","missile":"animation.rah66.shoot_missile","normal":"animation.rah66.normal","rah66":"controller.animation.helicopter","shoot":"animation.rah66.shoot","takeoff":"animation.rah66.takeoff","target":"animation.rah66.target"},"geometry":{"default":"geometry.rah66"},"identifier":"us:rah66","materials":{"default":"slime"},"particle_effects":{"shoot":"shoot:rah66","smoke":"shoot:rah662","wing":"rah66:wing"},"render_controllers":["controller.render.skeleton"],"scripts":{"animate":[{"fly":"query.has_rider"},{"takeofff":"query.has_rider"},{"normal":"!query.has_rider"},{"target":"variable.has_target"}]},"sound_effects":{"move":"rah66.move","shoot":"rah66.shoot"},"spawn_egg":{"texture":"rah66_egg","texture_index":0},"textures":{"default":"rah66"}}}}
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "fly": "animation.rah66.fly",
+                "missile": "animation.rah66.shoot_missile",
+                "normal": "animation.rah66.normal",
+                "rah66": "controller.animation.helicopter",
+                "shoot": "animation.rah66.shoot",
+                "takeoff": "animation.rah66.takeoff",
+                "target": "animation.rah66.target"
+            },
+            "geometry": {
+                "default": "geometry.rah66"
+            },
+            "identifier": "us:rah66",
+            "materials": {
+                "default": "slime"
+            },
+            "particle_effects": {
+                "shoot": "shoot:rah66",
+                "smoke": "shoot:rah662",
+                "wing": "rah66:wing"
+            },
+            "render_controllers": [
+                "controller.render.skeleton"
+            ],
+            "scripts": {
+                "animate": [
+                    {
+                        "fly": "query.has_rider"
+                    },
+                    {
+                        "takeofff": "query.has_rider"
+                    },
+                    {
+                        "normal": "!query.has_rider"
+                    },
+                    {
+                        "target": "variable.has_target"
+                    }
+                ]
+            },
+            "sound_effects": {
+                "move": "rah66.move",
+                "shoot": "rah66.shoot"
+            },
+            "spawn_egg": {
+                "texture": "rah66_egg",
+                "texture_index": 0
+            },
+            "textures": {
+                "default": "rah66"
+            }
+        }
+    }
+}

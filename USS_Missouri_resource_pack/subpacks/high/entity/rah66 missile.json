@@ -1,1 +1,44 @@
-{"format_version":"1.10.0","minecraft:client_entity":{"description":{"animations":{"move":"animation.rah66.missile","move1":"animation.rah66_missile.move1","move2":"animation.rah66_missile.move2"},"geometry":{"default":"geometry.rah66_missile"},"identifier":"us:rah66_missile","materials":{"default":"slime"},"particle_effects":{"move":"move:missile","smoke":"move:missile2"},"render_controllers":["controller.render.slime"],"scripts":{"animate":["move",{"move1":"query.variant ==2"},{"move2":"query.variant ==3"}]},"spawn_egg":{"texture":"spawn_egg","texture_index":69},"textures":{"default":"rah66"}}}}
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "move": "animation.rah66.missile",
+                "move1": "animation.rah66_missile.move1",
+                "move2": "animation.rah66_missile.move2"
+            },
+            "geometry": {
+                "default": "geometry.rah66_missile"
+            },
+            "identifier": "us:rah66_missile",
+            "materials": {
+                "default": "slime"
+            },
+            "particle_effects": {
+                "move": "move:missile",
+                "smoke": "move:missile2"
+            },
+            "render_controllers": [
+                "controller.render.slime"
+            ],
+            "scripts": {
+                "animate": [
+                    "move",
+                    {
+                        "move1": "query.variant ==2"
+                    },
+                    {
+                        "move2": "query.variant ==3"
+                    }
+                ]
+            },
+            "spawn_egg": {
+                "texture": "spawn_egg",
+                "texture_index": 69
+            },
+            "textures": {
+                "default": "rah66"
+            }
+        }
+    }
+}

@@ -1,1 +1,41 @@
-{"format_version":"1.10.0","minecraft:client_entity":{"description":{"animations":{"fly":"animation.rah66.fly"},"geometry":{"default":"geometry.rah66"},"identifier":"us:rah66_crash","materials":{"default":"slime"},"particle_effects":{"shoot":"shoot:rah66","smoke":"shoot:rah662","wing":"rah66:wing"},"render_controllers":["controller.render.skeleton"],"scripts":{"animate":["fly"]},"sound_effects":{"move":"rah66.move","shoot":"rah66.shoot"},"spawn_egg":{"texture":"rah66_egg","texture_index":0},"textures":{"default":"rah66"}}}}
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "animations": {
+                "fly": "animation.rah66.fly"
+            },
+            "geometry": {
+                "default": "geometry.rah66"
+            },
+            "identifier": "us:rah66_crash",
+            "materials": {
+                "default": "slime"
+            },
+            "particle_effects": {
+                "shoot": "shoot:rah66",
+                "smoke": "shoot:rah662",
+                "wing": "rah66:wing"
+            },
+            "render_controllers": [
+                "controller.render.skeleton"
+            ],
+            "scripts": {
+                "animate": [
+                    "fly"
+                ]
+            },
+            "sound_effects": {
+                "move": "rah66.move",
+                "shoot": "rah66.shoot"
+            },
+            "spawn_egg": {
+                "texture": "rah66_egg",
+                "texture_index": 0
+            },
+            "textures": {
+                "default": "rah66"
+            }
+        }
+    }
+}
