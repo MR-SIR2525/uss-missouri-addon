@@ -170,7 +170,6 @@
     },
 
     "components": {
-      "minecraft:behavior.controlled_by_player": {},
       "minecraft:damage_sensor": {
         "triggers": [
           {
@@ -203,19 +202,34 @@
           "range_min": 300
         }
       },
-      "minecraft:input_ground_controlled": {},
       "minecraft:is_stackable": {},
       "minecraft:knockback_resistance": {
         "value": 1
       },
+
+      // "minecraft:behavior.controlled_by_player": {}, // I think this is like leading with a carrot on stick?
+      "minecraft:input_ground_controlled": {},
       "minecraft:movement": {
-        "value": 0.4
+        "value": 0.1
       },
-      "minecraft:movement.basic": {},
+      "minecraft:flying_speed": {
+        "value": 0.1  //blocks per tick
+      },
+      "minecraft:navigation.hover": {
+        "can_path_over_water": true,
+        "can_sink": false,
+        "can_pass_doors": false,
+        "can_path_from_air": true,
+        "avoid_water": true,
+        "avoid_damage_blocks": true,
+        "avoid_sun": false
+      },
+      "minecraft:movement.hover": {},
       "minecraft:nameable": {},
-      "minecraft:navigation.walk": {
-        "can_float": false
-      },
+      // "minecraft:navigation.walk": { I would delete this but I will need floating false...
+      //   "can_float": false
+      // },
+
       "minecraft:push_through": {
         "value": 1
       },
@@ -224,6 +238,7 @@
         "is_pushable_by_piston": true
       },
       "minecraft:rideable": {
+        // "controlling_seat": // pilot seat, figure out in the future
         "crouching_skip_interact": true,
         "family_types": [
           "player"
@@ -242,13 +257,14 @@
         ]
       },
       "minecraft:scale": {
-        "value": 2
+        "value": 4
       },
       "minecraft:type_family": {
         "family": [
           "navy",
           "usa",
           "rah66",
+          "helicopter",
           "ushelicopter",
           "usahelicopter"
         ]
@@ -260,6 +276,19 @@
     
 
     "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "normal"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "drive"
+          ]
+        }
+      },
+
       "crash": {
         "add": {
           "component_groups": [
@@ -278,15 +307,10 @@
           "component_groups": [
             "drive"
           ]
-        },
-        "remove": {
-          "component_groups": [
-            "un_drive"
-          ]
         }
       },
 
-      "have": {
+      "got_pilot": {
         "add": {
           "component_groups": [
             "has_rider",
@@ -300,7 +324,7 @@
         }
       },
 
-      "havent": {
+      "lost_pilot": {
         "add": {
           "component_groups": [
             "no_rider"
@@ -326,19 +350,6 @@
         "add": {
           "component_groups": [
             "machinegun:shoot"
-          ]
-        }
-      },
-
-      "minecraft:entity_spawned": {
-        "add": {
-          "component_groups": [
-            "normal"
-          ]
-        },
-        "remove": {
-          "component_groups": [
-            "drive"
           ]
         }
       },
