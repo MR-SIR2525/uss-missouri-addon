@@ -210,10 +210,10 @@
       // "minecraft:behavior.controlled_by_player": {}, // I think this is like leading with a carrot on stick?
       "minecraft:input_ground_controlled": {},
       "minecraft:movement": {
-        "value": 0.1
+        "value": 1
       },
       "minecraft:flying_speed": {
-        "value": 0.1  //blocks per tick
+        "value": 1  //blocks per tick
       },
       "minecraft:navigation.hover": {
         "can_path_over_water": true,
