@@ -1,238 +1,240 @@
 {
-    "format_version": "1.16.0",
-    "minecraft:entity": {
-        "component_groups": {
-            "minecraft:add_bad_omen": {
-                "minecraft:spell_effects": {
-                    "add_effects": [
-                        {
-                            "display_on_screen_animation": true,
-                            "duration": 6000,
-                            "effect": "bad_omen"
-                        }
-                    ]
-                },
-                "minecraft:timer": {
-                    "looping": false,
-                    "time": [
-                        0,
-                        0
-                    ],
-                    "time_down_event": {
-                        "event": "minecraft:clear_add_bad_omen",
-                        "target": "self"
-                    }
-                }
-            },
-            "minecraft:clear_bad_omen_spell_effect": {
-                "minecraft:spell_effects": {}
-            },
-            "minecraft:raid_trigger": {
-                "minecraft:raid_trigger": {
-                    "triggered_event": {
-                        "event": "minecraft:remove_raid_trigger",
-                        "target": "self"
-                    }
-                },
-                "minecraft:spell_effects": {
-                    "remove_effects": "bad_omen"
-                }
+  "format_version": "1.20.10",
+  "minecraft:entity": {
+    "description": {
+      "animations": {
+        "back": "controller.animation.back",
+        "down": "controller.animation.down",
+        "forward": "controller.animation.forward",
+        "left": "controller.animation.left",
+        "mark12": "controller.animation.shoot_mark12",
+        "mark7": "controller.animation.shoot_mark7",
+        "missile": "controller.animation.shoot_missile",
+        "rah66": "controller.animation.rah66_shoot",
+        "rah66missile": "controller.animation.rah66_missile",
+        "right": "controller.animation.right",
+        "stop": "controller.animation.stop",
+        "up": "controller.animation.up"
+      },
+      "identifier": "minecraft:player",
+      "is_experimental": false,
+      "is_spawnable": false,
+      "is_summonable": false,
+      "scripts": {
+        "animate": [
+          "forward",
+          "back",
+          "left",
+          "right",
+          "stop",
+          "up",
+          "missile",
+          "move",
+          "riding",
+          "rah66",
+          "down",
+          "mark7",
+          "rah66missile",
+          "mark12"
+        ]
+      }
+    },
+
+    "component_groups": {
+      "minecraft:add_raid_omen": {
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "raid_omen",
+              "duration": 30,
+              "display_on_screen_animation": true
             }
+          ],
+          "remove_effects": "bad_omen"
         },
-        "components": {
-            "minecraft:attack": {
-                "damage": 1
-            },
-            "minecraft:breathable": {
-                "generates_bubbles": false,
-                "inhale_time": 3.75,
-                "suffocate_time": -1,
-                "total_supply": 15
-            },
-            "minecraft:can_climb": {},
-            "minecraft:collision_box": {
-                "height": 1.8,
-                "width": 0.6
-            },
-            "minecraft:environment_sensor": {
-                "triggers": {
-                    "event": "minecraft:trigger_raid",
-                    "filters": {
-                        "all_of": [
-                            {
-                                "subject": "self",
-                                "test": "has_mob_effect",
-                                "value": "bad_omen"
-                            },
-                            {
-                                "subject": "self",
-                                "test": "is_in_village",
-                                "value": true
-                            }
-                        ]
-                    }
-                }
-            },
-            "minecraft:experience_reward": {
-                "on_death": "Math.Min(query.player_level * 7, 100)"
-            },
-            "minecraft:hurt_on_condition": {
-                "damage_conditions": [
-                    {
-                        "cause": "lava",
-                        "damage_per_tick": 4,
-                        "filters": {
-                            "operator": "==",
-                            "subject": "self",
-                            "test": "in_lava",
-                            "value": true
-                        }
-                    }
-                ]
-            },
-            "minecraft:insomnia": {
-                "days_until_insomnia": 3
-            },
-            "minecraft:is_hidden_when_invisible": {},
-            "minecraft:is_stackable": {},
-            "minecraft:loot": {
-                "table": "loot_tables/empty.json"
-            },
-            "minecraft:movement": {
-                "value": 0.1
-            },
-            "minecraft:nameable": {
-                "allow_name_tag_renaming": false,
-                "always_show": true
-            },
-            "minecraft:physics": {},
-            "minecraft:player.exhaustion": {
-                "max": 4,
-                "value": 0
-            },
-            "minecraft:player.experience": {
-                "max": 1,
-                "value": 0
-            },
-            "minecraft:player.level": {
-                "max": 24791,
-                "value": 0
-            },
-            "minecraft:player.saturation": {
-                "value": 20
-            },
-            "minecraft:pushable": {
-                "is_pushable": false,
-                "is_pushable_by_piston": true
-            },
-            "minecraft:rideable": {
-                "family_types": [
-                    "parrot_tame"
-                ],
-                "pull_in_entities": true,
-                "seat_count": 2,
-                "seats": [
-                    {
-                        "lock_rider_rotation": 0,
-                        "max_rider_count": 0,
-                        "min_rider_count": 0,
-                        "position": [
-                            0.4,
-                            -0.2,
-                            -0.1
-                        ]
-                    },
-                    {
-                        "lock_rider_rotation": 0,
-                        "max_rider_count": 2,
-                        "min_rider_count": 1,
-                        "position": [
-                            -0.4,
-                            -0.2,
-                            -0.1
-                        ]
-                    }
-                ]
-            },
-            "minecraft:scaffolding_climber": {},
-            "minecraft:type_family": {
-                "family": [
-                    "player"
-                ]
-            }
-        },
-        "description": {
-            "animations": {
-                "back": "controller.animation.back",
-                "down": "controller.animation.down",
-                "forward": "controller.animation.forward",
-                "left": "controller.animation.left",
-                "mark12": "controller.animation.shoot_mark12",
-                "mark7": "controller.animation.shoot_mark7",
-                "missile": "controller.animation.shoot_missile",
-                "rah66": "controller.animation.rah66_shoot",
-                "rah66missile": "controller.animation.rah66_missile",
-                "right": "controller.animation.right",
-                "stop": "controller.animation.stop",
-                "up": "controller.animation.up"
-            },
-            "identifier": "minecraft:player",
-            "is_experimental": false,
-            "is_spawnable": false,
-            "is_summonable": false,
-            "scripts": {
-                "animate": [
-                    "forward",
-                    "back",
-                    "left",
-                    "right",
-                    "stop",
-                    "up",
-                    "missile",
-                    "move",
-                    "riding",
-                    "rah66",
-                    "down",
-                    "mark7",
-                    "rah66missile",
-                    "mark12"
-                ]
-            }
-        },
-        "events": {
-            "minecraft:clear_add_bad_omen": {
-                "add": {
-                    "component_groups": [
-                        "minecraft:clear_bad_omen_spell_effect"
-                    ]
-                },
-                "remove": {
-                    "component_groups": [
-                        "minecraft:add_bad_omen"
-                    ]
-                }
-            },
-            "minecraft:gain_bad_omen": {
-                "add": {
-                    "component_groups": [
-                        "minecraft:add_bad_omen"
-                    ]
-                }
-            },
-            "minecraft:remove_raid_trigger": {
-                "remove": {
-                    "component_groups": [
-                        "minecraft:raid_trigger"
-                    ]
-                }
-            },
-            "minecraft:trigger_raid": {
-                "add": {
-                    "component_groups": [
-                        "minecraft:raid_trigger"
-                    ]
-                }
-            }
+        "minecraft:timer": {
+          "time": [ 0.0, 0.0 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:clear_add_raid_omen",
+            "target": "self"
+          }
         }
+      },
+      "minecraft:clear_raid_omen_spell_effect": {
+        "minecraft:spell_effects": {
+        }
+      },
+      "minecraft:raid_trigger": {
+        "minecraft:raid_trigger": {
+          "triggered_event": {
+            "event": "minecraft:remove_raid_trigger",
+            "target": "self"
+          }
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:experience_reward": {
+        "on_death": "Math.Min(query.player_level * 7, 100)"
+      },
+      "minecraft:type_family": {
+        "family": [ "player" ]
+      },
+      "minecraft:is_hidden_when_invisible": {
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/empty.json"
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.8
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:movement": {
+        "value": 0.1
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:attack": {
+        "damage": 1
+      },
+      "minecraft:exhaustion_values": {
+        "heal": 6,
+        "jump": 0.05,
+        "sprint_jump": 0.2,
+        "mine": 0.005,
+        "attack": 0.1,
+        "damage": 0.1,
+        "walk": 0.0,
+        "sprint": 0.1,
+        "swim": 0.01
+      },
+      "minecraft:player.saturation": {
+        "value": 5,
+        "max": 20
+      },
+      "minecraft:player.exhaustion": {
+        "value": 0,
+        "max": 20
+      },
+      "minecraft:player.level": {
+        "value": 0,
+        "max": 24791
+      },
+      "minecraft:player.experience": {
+        "value": 0,
+        "max": 1
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": -1,
+        "inhale_time": 3.75,
+        "generates_bubbles": false
+      },
+      "minecraft:nameable": {
+        "always_show": true,
+        "allow_name_tag_renaming": false
+      },
+      "minecraft:physics": {
+        "push_towards_closest_space": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:insomnia": {
+        "days_until_insomnia": 3
+      },
+      "minecraft:rideable": {
+        "seat_count": 2,
+        "family_types": [
+          "parrot_tame"
+        ],
+        "pull_in_entities": true,
+        "seats": [
+          {
+            "position": [ 0.4, -0.2, -0.1 ],
+            "min_rider_count": 0,
+            "max_rider_count": 0,
+            "lock_rider_rotation": 0
+          },
+          {
+            "position": [ -0.4, -0.2, -0.1 ],
+            "min_rider_count": 1,
+            "max_rider_count": 2,
+            "lock_rider_rotation": 0
+          }
+        ]
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+      },
+      "minecraft:block_climber": {},
+      "minecraft:environment_sensor": {
+        "triggers": {
+          "filters": {
+            "all_of": [
+              {
+                "test": "has_mob_effect",
+                "subject": "self",
+                "value": "bad_omen"
+              },
+              {
+                "test": "is_in_village",
+                "subject": "self",
+                "value": true
+              }
+            ]
+          },
+          "event": "minecraft:gain_raid_omen"
+        }
+      }
+    },
+    
+    "events": {
+      "minecraft:gain_raid_omen": {
+        "add": {
+          "component_groups": [
+            "minecraft:add_raid_omen"
+          ]
+        }
+      },
+      "minecraft:clear_add_raid_omen": {
+        "remove": {
+          "component_groups": [
+            "minecraft:add_raid_omen"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:clear_raid_omen_spell_effect"
+          ]
+        }
+      },
+      "minecraft:trigger_raid": {
+        "add": {
+          "component_groups": [ "minecraft:raid_trigger" ]
+        }
+      },
+      "minecraft:remove_raid_trigger": {
+        "remove": {
+          "component_groups": [ "minecraft:raid_trigger" ]
+        }
+      }
     }
+  }
 }
