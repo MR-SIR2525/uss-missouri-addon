@@ -121,7 +121,7 @@
       "minecraft:collision_box": {
         // "height": -0.2,
         "height": 0.2, // MRxSIR: -0.2 to 0.2
-        "width": 0.3
+        "width": 0.25
       },
       "minecraft:damage_sensor": {
         "triggers": {

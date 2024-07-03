@@ -68,7 +68,7 @@
           "priority": 2
         },
         "minecraft:follow_range": {
-          "value": 100
+          "value": 125
         },
         "minecraft:shooter": {
           "def": "us:phalanx_shell"
