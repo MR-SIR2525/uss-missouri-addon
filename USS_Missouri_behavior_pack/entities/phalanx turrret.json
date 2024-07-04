@@ -1,5 +1,5 @@
 {
-  "format_version": "1.13.0",
+  "format_version": "1.16.0",
   "minecraft:entity": {
     "description": {
       "identifier": "us:phalanx_turret",
@@ -62,7 +62,7 @@
           "attack_interval_min": 0.1,   //was 0.1
           "attack_radius": 100,
           "burst_interval": 0.05,
-          "burst_shots": 1000,          //was 10000
+          "burst_shots": 5000,          //was 10000
           "charge_charged_trigger": 0,
           "charge_shoot_trigger": 0,
           "priority": 2
