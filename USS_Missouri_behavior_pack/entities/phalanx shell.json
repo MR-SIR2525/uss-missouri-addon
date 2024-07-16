@@ -26,26 +26,30 @@
     // reference for minecraft:projectile:
     // https://learn.microsoft.com/en-us/minecraft/creator/reference/content/entityreference/examples/entitycomponents/minecraftcomponent_projectile?view=minecraft-bedrock-stable
 
-    "component_groups": {
+    "component_groups":     {
       "despawn": {
         "minecraft:despawn": {}
       },
+
       "hit": {
         "minecraft:variant": {
           "value": 1
         }
       },
+
       "minecraft:exploding": {
         // https://learn.microsoft.com/en-us/minecraft/creator/reference/content/entityreference/examples/entitycomponents/minecraftcomponent_explode?view=minecraft-bedrock-stable
         "minecraft:explode": {
           "causes_fire": false,
-          "destroy_affected_by_griefing": true,
+          "destroy_affected_by_griefing": false,
           "fire_affected_by_griefing": true,
           "fuse_length": 0.1,
           "fuse_lit": true,
-          "power": 0
+          "power": 0.5,
+          "breaks_blocks": false
         }
       },
+
       "normal": {
         "minecraft:projectile": {
           "anchor": 2,
@@ -75,6 +79,7 @@
           }
         }
       },
+
       "normal2": {
         "minecraft:projectile": {
           "anchor": 2,
@@ -159,26 +164,6 @@
     },
     
     "events": {
-      "despawn": {
-        "add": {
-          "component_groups": [
-            "despawn"
-          ]
-        },
-        "remove": {
-          "component_groups": [
-            "normal"
-          ]
-        }
-      },
-      "hit": {
-        "add": {
-          "component_groups": [
-            "hit",
-            "minecraft:exploding"
-          ]
-        }
-      },
       "minecraft:entity_spawned": {
         "add": {
           "component_groups": [
@@ -191,6 +176,29 @@
           ]
         }
       },
+      
+      "despawn": {
+        "add": {
+          "component_groups": [
+            "despawn"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "normal"
+          ]
+        }
+      },
+
+      "hit": {
+        "add": {
+          "component_groups": [
+            "hit",
+            "minecraft:exploding"
+          ]
+        }
+      },
+
       "normal2": {
         "add": {
           "component_groups": [

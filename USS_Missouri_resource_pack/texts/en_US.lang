@@ -10,3 +10,7 @@ entity.us:phalanx.name=Phalanx Base
 ## Spawn Eggs
 item.spawn_egg.entity.us:phalanx_turret.name=Phalanx Turret
 item.spawn_egg.entity.us:phalanx.name=Phalanx Base
+
+## Actions
+action.interact.arm=Arm
+action.interact.disarm=Disarm
