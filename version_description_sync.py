@@ -1,5 +1,9 @@
 import os
 import json
+import re
+"""Script that searches for the manifest.json files inside the behavior and resource pack folders
+to then allow you to conviently manage the versions listed in the manifest.json files, and to
+automatically sync the name to include the new version in the format vX.X.X"""
 
 def find_folders(base_dir, keywords):
     matched_folders = []
@@ -23,11 +27,12 @@ def read_json_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         return json.load(file)
 
-# check indentation if needed
 def write_json_file(file_path, data):
-    indentation = 4
     with open(file_path, 'w', encoding='utf-8') as file:
-        json.dump(data, file, indent=indentation)
+        json_string = json.dumps(data, indent=4)
+        # Use regex to find and replace the multi-line lists
+        json_string = re.sub(r'\[\s*(\d+),\s*(\d+),\s*(\d+)\s*\]', r'[\1, \2, \3]', json_string)
+        file.write(json_string)
 
 def check_versions(manifest_files):
     versions = []

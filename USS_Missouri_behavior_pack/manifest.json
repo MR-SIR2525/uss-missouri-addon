@@ -1,15 +1,15 @@
 {
     "format_version": 1,
     "header": {
-        "name": "§9USS §1Missouri Behavior Pack updated by MRxSIR ",
-        "description": "§2Model Missouri by HerodrinePro124; Updated Mark12, Bofor40mm model by Creator Crafter321 by §4HerodrinePro124. Updated by MRxSIR in 2024.",
+        "name": "\u00a79USS Missouri Behavior Pack §fupdated by MRxSIR v0.0.408",
+        "description": "\u00a72Model Missouri by HerodrinePro124; Updated Mark12, Bofor40mm model by Creator Crafter321 by \u00a74HerodrinePro124. §fUpdated by MRxSIR in 2024.",
         "uuid": "759cccb4-ad47-42f8-baff-bf8fa27ac299",
         "min_engine_version": [1, 8, 0],
         "version": [0, 0, 408]
     },
     "modules": [
         {
-            "description": "Behavior pack for §9USS §1Missouri addon.",
+            "description": "Behavior pack for \u00a79USS Missouri addon.",
             "type": "data",
             "uuid": "1e6f6dd6-f3a4-4b70-b526-00550e29427a",
             "version": [0, 0, 408]
