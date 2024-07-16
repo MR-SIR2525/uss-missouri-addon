@@ -19,11 +19,72 @@
     },
 
     "component_groups": {
+
+      "range_15": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 1,
+          "attack_interval": 0.1,   //Consistent reload-time seconds when not using a charged shot.
+          "attack_radius": 15,     //Min distance to target before attempting to shoot.
+          "burst_interval": 0.05,   //Seconds between shots when firing a burst of shots from a charged up attack.
+          "burst_shots": 5000,      //was 10000. # of shots fired per charged up attack
+          "charge_charged_trigger": 0,
+          "charge_shoot_trigger": 0
+        }
+      },
+
+      "range_25": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 1,
+          "attack_interval": 0.1,   //Consistent reload-time seconds when not using a charged shot.
+          "attack_radius": 25,       //Min distance to target before attempting to shoot.
+          "burst_interval": 0.05,   //Seconds between shots when firing a burst of shots from a charged up attack.
+          "burst_shots": 5000,      //was 10000. # of shots fired per charged up attack
+          "charge_charged_trigger": 0,
+          "charge_shoot_trigger": 0
+        }
+      },
+
+      "range_50": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 1,
+          "attack_interval": 0.1,   //Consistent reload-time seconds when not using a charged shot.
+          "attack_radius": 50,       //Min distance to target before attempting to shoot.
+          "burst_interval": 0.05,   //Seconds between shots when firing a burst of shots from a charged up attack.
+          "burst_shots": 5000,      //was 10000. # of shots fired per charged up attack
+          "charge_charged_trigger": 0,
+          "charge_shoot_trigger": 0
+        }
+      },
+
+      "range_75": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 1,
+          "attack_interval": 0.1,   //Consistent reload-time seconds when not using a charged shot.
+          "attack_radius": 75,       //Min distance to target before attempting to shoot.
+          "burst_interval": 0.05,   //Seconds between shots when firing a burst of shots from a charged up attack.
+          "burst_shots": 5000,      //was 10000. # of shots fired per charged up attack
+          "charge_charged_trigger": 0,
+          "charge_shoot_trigger": 0
+        }
+      },
+
+      "range_100": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 1,
+          "attack_interval": 0.1,   //Consistent reload-time seconds when not using a charged shot.
+          "attack_radius": 100,       //Min distance to target before attempting to shoot.
+          "burst_interval": 0.05,   //Seconds between shots when firing a burst of shots from a charged up attack.
+          "burst_shots": 5000,      //was 10000. # of shots fired per charged up attack
+          "charge_charged_trigger": 0,
+          "charge_shoot_trigger": 0
+        }
+      },
+
       "auto_mode": {
         "minecraft:behavior.nearest_attackable_target": {
-          "must_see": true,
-          "must_see_forget_duration": 15.0, //If "must_see" = true, time before forgetting target
           "priority": 2,
+          "must_see": true,
+          "must_see_forget_duration": 12.0, //If "must_see" = true, time before forgetting target
           "reselect_targets": true,
           "entity_types": [
             {
@@ -56,14 +117,13 @@
           ]
         },
         "minecraft:behavior.ranged_attack": {
-          "attack_interval_max": 0.1,   //was 0.1
-          "attack_interval_min": 0.1,   //was 0.1
-          "attack_radius": 100,
-          "burst_interval": 0.05,
-          "burst_shots": 5000,          //was 10000
+          "priority": 1,
+          "attack_interval": 0.1,   //Consistent reload-time seconds when not using a charged shot.
+          "attack_radius": 50,       //Min distance to target before attempting to shoot.
+          "burst_interval": 0.05,   //Seconds between shots when firing a burst of shots from a charged up attack.
+          "burst_shots": 5000,      //was 10000. # of shots fired per charged up attack
           "charge_charged_trigger": 0,
-          "charge_shoot_trigger": 0,
-          "priority": 2
+          "charge_shoot_trigger": 0
         },
         "minecraft:follow_range": {
           "value": 125
@@ -93,7 +153,7 @@
             "value": "usa"
           }
         },
-        "priority": 1
+        "priority": 0
       },
       // "minecraft:behavior.look_at_target": {  //see if it works correctly
       //   "look_distance": 100,
@@ -253,6 +313,37 @@
             "health_amount": 15,
             "play_sounds": "irongolem.repair",
             "interact_text": "action.interact.repair"
+          },
+
+          { //disarm
+            "interact_text": "action.interact.disarm",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {"test": "has_tag", "subject": "self", "operator": "!=", "value": "disarmed"},
+                  {"test": "is_family", "subject": "other", "value": "player"},
+                  {"test": "has_equipment", "domain": "hand", "subject": "other", "value": "lever"}
+                ]
+              },
+              "event": "disarm"
+            },
+            "use_item": false,
+            "play_sounds": "beacon.deactivate"
+          },
+          { //arm
+            "interact_text": "action.interact.arm",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {"test": "has_tag", "subject": "self", "value": "disarmed"},
+                  {"test": "is_family", "subject": "other", "value": "player"},
+                  {"test": "has_equipment", "domain": "hand", "subject": "other", "value": "lever"}
+                ]
+              },
+              "event": "arm"
+            },
+            "use_item": false,
+            "play_sounds": "block.click"
           }
         ]
       }
@@ -269,18 +360,42 @@
       },
 
       "disarm": {
-        "remove": {"component_groups": ["auto_mode"]}
+        "remove": {"component_groups": ["auto_mode"]},
+        "queue_command": {"command": "tag @s add disarmed"}
       },
 
       "arm": {
-        "add": {"component_groups": ["auto_mode"]}
+        "add": {"component_groups": ["auto_mode"]},
+        "queue_command": {"command": "tag @s remove disarmed"}
       },
 
       "force_despawn": {
         "add": {
           "component_groups": ["force_despawn"]
         }
+      },
+
+      //debug things
+      "range_15": {
+        "add": {"component_groups": ["range_15"]}
+      },
+
+      "range_25": {
+        "add": {"component_groups": ["range_25"]}
+      },
+
+      "range_50": {
+        "add": {"component_groups": ["range_50"]}
+      },
+
+      "range_75": {
+        "add": {"component_groups": ["range_75"]}
+      },
+
+      "range_100": {
+        "add": {"component_groups": ["range_100"]}
       }
+        
     }
   }
 }
