@@ -7,14 +7,12 @@
       "is_spawnable": true,
       "is_summonable": true,
       "animations": {
-        "fix": "animation.fix_lag",
-        "shoot": "animation.shoot_glow"
+        "fix": "animation.fix_lag"
+        // "shoot": "animation.shoot_glow"
       },
       "scripts": {
         "animate": [
-          {
-            "shoot": "variable.has_target"
-          },
+          // {"shoot": "variable.has_target"},
           "fix"
         ]
       }

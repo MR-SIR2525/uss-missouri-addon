@@ -30,7 +30,7 @@
           "/playsound shell.hit @a[r=30]",
           "/fill ~~~ ~~~ fire",
           // "/particle shell:10damage ~ ~2 ~",   //I don't like it so muted it.
-          "/playsound shell.damage @a[tag=bb63]"
+          "/playsound shell.damage @a[tag=bb63,r=100]"
         ]
       }
     },
@@ -45,10 +45,12 @@
           "/playsound shell.hit @a[r=30]",
           "/fill ~~~ ~~~ fire",
           "/particle shell:400damage ~ ~2 ~",
-          "/playsound shell.damage @a[tag=bb63]"
+          "/playsound shell.damage @a[tag=bb63,r=100]"
         ]
       }
     },
+
+    // unused now
     "animation.shoot_glow": {
       "animation_length": 0.5,
       "loop": true,
