@@ -69,12 +69,20 @@ def update_name_with_version(manifest_files, new_version):
 
 
 def main():
+    print("----Version update/sync tool for addon manifest.json files, by MRxSIR.----\n")
     base_dir = os.path.dirname(os.path.abspath(__file__))
     behavior_keywords = ["behavior", "behavior_pack", " BP"]
     resource_keywords = ["resources", "resource_pack", "resource pack", " RP"]
 
+    print("Searching for behavior pack folder in operating directory...")
     behavior_folders = find_folders(base_dir, behavior_keywords)
+    if behavior_folders.__len__() > 1:
+        print("Warning:  Multiple behavior pack folders found. There should only be one per addon. Are you in a folder with multiple behavior packs?")
+    
+    print("Searching for resource pack folder in operating directory...")
     resource_folders = find_folders(base_dir, resource_keywords)
+    if resource_folders.__len__() > 1:
+        print("Warning:  Multiple resource pack folders found. There should only be one per addon. Are you in a folder with multiple resource packs?")
 
     all_folders = behavior_folders + resource_folders
     manifest_files = find_manifest_files(all_folders)
@@ -82,6 +90,8 @@ def main():
     if not manifest_files:
         print("No manifest.json files found.")
         return
+    else:
+        print(f"Found {len(manifest_files)} manifest.json files.")
 
     versions = check_versions(manifest_files)
     version_set = set(version for _, version in versions)
@@ -90,21 +100,26 @@ def main():
         print("Different versions found:")
         for file, version in versions:
             print(f"{file}: {version}")
-        choice = input("Do you want to set all to a new value? (yes/no): ").strip().lower()
-        if choice == 'yes':
-            new_version = input("Enter the new version (format: x.x.x): ").strip()
-            update_versions(manifest_files, new_version)
-            update_name_with_version(manifest_files, new_version)
-            print("Versions and names updated.")
+
+    print()
+    update_choice = input("Do you want to set all versions to a new value? (yes/no): ").strip().lower()
+    if update_choice == 'yes' or update_choice == 'y':
+        new_version = input("Enter the new version (format: x.x.x): ").strip()
+        update_versions(manifest_files, new_version)
+        update_name_with_version(manifest_files, new_version)
+        print(f"Versions and names updated.")
     else:
-        print("All versions match.")
-        new_version = '.'.join(map(str, version_set.pop()))
-        choice = input(f"Do you want to update the pack name to include the version {new_version}? (yes/no): ").strip().lower()
-        if choice == 'yes' or choice == 'y':
-            update_name_with_version(manifest_files, new_version)
-            print("Names updated.")
+        print("Ok, no changes made.")
+        if len(version_set) == 1:
+            new_version = '.'.join(map(str, version_set.pop()))
+            name_choice = input(f"Do you want to update the pack name to include the version {new_version}? (yes/no): ").strip().lower()
+            if name_choice == 'yes':
+                update_name_with_version(manifest_files, new_version)
+                print("Names updated.")
+            else:
+                print("Ok, no changes made.")
         else:
-            print("Okay, no changes made.")
+            print("Versions are inconsistent and no changes were made.")
 
 if __name__ == "__main__":
     main()
