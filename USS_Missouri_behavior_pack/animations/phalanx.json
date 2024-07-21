@@ -28,7 +28,7 @@
           "/particle shell:hit2 ~ ~0.1 ~",
           "/particle shell:hit3 ~ ~0.1 ~",
           "/playsound shell.hit @a[r=30]",
-          "/fill ~~~ ~~~ fire",
+          // "/fill ~~~ ~~~ fire",                //muted to prevent collateral damage to ground
           // "/particle shell:10damage ~ ~2 ~",   //I don't like it so muted it.
           "/playsound shell.damage @a[tag=bb63,r=100]"
         ]
@@ -43,7 +43,7 @@
           "/particle shell:hit2 ~ ~0.1 ~",
           "/particle shell:hit3 ~ ~0.1 ~",
           "/playsound shell.hit @a[r=30]",
-          "/fill ~~~ ~~~ fire",
+          // "/fill ~~~ ~~~ fire",                //muted to prevent collateral damage to ground
           "/particle shell:400damage ~ ~2 ~",
           "/playsound shell.damage @a[tag=bb63,r=100]"
         ]
