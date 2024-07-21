@@ -100,6 +100,10 @@ def main():
         print("Different versions found:")
         for file, version in versions:
             print(f"{file}: {version}")
+    elif versions:
+        for file, version in versions:
+            print(f" - version {version}")
+
 
     print()
     update_choice = input("Do you want to set all versions to a new value? (yes/no): ").strip().lower()
@@ -113,7 +117,7 @@ def main():
         if len(version_set) == 1:
             new_version = '.'.join(map(str, version_set.pop()))
             name_choice = input(f"Do you want to update the pack name to include the version {new_version}? (yes/no): ").strip().lower()
-            if name_choice == 'yes':
+            if name_choice == 'yes' or name_choice == 'y':
                 update_name_with_version(manifest_files, new_version)
                 print("Names updated.")
             else:
