@@ -2,25 +2,26 @@
     "format_version": "1.10.0",
     "minecraft:client_entity": {
         "description": {
+            "identifier": "us:phalanx_shell",
+            "materials": {
+                // "default": "slime",  //why was this here
+                "default": "charged_creeper"
+            },
             "animations": {
                 "move": "animation.shell.move"
             },
-            "geometry": {
-                "default": "geometry.phalanx_shell"
-            },
-            "identifier": "us:phalanx_shell",
-            "materials": {
-                "default": "slime",
-                "default": "charged_creeper"
-            },
-            "render_controllers": [
-                "controller.render.shell_phalanx"
-            ],
             "scripts": {
                 "animate": [
                     "move"
                 ]
             },
+            "geometry": {
+                "default": "geometry.phalanx_shell"
+            },
+            "render_controllers": [
+                "controller.render.shell_phalanx"
+            ],
+            
             // "spawn_egg": {
             //     "texture": "spawn_egg",
             //     "texture_index": 69
