@@ -195,17 +195,19 @@
             "sounds": [
                 {
                     "name": "sounds/vehicles/phalanxshoot",     //cram firing sound
-                    "volume": 0.4
+                    "volume": 0.3
                 }
             ]
         },
+
+        // unused
         "us.phalanxstartshoot": {
             "category": "neutral",
             "max_distance": 100,
             "sounds": [
                 {
                     "name": "sounds/vehicles/startshoot",
-                    "volume": 1.4
+                    "volume": 1.2
                 }
             ]
         },
