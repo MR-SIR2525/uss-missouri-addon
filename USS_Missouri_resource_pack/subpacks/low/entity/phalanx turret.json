@@ -7,13 +7,13 @@
                 "default": "spider"
             },
             "animations": {
-                "endshoot": "animation.phalanx.endshoot",
                 "fire": "controller.animation.phalanx_shoot",
                 "move": "animation.phalanx2.shoot",
                 "normal": "animation.phalanx2.normal",
                 "shoot": "animation.phalanx.shoot",
-                "sound": "controller.animation.phalanx_shoot_sound",
-                "startshoot": "animation.phalanx.startshoot"
+                "sound": "controller.animation.phalanx_shoot_sound"
+                // "startshoot": "animation.phalanx.startshoot",        //no longer used
+                // "endshoot": "animation.phalanx.endshoot"             //no longer used
             },
             "scripts": {
                 "animate": [

@@ -1,14 +1,26 @@
 {
+    "format_version": "1.8.0",
     "animations": {
-        "animation.phalanx.endshoot": {
-            "animation_length": 2,
-            "loop": true,
-            "sound_effects": {
-                "0.4": {
-                    "effect": "phalanx.endshoot"
-                }
-            }
-        },
+        // "animation.phalanx.startshoot": {        //muted cause no longer used
+        //     "animation_length": 2,
+        //     "loop": true,
+        //     "sound_effects": {
+        //         "0.0": {
+        //             "effect": "phalanx.startshoot"
+        //         }
+        //     }
+        // },
+
+        // "animation.phalanx.endshoot": {        //muted cause no longer used
+        //     "animation_length": 2,
+        //     "loop": true,
+        //     "sound_effects": {
+        //         "0.4": {
+        //             "effect": "phalanx.endshoot"
+        //         }
+        //     }
+        // },
+
         "animation.phalanx.normal": {
             "animation_length": 1,
             "bones": {
@@ -29,6 +41,7 @@
             },
             "loop": true
         },
+
         "animation.phalanx.shoot": {
             "animation_length": 0.06,
             "loop": true,
@@ -38,15 +51,7 @@
                 }
             }
         },
-        "animation.phalanx.startshoot": {
-            "animation_length": 2,
-            "loop": true,
-            "sound_effects": {
-                "0.0": {
-                    "effect": "phalanx.startshoot"
-                }
-            }
-        },
+
         "animation.phalanx.target": {
             "animation_length": 0.4,
             "bones": {
@@ -115,6 +120,7 @@
                 }
             }
         },
+
         "animation.phalanx2.normal": {
             "animation_length": 2,
             "bones": {
@@ -149,6 +155,7 @@
             },
             "loop": true
         },
+
         "animation.phalanx2.shoot": {
             "animation_length": 0.5,
             "bones": {
@@ -239,6 +246,7 @@
                 }
             }
         },
+
         "animation.shell.move": {
             "bones": {
                 "body": {
@@ -251,6 +259,5 @@
             },
             "loop": true
         }
-    },
-    "format_version": "1.8.0"
+    }
 }

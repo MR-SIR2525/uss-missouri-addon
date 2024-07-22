@@ -28,6 +28,7 @@
                 }
             }
         },
+
         "controller.animation.phalanx_shoot_sound": {
             "states": {
                 "default": {
@@ -36,17 +37,8 @@
                     ],
                     "transitions": [
                         {
-                            "start": "query.has_target"
-                        }
-                    ]
-                },
-                "endshoot": {
-                    "animations": [
-                        "endshoot"
-                    ],
-                    "transitions": [
-                        {
-                            "default": "!variable.has_target"
+                            "shoot": "query.has_target"
+                            //was start
                         }
                     ]
                 },
@@ -56,20 +48,32 @@
                     ],
                     "transitions": [
                         {
-                            "endshoot": "!variable.has_target"
-                        }
-                    ]
-                },
-                "start": {
-                    "animations": [
-                        "startshoot"
-                    ],
-                    "transitions": [
-                        {
-                            "shoot": "query.has_target"
+                            "default": "!variable.has_target"
+                            //was endshoot
                         }
                     ]
                 }
+                // no longer used...
+                // "start": {
+                //     "animations": [
+                //         "startshoot"
+                //     ],
+                //     "transitions": [
+                //         {
+                //             "shoot": "query.has_target"
+                //         }
+                //     ]
+                // },
+                // "endshoot": {
+                //     "animations": [
+                //         "endshoot"
+                //     ],
+                //     "transitions": [
+                //         {
+                //             "default": "!variable.has_target"
+                //         }
+                //     ]
+                // }
             }
         }
     }
