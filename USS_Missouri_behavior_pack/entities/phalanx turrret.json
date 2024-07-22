@@ -97,9 +97,9 @@
                   {"test": "is_family", "subject": "other", "value": "rsmissile"},
                   {"test": "is_family", "subject": "other", "value": "rshelicopter"},
                   {"test": "is_family", "subject": "other", "value": "su57"},
-                  {"test": "is_family", "subject": "other", "value": "ghast"},
+                  {"test": "is_family", "subject": "other", "value": "ghast"},  //Ghasts aren't targetable for some reason
                   {"test": "is_family", "subject": "other", "value": "blaze"},
-                  {"test": "is_family", "subject": "other", "value": "ender_dragon"},
+                  {"test": "is_family", "subject": "other", "value": "dragon"},
 
                   // MRxSIR - entities from MrHusana909's Long Range Rockets
                   // each missile seems to be tagged "missileactive" when launched,
