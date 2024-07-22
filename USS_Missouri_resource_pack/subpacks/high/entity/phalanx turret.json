@@ -2,6 +2,10 @@
     "format_version": "1.10.0",
     "minecraft:client_entity": {
         "description": {
+            "identifier": "us:phalanx_turret",
+            "materials": {
+                "default": "spider"
+            },
             "animations": {
                 "endshoot": "animation.phalanx.endshoot",
                 "fire": "controller.animation.phalanx_shoot",
@@ -11,21 +15,6 @@
                 "sound": "controller.animation.phalanx_shoot_sound",
                 "startshoot": "animation.phalanx.startshoot"
             },
-            "geometry": {
-                "default": "geometry.phalanx_turret"
-            },
-            "identifier": "us:phalanx_turret",
-            "materials": {
-                "default": "spider"
-            },
-            "particle_effects": {
-                "phalanx_shoot": "shoot:phalanx",
-                "phalanx_shoot2": "shoot:phalanx2",
-                "phalanx_shoot3": "shoot:phalanx3"
-            },
-            "render_controllers": [
-                "controller.render.skeleton"
-            ],
             "scripts": {
                 "animate": [
                     "fire",
@@ -38,9 +27,20 @@
                     }
                 ]
             },
+            "geometry": {
+                "default": "geometry.phalanx_turret"
+            },
+            "particle_effects": {
+                "phalanx_shoot": "shoot:phalanx",
+                "phalanx_shoot2": "shoot:phalanx2",
+                "phalanx_shoot3": "shoot:phalanx3"
+            },
+            "render_controllers": [
+                "controller.render.skeleton"
+            ],
             "sound_effects": {
-                "phalanx.shoot": "us.phalanxshoot",
-                "phalanx.startshoot": "us.phalanxstartshoot"
+                "phalanx.shoot": "us.phalanxshoot"
+                // "phalanx.startshoot": "us.phalanxstartshoot" //doesn't sound great
                 // "phalanx.endshoot": "us.phalanxendshoot"     //makes sound linger too long
             },
             "spawn_egg": {
