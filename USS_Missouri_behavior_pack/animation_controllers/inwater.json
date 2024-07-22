@@ -57,12 +57,13 @@
                 "inwater_2": {
                     "on_entry": [
                         "/kill @s"
-                    ],
-                    "transitions": [
-                        {
-                            "inwater_2": "variable.delay406mmbeh = 0.1; variable.previous_time406mmbeh = query.life_time; return;"
-                        }
                     ]
+                    // transition? It's dead at this point.
+                    // "transitions": [
+                    //     {
+                    //         "inwater_2": "variable.delay406mmbeh = 0.1; variable.previous_time406mmbeh = query.life_time; return;"
+                    //     }
+                    // ]
                 }
             }
         },
