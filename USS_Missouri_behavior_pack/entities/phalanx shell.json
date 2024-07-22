@@ -41,12 +41,12 @@
         // https://learn.microsoft.com/en-us/minecraft/creator/reference/content/entityreference/examples/entitycomponents/minecraftcomponent_explode?view=minecraft-bedrock-stable
         "minecraft:explode": {
           "causes_fire": false,
+          "breaks_blocks": false,
           "destroy_affected_by_griefing": false,
-          "fire_affected_by_griefing": true,
-          "fuse_length": 0.1,
+          "fire_affected_by_griefing": false,
+          "fuse_length": -1,
           "fuse_lit": true,
-          "power": 0.5,
-          "breaks_blocks": false
+          "power": 0.1
         }
       },
 
@@ -68,11 +68,11 @@
           "power": 6,
           "reflect_on_hurt": false,
           "semi_random_diff_damage": false,
-          "uncertainty_base": 2
+          "uncertainty_base": 1
         },
         "minecraft:timer": {
-          "looping": true,
-          "time": 0.2,
+          "looping": false,
+          "time": 0.20,
           "time_down_event": {
             "event": "normal2",
             "target": "self"
@@ -106,10 +106,8 @@
               "knockback": true
             },
             "mob_effect": {
-              "amplifier": 5,
-              "durationeasy": 5,
-              "durationhard": 5,
-              "durationnormal": 5,
+              "amplifier": 1,
+              "duration": 5,
               "effect": "wither"
             }
           },
@@ -118,6 +116,14 @@
           "reflect_on_hurt": false,
           "semi_random_diff_damage": false,
           "uncertainty_base": 2
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 7,
+          "time_down_event": {
+            "event": "despawn",
+            "target": "self"
+          }
         }
       }
     },
@@ -135,7 +141,9 @@
         }
       },
       "minecraft:despawn": {
-        "despawn_from_distance": {}
+        "despawn_from_distance": {
+          "min_distance": 225
+        }
       },
       "minecraft:physics": {},
       "minecraft:pushable": {
@@ -155,7 +163,8 @@
       },
       "minecraft:type_family": {
         "family": [
-          "anti-aircraft"
+          "anti-aircraft",
+          "phalanx_shell"
         ]
       },
       "minecraft:variant": {
@@ -165,51 +174,25 @@
     
     "events": {
       "minecraft:entity_spawned": {
-        "add": {
-          "component_groups": [
-            "normal"
-          ]
-        },
-        "remove": {
-          "component_groups": [
-            "despawn"
-          ]
-        }
+        "add": {"component_groups": ["normal"]}
       },
       
       "despawn": {
-        "add": {
-          "component_groups": [
-            "despawn"
-          ]
-        },
-        "remove": {
-          "component_groups": [
-            "normal"
-          ]
-        }
+        // an instant despawn
+        "add": {"component_groups": ["despawn"]}
       },
 
       "hit": {
         "add": {
           "component_groups": [
-            "hit",
-            "minecraft:exploding"
+            "hit"
+            // "minecraft:exploding"  //muted to prevent lag
           ]
         }
       },
 
       "normal2": {
-        "add": {
-          "component_groups": [
-            "normal2"
-          ]
-        },
-        "remove": {
-          "component_groups": [
-            "normal"
-          ]
-        }
+        "add": {"component_groups": ["normal2"]}
       }
     }
   }
