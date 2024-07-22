@@ -13,7 +13,7 @@
                 "inwater": {
                     "on_entry": [
                         "/particle hitwater:127mm ~ ~0.1 ~",
-                        "/playsound @p 127mm.inwater"
+                        "/playsound 127mm.inwater @p"
                     ],
                     "transitions": [
                         {
@@ -46,7 +46,7 @@
                 "inwater": {
                     "on_entry": [
                         "/particle hitwater:406mm ~ ~0.1 ~",
-                        "/playsound @p 406mm.inwater"
+                        "/playsound 406mm.inwater @p"
                     ],
                     "transitions": [
                         {
@@ -60,7 +60,7 @@
                     ],
                     "transitions": [
                         {
-                            "inwater_2": "variable.delay406mmbeh = 0.1; variable.previous_time406mmbeh = query.life_time; return"
+                            "inwater_2": "variable.delay406mmbeh = 0.1; variable.previous_time406mmbeh = query.life_time; return;"
                         }
                     ]
                 }

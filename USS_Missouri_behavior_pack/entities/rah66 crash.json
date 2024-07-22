@@ -23,12 +23,22 @@
                 "height": 0.1,
                 "width": 0.1
             },
-            "minecraft:damage_sensor": [
-                {
-                    "cause": "all",
-                    "deals_damage": false
-                }
-            ],
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": false
+                    },
+                    {
+                        "cause": "entity_explosion",    //added
+                        "deals_damage": true
+                    },
+                    {
+                        "cause": "block_explosion",     //added
+                        "deals_damage": true
+                    }
+                ]
+            },
             "minecraft:physics": {},
             "minecraft:projectile": {
                 "anchor": 1,
@@ -56,8 +66,8 @@
                     }
                 },
                 "power": 1,
-                "reflectOnHurt": false,
-                "uncertaintyBase": 0.5
+                "reflect_on_hurt": false,
+                "uncertainty_base": 0.5
             },
             "minecraft:pushable": {
                 "is_pushable": true,
