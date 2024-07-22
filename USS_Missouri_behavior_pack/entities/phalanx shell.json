@@ -46,7 +46,7 @@
           "fire_affected_by_griefing": false,
           "fuse_length": -1,
           "fuse_lit": true,
-          "power": 0.1
+          "power": 0
         }
       },
 
@@ -63,7 +63,17 @@
             0.15,
             0
           ],
-          "on_hit": {},
+          "on_hit": {     //this was missing, and why close up was not working
+            "impact_damage": {
+              "damage": [ 1, 10 ],
+              "knockback": true,
+              "semi_random_diff_damage": false,
+              "destroy_on_hit": true
+            },
+            "arrow_effect": {
+              "apply_effect_to_blocking_targets": false
+            }
+          },
           "particle": "explode",
           "power": 6,
           "reflect_on_hurt": false,
@@ -103,16 +113,20 @@
             },
             "impact_damage": {
               "damage": 10,
-              "knockback": true
+              "knockback": true,
+              "destroy_on_hit": true
             },
             "mob_effect": {
               "amplifier": 1,
               "duration": 5,
               "effect": "wither"
+            },
+            "arrow_effect": {
+              "apply_effect_to_blocking_targets": false
             }
           },
           "particle": "explode",
-          "power": 4,
+          "power": 4.5,
           "reflect_on_hurt": false,
           "semi_random_diff_damage": false,
           "uncertainty_base": 2
@@ -186,7 +200,7 @@
         "add": {
           "component_groups": [
             "hit"
-            // "minecraft:exploding"  //muted to prevent lag
+            // "minecraft:exploding"
           ]
         }
       },
