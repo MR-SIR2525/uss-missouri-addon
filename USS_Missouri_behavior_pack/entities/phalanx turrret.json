@@ -10,37 +10,13 @@
 
     "component_groups": {
 
-      "range_15": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 1,
-          "attack_interval": 0.1,   //Consistent reload-time seconds when not using a charged shot.
-          "attack_radius": 15,     //Min distance to target before attempting to shoot.
-          "burst_interval": 0.05,   //Seconds between shots when firing a burst of shots from a charged up attack.
-          "burst_shots": 5000,      //was 10000. # of shots fired per charged up attack
-          "charge_charged_trigger": 0,
-          "charge_shoot_trigger": 0
-        }
-      },
-
-      "range_25": {
-        "minecraft:behavior.ranged_attack": {
-          "priority": 1,
-          "attack_interval": 0.1,   //Consistent reload-time seconds when not using a charged shot.
-          "attack_radius": 25,       //Min distance to target before attempting to shoot.
-          "burst_interval": 0.05,   //Seconds between shots when firing a burst of shots from a charged up attack.
-          "burst_shots": 5000,      //was 10000. # of shots fired per charged up attack
-          "charge_charged_trigger": 0,
-          "charge_shoot_trigger": 0
-        }
-      },
-
       "range_50": {
         "minecraft:behavior.ranged_attack": {
           "priority": 1,
           "attack_interval": 0.1,   //Consistent reload-time seconds when not using a charged shot.
           "attack_radius": 50,       //Min distance to target before attempting to shoot.
           "burst_interval": 0.05,   //Seconds between shots when firing a burst of shots from a charged up attack.
-          "burst_shots": 5000,      //was 10000. # of shots fired per charged up attack
+          "burst_shots": 250,      //was 10000. # of shots fired per charged up attack
           "charge_charged_trigger": 0,
           "charge_shoot_trigger": 0
         }
@@ -52,7 +28,7 @@
           "attack_interval": 0.1,   //Consistent reload-time seconds when not using a charged shot.
           "attack_radius": 75,       //Min distance to target before attempting to shoot.
           "burst_interval": 0.05,   //Seconds between shots when firing a burst of shots from a charged up attack.
-          "burst_shots": 5000,      //was 10000. # of shots fired per charged up attack
+          "burst_shots": 250,      //was 10000. # of shots fired per charged up attack
           "charge_charged_trigger": 0,
           "charge_shoot_trigger": 0
         }
@@ -64,7 +40,31 @@
           "attack_interval": 0.1,   //Consistent reload-time seconds when not using a charged shot.
           "attack_radius": 100,       //Min distance to target before attempting to shoot.
           "burst_interval": 0.05,   //Seconds between shots when firing a burst of shots from a charged up attack.
-          "burst_shots": 5000,      //was 10000. # of shots fired per charged up attack
+          "burst_shots": 250,      //was 10000. # of shots fired per charged up attack
+          "charge_charged_trigger": 0,
+          "charge_shoot_trigger": 0
+        }
+      },
+
+      "range_125": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 1,
+          "attack_interval": 0.1,   //Consistent reload-time seconds when not using a charged shot.
+          "attack_radius": 125,       //Min distance to target before attempting to shoot.
+          "burst_interval": 0.05,   //Seconds between shots when firing a burst of shots from a charged up attack.
+          "burst_shots": 250,      //was 10000. # of shots fired per charged up attack
+          "charge_charged_trigger": 0,
+          "charge_shoot_trigger": 0
+        }
+      },
+
+      "range_135": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 1,
+          "attack_interval": 0.1,   //Consistent reload-time seconds when not using a charged shot.
+          "attack_radius": 135,       //Min distance to target before attempting to shoot.
+          "burst_interval": 0.05,   //Seconds between shots when firing a burst of shots from a charged up attack.
+          "burst_shots": 250,      //was 10000. # of shots fired per charged up attack
           "charge_charged_trigger": 0,
           "charge_shoot_trigger": 0
         }
@@ -96,27 +96,27 @@
                   // so target it only if it's active, aka probably in flight.
                   {
                     "all_of": [
-                      {"test": "is_family", "subject": "other", "value": "solrrmissile"}
-                      // {"test": "has_tag", "subject": "other", "value": "missileactive"}
+                      {"test": "is_family", "subject": "other", "value": "solrrmissile"},
+                      {"test": "has_tag", "subject": "other", "value": "missileactive"}
                     ]
                   }
                 ]
               },
-              "max_dist": 125
+              "max_dist": 135
             }
           ]
         },
         "minecraft:behavior.ranged_attack": {
           "priority": 1,
           "attack_interval": 0.1,   //Consistent reload-time seconds when not using a charged shot.
-          "attack_radius": 50,       //Min distance to target before attempting to shoot.
+          "attack_radius": 135,
           "burst_interval": 0.05,   //Seconds between shots when firing a burst of shots from a charged up attack.
-          "burst_shots": 5000,      //was 10000. # of shots fired per charged up attack
+          "burst_shots": 250,      //was 10000. # of shots fired per charged up attack
           "charge_charged_trigger": 0,
           "charge_shoot_trigger": 0
         },
         "minecraft:follow_range": {
-          "value": 125
+          "value": 150
         },
         "minecraft:shooter": {
           "def": "us:phalanx_shell"
@@ -366,14 +366,6 @@
       },
 
       //debug things
-      "range_15": {
-        "add": {"component_groups": ["range_15"]}
-      },
-
-      "range_25": {
-        "add": {"component_groups": ["range_25"]}
-      },
-
       "range_50": {
         "add": {"component_groups": ["range_50"]}
       },
@@ -384,8 +376,15 @@
 
       "range_100": {
         "add": {"component_groups": ["range_100"]}
-      }
-        
+      },
+
+      "range_125": {
+        "add": {"component_groups": ["range_125"]}
+      },
+
+      "range_135": {
+        "add": {"component_groups": ["range_135"]}
+      } 
     }
   }
 }
