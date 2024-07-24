@@ -1,24 +1,24 @@
 {
     "format_version": 1,
     "header": {
-        "name": "\u00a79USS Missouri (resources) \u00a7fupdated by MRxSIR v0.0.411",
+        "name": "\u00a79USS Missouri (resources) \u00a7fupdated by MRxSIR v0.0.412",
         "description": "Resource pack. \u00a72Model Missouri by HerodrinePro124; Mark12,Borfor40mm model by Creator Crafter321 by \u00a74HerodrinePro124. \u00a7fUpdated by MRxSIR in 2024",
         "uuid": "83c7b645-b6a7-41e3-931b-6e2530c53362",
-        "min_engine_version": [1, 8, 0],
-        "version": [0, 0, 411]
+        "min_engine_version": [1, 16, 10],
+        "version": [0, 0, 412]
     },
     "modules": [
         {
             "description": "Resource pack for \u00a79USS Missouri addon",
             "type": "resources",
             "uuid": "97e0c797-4616-4bec-a07f-714ef9f2444f",
-            "version": [0, 0, 411]
+            "version": [0, 0, 412]
         }
     ],
     "dependencies": [
         {
             "uuid": "759cccb4-ad47-42f8-baff-bf8fa27ac299",
-            "version": [0, 0, 411]
+            "version": [0, 0, 412]
         }
     ],
     "subpacks": [

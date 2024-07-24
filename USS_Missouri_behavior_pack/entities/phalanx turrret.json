@@ -145,7 +145,7 @@
         },
         "priority": 0
       },
-      // "minecraft:behavior.look_at_target": {  //see if it works correctly
+      // "minecraft:behavior.look_at_target": {  //tried, doesn't work
       //   "look_distance": 100,
       //   "probability": 0.10,
       //   "angle_of_view_vertical": 360,
@@ -343,9 +343,6 @@
       "minecraft:entity_spawned": {
         "add": {
           "component_groups": ["auto_mode"]
-        },
-        "remove": {
-          "component_groups": ["shoot"] //what does this do? There is no "shoot" component group
         }
       },
 
@@ -384,7 +381,7 @@
 
       "range_135": {
         "add": {"component_groups": ["range_135"]}
-      } 
+      }
     }
   }
 }
