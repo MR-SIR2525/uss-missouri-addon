@@ -1,635 +1,640 @@
 {
-    "format_version": "1.13.0",
-    "minecraft:entity": {
-        "component_groups": {
-            "bb63": {
-                "minecraft:variant": {
-                    "value": 4
-                }
-            },
-            "maingun:ready": {
-                "minecraft:collision_box": {
-                    "height": 0.3,
-                    "width": 0.7
-                },
-                "minecraft:damage_sensor": {
-                    "triggers": [
-                        {
-                            "deals_damage": false,
-                            "on_damage": {
-                                "filters": {
-                                    "subject": "other",
-                                    "test": "is_riding",
-                                    "value": true
-                                }
-                            }
-                        },
-                        {
-                            "cause": "us:mark7_shell",
-                            "deals_damage": false
-                        },
-                        {
-                            "cause": "us:mark7_shell2",
-                            "deals_damage": false
-                        },
-                        {
-                            "cause": "us:mark7_shell3",
-                            "deals_damage": false
-                        },
-                        {
-                            "cause": "us:mark12_shell",
-                            "deals_damage": false
-                        },
-                        {
-                            "cause": "us:phalanx_shell",
-                            "deals_damage": false
-                        },
-                        {
-                            "cause": "us:bofor_shell",
-                            "deals_damage": false
-                        },
-                        {
-                            "cause": "contact",
-                            "deals_damage": false
-                        }
-                    ]
-                },
-                "minecraft:interact": {
-                    "interactions": [
-                        {
-                            "cooldown": 10,
-                            "interact_text": "Shoot",
-                            "on_interact": {
-                                "event": "maingun:shoot_start",
-                                "filters": {
-                                    "all_of": [
-                                        {
-                                            "domain": "hand",
-                                            "operator": "equals",
-                                            "subject": "player",
-                                            "test": "has_equipment",
-                                            "value": "flint_and_steel"
-                                        },
-                                        {
-                                            "operator": "equals",
-                                            "subject": "self",
-                                            "test": "is_variant",
-                                            "value": 0
-                                        },
-                                        {
-                                            "subject": "other",
-                                            "test": "is_riding",
-                                            "value": true
-                                        }
-                                    ]
-                                },
-                                "target": "self"
-                            },
-                            "use_item": false
-                        },
-                        {
-                            "interact_text": "Open Menu",
-                            "on_interact": {
-                                "event": "menu",
-                                "filters": {
-                                    "subject": "other",
-                                    "test": "is_riding",
-                                    "value": true
-                                },
-                                "target": "self"
-                            },
-                            "use_item": false
-                        }
-                    ]
-                },
-                "minecraft:variant": {
-                    "value": 0
-                }
-            },
-            "maingun:shoot2": {
-                "minecraft:spawn_entity": [
-                    {
-                        "max_wait_time": 0,
-                        "min_wait_time": 0,
-                        "num_to_spawn": 1,
-                        "single_use": true,
-                        "spawn_entity": "us:mark7_shell2"
-                    }
-                ],
-                "minecraft:timer": {
-                    "looping": true,
-                    "time": 0.1,
-                    "time_down_event": {
-                        "event": "maingun:shoot3",
-                        "target": "self"
-                    }
-                },
-                "minecraft:variant": {
-                    "value": 1
-                }
-            },
-            "maingun:shoot3": {
-                "minecraft:spawn_entity": [
-                    {
-                        "max_wait_time": 0,
-                        "min_wait_time": 0,
-                        "num_to_spawn": 1,
-                        "single_use": true,
-                        "spawn_entity": "us:mark7_shell3"
-                    }
-                ],
-                "minecraft:timer": {
-                    "looping": true,
-                    "time": 0.1,
-                    "time_down_event": {
-                        "event": "maingun:shoot_end",
-                        "target": "self"
-                    }
-                },
-                "minecraft:variant": {
-                    "value": 1
-                }
-            },
-            "maingun:shoot_aim": {
-                "minecraft:spawn_entity": [
-                    {
-                        "max_wait_time": 0,
-                        "min_wait_time": 0,
-                        "num_to_spawn": 1,
-                        "single_use": true,
-                        "spawn_entity": "jp:yamato_460mm1"
-                    }
-                ],
-                "minecraft:timer": {
-                    "looping": true,
-                    "time": 1,
-                    "time_down_event": {
-                        "event": "maingun:shoot_aim2",
-                        "target": "self"
-                    }
-                },
-                "minecraft:variant": {
-                    "value": 1
-                }
-            },
-            "maingun:shoot_aim2": {
-                "minecraft:spawn_entity": [
-                    {
-                        "max_wait_time": 0,
-                        "min_wait_time": 0,
-                        "num_to_spawn": 1,
-                        "single_use": true,
-                        "spawn_entity": "jp:yamato_460mm2"
-                    }
-                ],
-                "minecraft:timer": {
-                    "looping": true,
-                    "time": 1,
-                    "time_down_event": {
-                        "event": "maingun:shoot_aim3",
-                        "target": "self"
-                    }
-                },
-                "minecraft:variant": {
-                    "value": 1
-                }
-            },
-            "maingun:shoot_aim3": {
-                "minecraft:spawn_entity": [
-                    {
-                        "max_wait_time": 0,
-                        "min_wait_time": 0,
-                        "num_to_spawn": 1,
-                        "single_use": true,
-                        "spawn_entity": "jp:yamato_460mm3"
-                    }
-                ],
-                "minecraft:timer": {
-                    "looping": true,
-                    "time": 1,
-                    "time_down_event": {
-                        "event": "minecraft:entity_spawned2",
-                        "target": "self"
-                    }
-                },
-                "minecraft:variant": {
-                    "value": 1
-                }
-            },
-            "maingun:shoot_end": {
-                "minecraft:timer": {
-                    "looping": true,
-                    "time": 10,
-                    "time_down_event": {
-                        "event": "minecraft:entity_spawned",
-                        "target": "self"
-                    }
-                },
-                "minecraft:variant": {
-                    "value": 0
-                }
-            },
-            "maingun:shoot_end2": {
-                "minecraft:timer": {
-                    "looping": true,
-                    "time": 14,
-                    "time_down_event": {
-                        "event": "minecraft:entity_spawned2",
-                        "target": "self"
-                    }
-                },
-                "minecraft:variant": {
-                    "value": 0
-                }
-            },
-            "maingun:shoot_start": {
-                "minecraft:spawn_entity": [
-                    {
-                        "max_wait_time": 0,
-                        "min_wait_time": 0,
-                        "num_to_spawn": 1,
-                        "single_use": true,
-                        "spawn_entity": "us:mark7_shell"
-                    }
-                ],
-                "minecraft:timer": {
-                    "looping": true,
-                    "time": 0.1,
-                    "time_down_event": {
-                        "event": "maingun:shoot2",
-                        "target": "self"
-                    }
-                },
-                "minecraft:variant": {
-                    "value": 1
-                }
-            },
-            "minecraft:is_dead": {
-                "minecraft:transformation": {
-                    "into": "null"
-                }
-            },
-            "reload": {},
-            "remove_type94": {
-                "minecraft:variant": {
-                    "value": 3
-                }
-            },
-            "target": {
-                "minecraft:behavior.nearest_attackable_target": {
-                    "entity_types": [
-                        {
-                            "filters": {
-                                "other_with_families": [
-                                    "yamatoaim"
-                                ]
-                            },
-                            "max_dist": 300
-                        }
-                    ],
-                    "must_see": true,
-                    "priority": 2,
-                    "reselect_targets": true
-                },
-                "minecraft:behavior.ranged_attack": {
-                    "attack_radius": 300,
-                    "burst_interval": 0.1,
-                    "burst_shots": 400,
-                    "charge_charged_trigger": 0,
-                    "charge_shoot_trigger": 0.1,
-                    "priority": 2
-                },
-                "minecraft:follow_range": {
-                    "value": 300
-                },
-                "minecraft:shooter": {
-                    "def": "null"
-                },
-                "minecraft:variant": {
-                    "value": 0
-                }
-            }
-        },
-        "components": {
-            "minecraft:collision_box": {
-                "height": 0.3,
-                "width": 0.7
-            },
-            "minecraft:damage_sensor": {
-                "triggers": [
-                    {
-                        "deals_damage": false,
-                        "on_damage": {
-                            "filters": {
-                                "subject": "other",
-                                "test": "is_riding",
-                                "value": true
-                            }
-                        }
-                    },
-                    {
-                        "cause": "us:mark7_shell",
-                        "deals_damage": false
-                    },
-                    {
-                        "cause": "us:mark7_shell2",
-                        "deals_damage": false
-                    },
-                    {
-                        "cause": "us:mark7_shell3",
-                        "deals_damage": false
-                    },
-                    {
-                        "cause": "us:mark12_shell",
-                        "deals_damage": false
-                    },
-                    {
-                        "cause": "us:phalanx_shell",
-                        "deals_damage": false
-                    },
-                    {
-                        "cause": "us:bofor_shell",
-                        "deals_damage": false
-                    },
-                    {
-                        "cause": "all",
-                        "deals_damage": false
-                    }
-                ]
-            },
-            "minecraft:fire_immune": {},
-            "minecraft:healable": {
-                "items": [
-                    {
-                        "heal_amount": 20,
-                        "item": "iron_ingot"
-                    }
-                ]
-            },
-            "minecraft:health": {
-                "value": {
-                    "range_max": 3000,
-                    "range_min": 2000
-                }
-            },
-            "minecraft:input_ground_controlled": {},
-            "minecraft:is_stackable": {},
-            "minecraft:knockback_resistance": {
-                "value": 1
-            },
-            "minecraft:movement": {
-                "value": 0
-            },
-            "minecraft:movement.basic": {},
-            "minecraft:nameable": {},
-            "minecraft:navigation.walk": {
-                "can_float": false
-            },
-            "minecraft:physics": {},
-            "minecraft:pushable": {
-                "is_pushable": false,
-                "is_pushable_by_piston": false
-            },
-            "minecraft:rideable": {
-                "crouching_skip_interact": true,
-                "family_types": [
-                    "player"
-                ],
-                "interact_text": "Into Mark7!!",
-                "rider_can_interact": true,
-                "seat_count": 1,
-                "seats": [
-                    {
-                        "position": [
-                            0,
-                            0.4,
-                            0
-                        ]
-                    }
-                ]
-            },
-            "minecraft:scale": {
-                "value": 6
-            },
-            "minecraft:type_family": {
-                "family": [
-                    "navy",
-                    "usa",
-                    "mark7"
-                ]
-            },
-            "minecraft:underwater_movement": {
-                "value": 0
-            }
-        },
-        "description": {
-            "animations": {
-                "aim": "controller.animation.mark7_aim",
-                "controller": "animation.mark7_controller",
-                "controller2": "animation.mark7_controller2",
-                "player": "animation.mark7_aim",
-                "root": "controller.animation.mark7",
-                "shoot": "animation.mark7_shoot"
-            },
-            "identifier": "us:mark7",
-            "is_experimental": false,
-            "is_spawnable": false,
-            "is_summonable": true,
-            "scripts": {
-                "animate": [
-                    "root",
-                    "aim",
-                    {
-                        "controller": "query.has_rider"
-                    },
-                    {
-                        "controller2": "query.variant ==4"
-                    },
-                    {
-                        "player": "query.has_rider"
-                    },
-                    {
-                        "shoot": "query.variant ==1"
-                    }
-                ]
-            }
-        },
-        "events": {
-            "bb63": {
-                "add": {
-                    "component_groups": [
-                        "bb63"
-                    ]
-                },
-                "remove": {
-                    "component_groups": [
-                        "maingun:ready"
-                    ]
-                }
-            },
-            "maingun:shoot2": {
-                "add": {
-                    "component_groups": [
-                        "maingun:shoot2"
-                    ]
-                },
-                "remove": {
-                    "component_groups": [
-                        "maingun:shoot_start"
-                    ]
-                }
-            },
-            "maingun:shoot3": {
-                "add": {
-                    "component_groups": [
-                        "maingun:shoot3"
-                    ]
-                },
-                "remove": {
-                    "component_groups": [
-                        "maingun:shoot2"
-                    ]
-                }
-            },
-            "maingun:shoot_aim": {
-                "add": {
-                    "component_groups": [
-                        "maingun:shoot_aim"
-                    ]
-                },
-                "remove": {
-                    "component_groups": [
-                        "maingun:ready"
-                    ]
-                }
-            },
-            "maingun:shoot_aim2": {
-                "add": {
-                    "component_groups": [
-                        "maingun:shoot_aim2"
-                    ]
-                },
-                "remove": {
-                    "component_groups": [
-                        "maingun:shoot_aim"
-                    ]
-                }
-            },
-            "maingun:shoot_aim3": {
-                "add": {
-                    "component_groups": [
-                        "maingun:shoot_aim3"
-                    ]
-                },
-                "remove": {
-                    "component_groups": [
-                        "maingun:shoot_aim2"
-                    ]
-                }
-            },
-            "maingun:shoot_end": {
-                "add": {
-                    "component_groups": [
-                        "maingun:shoot_end"
-                    ]
-                },
-                "remove": {
-                    "component_groups": [
-                        "maingun:shoot_start"
-                    ]
-                }
-            },
-            "maingun:shoot_end2": {
-                "add": {
-                    "component_groups": [
-                        "maingun:shoot_end2"
-                    ]
-                },
-                "remove": {
-                    "component_groups": [
-                        "maingun:shoot_aim3"
-                    ]
-                }
-            },
-            "maingun:shoot_start": {
-                "add": {
-                    "component_groups": [
-                        "maingun:shoot_start"
-                    ]
-                },
-                "remove": {
-                    "component_groups": [
-                        "maingun:ready"
-                    ]
-                }
-            },
-            "menu": {
-                "run_command": {
-                    "command": [
-                        "tag @p[r=2] add hd124:mark7"
-                    ]
-                }
-            },
-            "minecraft:dead": {
-                "add": {
-                    "component_groups": [
-                        "minecraft:is_dead"
-                    ]
-                }
-            },
-            "minecraft:entity_spawned": {
-                "add": {
-                    "component_groups": [
-                        "maingun:ready",
-                        "aim_mode"
-                    ]
-                },
-                "remove": {
-                    "component_groups": [
-                        "auto_mode",
-                        "shoot_mode",
-                        "shoot_mode2",
-                        "reload",
-                        "maingun:shoot_end",
-                        "maingun:shoot_start",
-                        "aim_mode",
-                        "shoot_aim",
-                        "shoot_aim2",
-                        "reload2",
-                        "bb63"
-                    ]
-                }
-            },
-            "reload": {
-                "add": {
-                    "component_groups": [
-                        "reload"
-                    ]
-                },
-                "remove": {
-                    "component_groups": [
-                        "maingun:shoot_end",
-                        "maingun:ready",
-                        "maingun:shoot_start",
-                        "shoot_mode"
-                    ]
-                }
-            },
-            "remove_type94": {
-                "add": {
-                    "component_groups": [
-                        "remove_type94"
-                    ]
-                },
-                "remove": {
-                    "component_groups": [
-                        "maingun:shoot_end",
-                        "maingun:ready",
-                        "maingun:shoot_start",
-                        "shoot_mode"
-                    ]
-                }
-            }
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "us:mark7",
+      "is_experimental": false,
+      "is_spawnable": false,
+      "is_summonable": true,
+      "animations": {
+        "aim": "controller.animation.mark7_aim",
+        "controller": "animation.mark7_controller",
+        "controller2": "animation.mark7_controller2",
+        "player": "animation.mark7_aim",
+        "root": "controller.animation.mark7",
+        "shoot": "animation.mark7_shoot"
+      },
+      "scripts": {
+        "animate": [
+          "root",
+          "aim",
+          {"controller": "query.has_rider"},
+          {"controller2": "query.variant ==4"},
+          {"player": "query.has_rider"},
+          {"shoot": "query.variant ==1"}
+        ]
+      }
+    },
+
+    "component_groups": {
+      "bb63": {
+        "minecraft:variant": {
+          "value": 4
         }
+      },
+
+      "maingun:ready": {
+        "minecraft:collision_box": {
+          "height": 0.3,
+          "width": 0.7
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "subject": "other",
+                  "test": "is_riding",
+                  "value": true
+                }
+              }
+            },
+            {
+              "deals_damage": false,
+              "on_damage": {
+                "filters": {
+                  "any_of": [
+                    {"subject": "other", "test": "is_family", "value": "mark7_shell"},
+                    {"subject": "other", "test": "is_family", "value": "mark12_shell"},
+                    {"subject": "other", "test": "is_family", "value": "phalanx_shell"},
+                    {"subject": "other", "test": "is_family", "value": "bofor_shell"}
+                  ]
+                }
+              }
+            },
+            {
+              "cause": "contact",
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "cooldown": 10,
+              "interact_text": "Shoot",
+              "on_interact": {
+                "event": "maingun:shoot_start",
+                "filters": {
+                  "all_of": [
+                    {
+                      "domain": "hand",
+                      "operator": "equals",
+                      "subject": "player",
+                      "test": "has_equipment",
+                      "value": "flint_and_steel"
+                    },
+                    {
+                      "operator": "equals",
+                      "subject": "self",
+                      "test": "is_variant",
+                      "value": 0
+                    },
+                    {
+                      "subject": "other",
+                      "test": "is_riding",
+                      "value": true
+                    }
+                  ]
+                },
+                "target": "self"
+              },
+              "use_item": false
+            },
+            {
+              "interact_text": "Open Menu",
+              "on_interact": {
+                "event": "menu",
+                "filters": {
+                  "subject": "other",
+                  "test": "is_riding",
+                  "value": true
+                },
+                "target": "self"
+              },
+              "use_item": false
+            }
+          ]
+        },
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+
+      "maingun:shoot2": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "us:mark7_shell2"
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "looping": true,
+          "time": 0.1,
+          "time_down_event": {
+            "event": "maingun:shoot3",
+            "target": "self"
+          }
+        },
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+
+      "maingun:shoot3": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "us:mark7_shell3"
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "looping": true,
+          "time": 0.1,
+          "time_down_event": {
+            "event": "maingun:shoot_end",
+            "target": "self"
+          }
+        },
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+
+      "maingun:shoot_aim": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "jp:yamato_460mm1"
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "looping": true,
+          "time": 1,
+          "time_down_event": {
+            "event": "maingun:shoot_aim2",
+            "target": "self"
+          }
+        },
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+
+      "maingun:shoot_aim2": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "jp:yamato_460mm2"
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "looping": true,
+          "time": 1,
+          "time_down_event": {
+            "event": "maingun:shoot_aim3",
+            "target": "self"
+          }
+        },
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+
+      "maingun:shoot_aim3": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "jp:yamato_460mm3"
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "looping": true,
+          "time": 1,
+          "time_down_event": {
+            "event": "minecraft:entity_spawned2",
+            "target": "self"
+          }
+        },
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+
+      "maingun:shoot_end": {
+        "minecraft:timer": {
+          "looping": true,
+          "time": 10,
+          "time_down_event": {
+            "event": "minecraft:entity_spawned",
+            "target": "self"
+          }
+        },
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+
+      "maingun:shoot_end2": {
+        "minecraft:timer": {
+          "looping": true,
+          "time": 14,
+          "time_down_event": {
+            "event": "minecraft:entity_spawned2",
+            "target": "self"
+          }
+        },
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+
+      "maingun:shoot_start": {
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "max_wait_time": 0,
+              "min_wait_time": 0,
+              "num_to_spawn": 1,
+              "single_use": true,
+              "spawn_entity": "us:mark7_shell"
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "looping": true,
+          "time": 0.1,
+          "time_down_event": {
+            "event": "maingun:shoot2",
+            "target": "self"
+          }
+        },
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+
+      "minecraft:is_dead": {
+        "minecraft:transformation": {
+          "into": "null"
+        }
+      },
+
+      "reload": {},
+
+      "remove_type94": {
+        "minecraft:variant": {
+          "value": 3
+        }
+      },
+
+      "target": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family", "subject": "other", "value": "yamatoaim"
+              },
+              "max_dist": 300
+            }
+          ],
+          "must_see": true,
+          "priority": 2,
+          "reselect_targets": true
+        },
+        "minecraft:behavior.ranged_attack": {
+          "attack_radius": 300,
+          "burst_interval": 0.1,
+          "burst_shots": 400,
+          "charge_charged_trigger": 0,
+          "charge_shoot_trigger": 0.1,
+          "priority": 2
+        },
+        "minecraft:follow_range": {
+          "value": 300
+        },
+        "minecraft:shooter": {
+          "def": "null"
+        },
+        "minecraft:variant": {
+          "value": 0
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": ["navy", "usa", "mark7"]
+      },
+      "minecraft:collision_box": {
+        "height": 0.3,
+        "width": 0.7
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "subject": "other",
+                "test": "is_riding",
+                "value": true
+              }
+            }
+          },
+          {
+            "deals_damage": false,
+            "on_damage": {
+              "filters": {
+                "any_of": [
+                  {"subject": "other", "test": "is_family", "value": "mark7_shell"},
+                  {"subject": "other", "test": "is_family", "value": "mark12_shell"},
+                  {"subject": "other", "test": "is_family", "value": "phalanx_shell"},
+                  {"subject": "other", "test": "is_family", "value": "bofor_shell"}
+                ]
+              }
+            }
+          },
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:healable": {
+        "items": [
+          {
+            "heal_amount": 20,
+            "item": "iron_ingot"
+          }
+        ]
+      },
+      "minecraft:health": {
+        "value": {
+          "range_max": 3000,
+          "range_min": 2000
+        }
+      },
+      "minecraft:input_ground_controlled": {},
+      "minecraft:is_stackable": {},
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:movement": {
+        "value": 0
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:nameable": {},
+      "minecraft:navigation.walk": {
+        "can_float": false
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:rideable": {
+        "crouching_skip_interact": true,
+        "family_types": [
+          "player"
+        ],
+        "interact_text": "Enter Mark7",
+        "rider_can_interact": true,
+        "seat_count": 1,
+        "seats": [
+          {
+            "position": [
+              0,
+              0.4,
+              0
+            ]
+          }
+        ]
+      },
+      "minecraft:scale": {
+        "value": 6
+      },
+      "minecraft:underwater_movement": {
+        "value": 0
+      }
+    },
+    
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "maingun:ready",
+            "aim_mode"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "auto_mode",
+            "shoot_mode",
+            "shoot_mode2",
+            "reload",
+            "maingun:shoot_end",
+            "maingun:shoot_start",
+            "aim_mode",
+            "shoot_aim",
+            "shoot_aim2",
+            "reload2",
+            "bb63"
+          ]
+        }
+      },
+
+      "bb63": {
+        "add": {
+          "component_groups": [
+            "bb63"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "maingun:ready"
+          ]
+        }
+      },
+
+      "maingun:shoot2": {
+        "add": {
+          "component_groups": [
+            "maingun:shoot2"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "maingun:shoot_start"
+          ]
+        }
+      },
+
+      "maingun:shoot3": {
+        "add": {
+          "component_groups": [
+            "maingun:shoot3"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "maingun:shoot2"
+          ]
+        }
+      },
+
+      "maingun:shoot_aim": {
+        "add": {
+          "component_groups": [
+            "maingun:shoot_aim"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "maingun:ready"
+          ]
+        }
+      },
+
+      "maingun:shoot_aim2": {
+        "add": {
+          "component_groups": [
+            "maingun:shoot_aim2"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "maingun:shoot_aim"
+          ]
+        }
+      },
+
+      "maingun:shoot_aim3": {
+        "add": {
+          "component_groups": [
+            "maingun:shoot_aim3"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "maingun:shoot_aim2"
+          ]
+        }
+      },
+
+      "maingun:shoot_end": {
+        "add": {
+          "component_groups": [
+            "maingun:shoot_end"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "maingun:shoot_start"
+          ]
+        }
+      },
+
+      "maingun:shoot_end2": {
+        "add": {
+          "component_groups": [
+            "maingun:shoot_end2"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "maingun:shoot_aim3"
+          ]
+        }
+      },
+
+      "maingun:shoot_start": {
+        "add": {
+          "component_groups": [
+            "maingun:shoot_start"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "maingun:ready"
+          ]
+        }
+      },
+
+      "menu": {
+        "queue_command": {
+          "command": [
+            "tag @p[r=2] add hd124:mark7"
+          ]
+        }
+      },
+
+      "minecraft:dead": {
+        "add": {
+          "component_groups": [
+            "minecraft:is_dead"
+          ]
+        }
+      },
+      
+      "reload": {
+        "add": {
+          "component_groups": [
+            "reload"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "maingun:shoot_end",
+            "maingun:ready",
+            "maingun:shoot_start",
+            "shoot_mode"
+          ]
+        }
+      },
+
+      "remove_type94": {
+        "add": {
+          "component_groups": [
+            "remove_type94"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "maingun:shoot_end",
+            "maingun:ready",
+            "maingun:shoot_start",
+            "shoot_mode"
+          ]
+        }
+      }
     }
+  }
 }
