@@ -74,26 +74,24 @@
         "minecraft:behavior.nearest_attackable_target": {
           "priority": 2,
           "must_see": true,
-          "must_see_forget_duration": 12.0, //If "must_see" = true, time before forgetting target
+          "must_see_forget_duration": 10, //If "must_see" = true, time before forgetting target
           "reselect_targets": true,
           "entity_types": [
             {
               "filters": { //MRxSIR updated filter to be standard
                 "any_of": [   //tracks air mobs, tests if friendly or foe?
                   {"test": "is_family", "subject": "other", "value": "wither"},
-                  {"test": "is_family", "subject": "other", "value": "rsaircraft"},
-                  {"test": "is_family", "subject": "other", "value": "phantom"},
-                  {"test": "is_family", "subject": "other", "value": "jpaircraft"},
-                  {"test": "is_family", "subject": "other", "value": "rsmissile"},
-                  {"test": "is_family", "subject": "other", "value": "rshelicopter"},
-                  {"test": "is_family", "subject": "other", "value": "su57"},
                   {"test": "is_family", "subject": "other", "value": "ghast"},  //Ghasts aren't targetable for some reason
                   {"test": "is_family", "subject": "other", "value": "blaze"},
                   {"test": "is_family", "subject": "other", "value": "dragon"},
+                  {"test": "is_family", "subject": "other", "value": "jpaircraft"},
+                  {"test": "is_family", "subject": "other", "value": "rsaircraft"},
+                  {"test": "is_family", "subject": "other", "value": "rsmissile"},
+                  {"test": "is_family", "subject": "other", "value": "rshelicopter"},
+                  {"test": "is_family", "subject": "other", "value": "su57"},
 
                   // MRxSIR - entities from MrHusana909's Long Range Rockets
-                  // each missile seems to be tagged "missileactive" when launched,
-                  // so target it only if it's active, aka probably in flight.
+                  // each missile seems to be tagged "missileactive" when launched and in flight.
                   {
                     "all_of": [
                       {"test": "is_family", "subject": "other", "value": "solrrmissile"},
@@ -116,13 +114,78 @@
           "charge_shoot_trigger": 0
         },
         "minecraft:follow_range": {
-          "value": 150
+          "value": 150    //should this be 135 also? idk.
         },
         "minecraft:shooter": {
           "def": "us:phalanx_shell"
         },
         "minecraft:variant": {
           "value": 0
+        }
+      },
+
+      "ground_sentry_mode": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "must_see": true,
+          "must_see_forget_duration": 10,
+          "reselect_targets": true,
+          "entity_types": [
+            {
+              "filters": {
+                "any_of": [
+                  {"test": "is_family", "subject": "other", "value": "monster"},
+                  {"test": "is_family", "subject": "other", "value": "ghast"},  //Ghasts aren't targetable for some reason
+                  {"test": "is_family", "subject": "other", "value": "dragon"},
+                  {"test": "is_family", "subject": "other", "value": "jpaircraft"},
+                  {"test": "is_family", "subject": "other", "value": "rsaircraft"},
+                  {"test": "is_family", "subject": "other", "value": "rsmissile"},
+                  {"test": "is_family", "subject": "other", "value": "rshelicopter"},
+                  {"test": "is_family", "subject": "other", "value": "su57"},
+
+                  // MRxSIR - entities from MrHusana909's Long Range Rockets
+                  // each missile seems to be tagged "missileactive" when launched and in flight.
+                  {
+                    "all_of": [
+                      {"test": "is_family", "subject": "other", "value": "solrrmissile"},
+                      {"test": "has_tag", "subject": "other", "value": "missileactive"}
+                    ]
+                  }
+                ]
+              },
+              "max_dist": 35
+            }
+          ]
+        },
+        "minecraft:behavior.ranged_attack": {
+          "priority": 1,
+          "attack_interval": 0.1,   //Consistent reload-time seconds when not using a charged shot.
+          "attack_radius": 35,
+          "burst_interval": 0.05,   //Seconds between shots when firing a burst of shots from a charged up attack.
+          "burst_shots": 150,      //was 10000. # of shots fired per charged up attack
+          "charge_charged_trigger": 0,
+          "charge_shoot_trigger": 0
+        },
+        "minecraft:follow_range": {
+          "value": 35
+        },
+        "minecraft:shooter": {
+          "def": "us:phalanx_shell"
+        },
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+
+      "ammo_arrows": {
+        "minecraft:shooter": {
+          "def": "minecraft:arrow"
+        }
+      },
+
+      "ammo_phalanx_shells": {
+        "minecraft:shooter": {
+          "def": "us:phalanx_shell"
         }
       },
 
@@ -161,17 +224,9 @@
             "deals_damage": false, // MRxSIR: no damage when...
             "on_damage": {
               "filters": {
-                "all_of": [   // player is driving the boat
-                  {
-                    "subject": "player",
-                    "test": "is_riding",
-                    "value": true
-                  },
-                  {
-                    "subject": "player",
-                    "test": "on_ground",
-                    "value": false
-                  }
+                "all_of": [   // player is driving the boat?
+                  {"subject": "player", "test": "is_riding", "value": true},
+                  {"subject": "player", "test": "on_ground", "value": false}
                 ]
               }
             }
@@ -334,6 +389,60 @@
             },
             "use_item": false,
             "play_sounds": "block.click"
+          },
+
+          { //ground sentry mode
+            "interact_text": "action.interact.ground_sentry_mode",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {"test": "is_variant", "subject": "self", "value": 0},  //0 = auto_mode/air defense
+                  {"test": "is_family", "subject": "other", "value": "player"},
+                  {"test": "has_equipment", "domain": "hand", "subject": "other", "value": "dirt"}
+                ]
+              },
+              "event": "ground_sentry_mode"
+            }
+          },
+          { //air defense mode
+            "interact_text": "action.interact.air_defense_mode",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {"test": "is_variant", "subject": "self", "value": 1}, //1 = ground_sentry_mode
+                  {"test": "is_family", "subject": "other", "value": "player"},
+                  {"test": "has_equipment", "domain": "hand", "subject": "other", "value": "dirt"}
+                ]
+              },
+              "event": "air_defense_mode"
+            }
+          },
+
+          { //shoot arrows
+            "interact_text": "action.interact.swap_ammo_to_arrows",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {"test": "has_tag", "subject": "self", "operator": "!=", "value": "arrow_mode"},
+                  {"test": "is_family", "subject": "other", "value": "player"},
+                  {"test": "has_equipment", "domain": "hand", "subject": "other", "value": "arrow"}
+                ]
+              },
+              "event": "swap_ammo_to_arrows"
+            }
+          },
+          { //restore default ammo (phalanx shells)
+            "interact_text": "action.interact.restore_default_ammo",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {"test": "has_tag", "subject": "self", "value": "arrow_mode"},
+                  {"test": "is_family", "subject": "other", "value": "player"},
+                  {"test": "has_equipment", "domain": "hand", "subject": "other", "value": "arrow"}
+                ]
+              },
+              "event": "restore_default_ammo"
+            }
           }
         ]
       }
@@ -343,6 +452,12 @@
       "minecraft:entity_spawned": {
         "add": {
           "component_groups": ["auto_mode"]
+        }
+      },
+
+      "force_despawn": {
+        "add": {
+          "component_groups": ["force_despawn"]
         }
       },
 
@@ -356,10 +471,24 @@
         "queue_command": {"command": "tag @s remove disarmed"}
       },
 
-      "force_despawn": {
-        "add": {
-          "component_groups": ["force_despawn"]
-        }
+      "ground_sentry_mode": {
+        "add": {"component_groups": ["ground_sentry_mode"]}
+      },
+
+      "air_defense_mode": {
+        "trigger": "auto_mode"
+      },
+
+      "auto_mode": {
+        "add": {"component_groups": ["auto_mode"]}
+      },
+
+      "swap_ammo_to_arrows": {
+        "add": {"component_groups": ["ammo_arrows"]}
+      },
+
+      "restore_default_ammo": {
+        "remove": {"component_groups": ["ammo_phalanx_shells"]}
       },
 
       //debug things
