@@ -379,38 +379,39 @@
             },
             "use_item": false,
             "play_sounds": "armor.equip_chain"
-          },
-
-          { //shoot arrows
-            "interact_text": "action.interact.swap_ammo_to_arrows",
-            "on_interact": {
-              "filters": {
-                "all_of": [
-                  {"test": "has_tag", "subject": "self", "operator": "!=", "value": "arrow_mode"},
-                  {"test": "is_family", "subject": "other", "value": "player"},
-                  {"test": "has_equipment", "domain": "hand", "subject": "other", "value": "arrow"}
-                ]
-              },
-              "event": "swap_ammo_to_arrows"
-            },
-            "use_item": false,
-            "play_sounds": "block.click"
-          },
-          { //restore default ammo (phalanx shells)
-            "interact_text": "action.interact.restore_default_ammo",
-            "on_interact": {
-              "filters": {
-                "all_of": [
-                  {"test": "has_tag", "subject": "self", "value": "arrow_mode"},
-                  {"test": "is_family", "subject": "other", "value": "player"},
-                  {"test": "has_equipment", "domain": "hand", "subject": "other", "value": "arrow"}
-                ]
-              },
-              "event": "restore_default_ammo"
-            },
-            "use_item": false,
-            "play_sounds": "block.fletching_table.use"
           }
+
+          //-----------Too laggy, maybe another time-----------
+          // { //shoot arrows
+          //   "interact_text": "action.interact.swap_ammo_to_arrows",
+          //   "on_interact": {
+          //     "filters": {
+          //       "all_of": [
+          //         {"test": "has_tag", "subject": "self", "operator": "!=", "value": "arrow_mode"},
+          //         {"test": "is_family", "subject": "other", "value": "player"},
+          //         {"test": "has_equipment", "domain": "hand", "subject": "other", "value": "arrow"}
+          //       ]
+          //     },
+          //     "event": "swap_ammo_to_arrows"
+          //   },
+          //   "use_item": false,
+          //   "play_sounds": "block.click"
+          // },
+          // { //restore default ammo (phalanx shells)
+          //   "interact_text": "action.interact.restore_default_ammo",
+          //   "on_interact": {
+          //     "filters": {
+          //       "all_of": [
+          //         {"test": "has_tag", "subject": "self", "value": "arrow_mode"},
+          //         {"test": "is_family", "subject": "other", "value": "player"},
+          //         {"test": "has_equipment", "domain": "hand", "subject": "other", "value": "arrow"}
+          //       ]
+          //     },
+          //     "event": "restore_default_ammo"
+          //   },
+          //   "use_item": false,
+          //   "play_sounds": "block.fletching_table.use"
+          // }
         ]
       }
     },
