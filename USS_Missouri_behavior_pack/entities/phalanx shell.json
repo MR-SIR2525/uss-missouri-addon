@@ -8,17 +8,15 @@
       "is_summonable": true,
       "runtime_identifier": "minecraft:arrow",
       "animations": {
-        "hit": "animation.shell_hit",
-        "inwater": "controller.animation.shell_inwater",
-        "shell": "animation.shell_flying"
+        "shell": "animation.shell_flying",
+        "inwater": "controller.animation.shell_inwater"
+        // "hit": "animation.shell_hit",
       },
       "scripts": {
         "animate": [
           "shell",
-          {
-            "hit": "query.variant ==1"
-          },
           "inwater"
+          // {"hit": "query.variant == 1"}
         ]
       }
     },
@@ -31,12 +29,12 @@
         "minecraft:despawn": {}
       },
 
+      // unused now
       "hit": {
-        "minecraft:variant": {
-          "value": 1
-        }
+        "minecraft:variant": {"value": 1}
       },
 
+      // unused now
       "minecraft:exploding": {
         // https://learn.microsoft.com/en-us/minecraft/creator/reference/content/entityreference/examples/entitycomponents/minecraftcomponent_explode?view=minecraft-bedrock-stable
         "minecraft:explode": {
@@ -50,59 +48,25 @@
         }
       },
 
-      "normal": {
-        "minecraft:projectile": {
-          "anchor": 2,
-          "catch_fire": false,
-          "destroy_on_hurt": false,
-          "gravity": 0.002,
-          "inertia": 1,
-          "liquid_inertia": 1,
-          "offset": [
-            0,
-            0.15,
-            0
-          ],
-          "on_hit": {     //this was missing, and why close up was not working
-            "impact_damage": {
-              "damage": [ 1, 10 ],
-              "knockback": true,
-              "semi_random_diff_damage": false,
-              "destroy_on_hit": true
-            },
-            "arrow_effect": {
-              "apply_effect_to_blocking_targets": false
-            }
-          },
-          "particle": "explode",
-          "power": 6,
-          "reflect_on_hurt": false,
-          "semi_random_diff_damage": false,
-          "uncertainty_base": 1
-        },
-        "minecraft:timer": {
-          "looping": false,
-          "time": 0.20,
-          "time_down_event": {
-            "event": "normal2",
-            "target": "self"
-          }
-        }
-      },
-
+      // unused now
       "normal2": {
         "minecraft:projectile": {
-          "anchor": 2,
           "catch_fire": false,
           "destroy_on_hurt": false,
           "gravity": 0.002,
-          "inertia": 1,
-          "liquid_inertia": 1,
+          "inertia": 0.99,
+          "liquid_inertia": 0.90,
+          "anchor": 2,
           "offset": [   //"...from the entity's anchor where the projectile will spawn."
             0,
-            0.15,
+            0,
             0
           ],
+          "particle": "explode",
+          "uncertainty_base": 2,
+          "power": 4.5,
+          "reflect_on_hurt": false,
+          "semi_random_diff_damage": false,
           "on_hit": {                   // was "onHit" (incorrect?)
             "definition_event": {
               "affect_projectile": true,
@@ -124,12 +88,7 @@
             "arrow_effect": {
               "apply_effect_to_blocking_targets": false
             }
-          },
-          "particle": "explode",
-          "power": 4.5,
-          "reflect_on_hurt": false,
-          "semi_random_diff_damage": false,
-          "uncertainty_base": 2
+          }
         },
         "minecraft:timer": {
           "looping": false,
@@ -142,11 +101,20 @@
       }
     },
     
+
     "components": {
+      "minecraft:type_family": {
+        "family": ["anti-aircraft", "phalanx_shell"]
+      },
+      "minecraft:variant": {
+        "value": 0
+      },
       "minecraft:collision_box": {
-        // "height": -0.2,
         "height": 0.2, // MRxSIR: -0.2 to 0.2
         "width": 0.25
+      },
+      "minecraft:scale": {
+        "value": 2.1
       },
       "minecraft:damage_sensor": {
         "triggers": {
@@ -154,59 +122,84 @@
           "deals_damage": false
         }
       },
-      "minecraft:despawn": {
-        "despawn_from_distance": {
-          "min_distance": 225
-        }
-      },
       "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": false,
         "is_pushable_by_piston": false
       },
-      "minecraft:scale": {
-        "value": 2.1
+
+      "minecraft:projectile": {
+        "catch_fire": false,
+        "destroy_on_hurt": false,
+        "gravity": 0.002,
+        "inertia": 0.99,
+        "liquid_inertia": 0.90,
+        "anchor": 2,
+        "offset": [
+          0,
+          0.15,
+          0
+        ],
+        "particle": "explode",
+        "uncertainty_base": 1,
+        "power": 4.5,
+        "reflect_on_hurt": false,
+        "semi_random_diff_damage": false,
+        "on_hit": {
+          "definition_event": {
+              "affect_projectile": true,
+              "event_trigger": {
+                "event": "hit",
+                "target": "self"
+              }
+            },
+          "impact_damage": {
+            "damage": 10,
+            "knockback": true,
+            "semi_random_diff_damage": false,
+            "destroy_on_hit": false //event "hit" handles this
+          },
+          "arrow_effect": {
+            "apply_effect_to_blocking_targets": false
+          }
+        }
       },
+
       "minecraft:timer": {
         "looping": false,
-        "time": 1,
+        "time": 7,
         "time_down_event": {
           "event": "despawn",
           "target": "self"
         }
       },
-      "minecraft:type_family": {
-        "family": [
-          "anti-aircraft",
-          "phalanx_shell"
-        ]
-      },
-      "minecraft:variant": {
-        "value": 0
+
+      "minecraft:despawn": {
+        "despawn_from_distance": {"min_distance": 225}
       }
     },
+
     
     "events": {
-      "minecraft:entity_spawned": {
-        "add": {"component_groups": ["normal"]}
-      },
-      
       "despawn": {
-        // an instant despawn
-        "add": {"component_groups": ["despawn"]}
+        "add": {"component_groups": ["despawn"]}  //instant despawn
       },
 
       "hit": {
-        "add": {
-          "component_groups": [
-            "hit"
-            // "minecraft:exploding"
-          ]
-        }
-      },
-
-      "normal2": {
-        "add": {"component_groups": ["normal2"]}
+        "sequence": [
+          {
+            "queue_command": {"command": [
+              "particle shell:hit ~ ~0.1 ~",
+              "particle shell:hit2 ~ ~0.1 ~",
+              "particle shell:hit3 ~ ~0.1 ~",
+              "playsound shell.hit @a[r=30]",
+              "playsound shell.damage @a[tag=bb63,r=100]"
+            ]}
+          },
+          {
+            "add": {"component_groups": ["despawn"]}
+          }
+        ]
       }
     }
   }
