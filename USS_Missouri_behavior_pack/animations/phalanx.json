@@ -10,6 +10,7 @@
         ]
       }
     },
+    
     "animation.shell_flying": {
       "animation_length": 0.1,
       "loop": true,
@@ -19,6 +20,7 @@
         ]
       }
     },
+
     "animation.shell_hit": {
       "animation_length": 0.2,
       "loop": false,
@@ -34,6 +36,7 @@
         ]
       }
     },
+
     "animation.shell_hit2": {
       "animation_length": 0.5,
       "loop": false,
