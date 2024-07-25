@@ -453,21 +453,6 @@
             "maingun:ready",
             "aim_mode"
           ]
-        },
-        "remove": {
-          "component_groups": [
-            "auto_mode",
-            "shoot_mode",
-            "shoot_mode2",
-            "reload",
-            "maingun:shoot_end",
-            "maingun:shoot_start",
-            "aim_mode",
-            "shoot_aim",
-            "shoot_aim2",
-            "reload2",
-            "bb63"
-          ]
         }
       },
 
