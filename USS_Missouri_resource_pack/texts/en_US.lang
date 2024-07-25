@@ -14,3 +14,7 @@ item.spawn_egg.entity.us:phalanx.name=Phalanx Base
 ## Actions
 action.interact.arm=Arm
 action.interact.disarm=Disarm
+action.interact.ground_sentry_mode=Ground Sentry Mode
+action.interact.air_defense_mode=Air Defense Mode
+action.interact.swap_ammo_to_arrows=Swap Ammo to Arrows
+action.interact.restore_default_ammo=Restore Default Ammo
