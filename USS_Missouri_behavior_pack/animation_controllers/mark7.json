@@ -5,7 +5,7 @@
             "states": {
                 "default": {
                     "on_entry": [
-                        "/gamerule sendcommandfeedback false",
+            // "/gamerule sendcommandfeedback false",
                         "/kill @e[name=maingunaim,r=50]",
                         "/kill @e[name=maingunaim2,r=50]",
                         "@s un_drive",
@@ -17,8 +17,8 @@
                         "/clear @p[tag=bb63] bb63:mark7 1",
                         "/clear @p[tag=bb63] bb63:mark12 1",
                         "/clear @p[tag=bb63] bb63:rum139 1",
-                        "/tag @p remove bb63",
-                        "/gamerule sendcommandfeedback true"
+            "/tag @p remove bb63"
+            // "/gamerule sendcommandfeedback true"
                     ],
                     "transitions": [
                         {
@@ -28,7 +28,7 @@
                 },
                 "drive": {
                     "on_entry": [
-                        "/gamerule sendcommandfeedback false",
+            // "/gamerule sendcommandfeedback false",
                         "/summon us:aim ~~~ bb63 maingunaim",
                         "/summon us:aim ~~~ minecraft:entity_spawned maingunaim2",
                         "@ drive",
@@ -42,7 +42,7 @@
                         "/give @p[tag=bb63] bb63:mark7 1 1 {\"minecraft:item_lock\":{ \"mode\": \"lock_in_inventory\" }}",
                         "/give @p[tag=bb63] bb63:mark12 1 1 {\"minecraft:item_lock\":{ \"mode\": \"lock_in_inventory\" }}",
                         "/give @p[tag=bb63] bb63:rum139 1 1 {\"minecraft:item_lock\":{ \"mode\": \"lock_in_inventory\" }}",
-                        "/gamerule sendcommandfeedback true"
+            // "/gamerule sendcommandfeedback true"
                     ],
                     "transitions": [
                         {
@@ -52,6 +52,7 @@
                 }
             }
         },
+
         "controller.animation.missouri_spawn": {
             "initial_state": "default",
             "states": {
@@ -131,12 +132,13 @@
                 }
             }
         },
+
         "controller.animation.rah66": {
             "initial_state": "default",
             "states": {
                 "default": {
                     "on_entry": [
-                        "/gamerule sendcommandfeedback false",
+            // "/gamerule sendcommandfeedback false",
                         "/kill @e[name=rah1,r=30]",
                         "@s un_drive",
                         "@s havent",
@@ -145,7 +147,7 @@
                         "/clear @p[tag=rah66] bb63:forward 1",
                         "/clear @p[tag=rah66] bb63:back 1",
                         "/tag @p[r=10] remove rah66",
-                        "/gamerule sendcommandfeedback true"
+            // "/gamerule sendcommandfeedback true"
                     ],
                     "transitions": [
                         {
@@ -155,7 +157,7 @@
                 },
                 "drive": {
                     "on_entry": [
-                        "/gamerule sendcommandfeedback false",
+            // "/gamerule sendcommandfeedback false",
                         "/summon us:aim2 ~~~ minecraft:entity_spawned rah1",
                         "@s drive",
                         "/tag @p[r=10] add rah66",
@@ -166,7 +168,7 @@
                         "/give @p[tag=rah66] rah66:missile 1 1 {\"minecraft:item_lock\":{ \"mode\": \"lock_in_inventory\" }}",
                         "/give @p[tag=rah66] bb63:forward 1 1 {\"minecraft:item_lock\":{ \"mode\": \"lock_in_inventory\" }}",
                         "/give @p[tag=rah66] bb63:back 1 1 {\"minecraft:item_lock\":{ \"mode\": \"lock_in_inventory\" }}",
-                        "/gamerule sendcommandfeedback true"
+            // "/gamerule sendcommandfeedback true"
                     ],
                     "transitions": [
                         {
@@ -176,6 +178,7 @@
                 }
             }
         },
+
         "controller.animation.rah662": {
             "initial_state": "default",
             "states": {
@@ -203,6 +206,7 @@
                 }
             }
         },
+
         "controller.animation.rah66_dead": {
             "initial_state": "default",
             "states": {
@@ -225,6 +229,7 @@
                 }
             }
         },
+    
         "controller.animation.rah66_move": {
             "initial_state": "default",
             "states": {
