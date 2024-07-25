@@ -82,6 +82,7 @@
                   {"test": "is_family", "subject": "other", "value": "wither"},
                   {"test": "is_family", "subject": "other", "value": "ghast"},  //Ghasts aren't targetable for some reason
                   {"test": "is_family", "subject": "other", "value": "blaze"},
+                  {"test": "is_family", "subject": "other", "value": "phantom"},
                   {"test": "is_family", "subject": "other", "value": "dragon"},
                   {"test": "is_family", "subject": "other", "value": "jpaircraft"},
                   {"test": "is_family", "subject": "other", "value": "rsaircraft"},
@@ -135,6 +136,7 @@
                 "any_of": [
                   {"test": "is_family", "subject": "other", "value": "monster"},
                   {"test": "is_family", "subject": "other", "value": "ghast"},  //Ghasts aren't targetable for some reason
+                  {"test": "is_family", "subject": "other", "value": "phantom"},
                   {"test": "is_family", "subject": "other", "value": "dragon"},
                   {"test": "is_family", "subject": "other", "value": "jpaircraft"},
                   {"test": "is_family", "subject": "other", "value": "rsaircraft"},
@@ -234,7 +236,7 @@
               }
             }
           },
-          {"deals_damage": false, "cause": "all"},
+          // {"deals_damage": false, "cause": "all"},
           {"deals_damage": false, "cause": "fall"},
           {"deals_damage": false, "cause": "drowning"},
           {"deals_damage": false, "cause": "fire"},
@@ -244,6 +246,7 @@
           {"deals_damage": false, "cause": "magic"},
           {"deals_damage": false, "cause": "suffocation"},
           {"deals_damage": false, "cause": "thorns"},
+          {"deals_damage": false, "cause": "magma"},
           {
             "deals_damage": false,
             "on_damage": {
@@ -358,7 +361,9 @@
                 ]
               },
               "event": "ground_sentry_mode"
-            }
+            },
+            "use_item": false,
+            "play_sounds": "armor.equip_leather"
           },
           { //air defense mode
             "interact_text": "action.interact.air_defense_mode",
@@ -371,7 +376,9 @@
                 ]
               },
               "event": "air_defense_mode"
-            }
+            },
+            "use_item": false,
+            "play_sounds": "armor.equip_chain"
           },
 
           { //shoot arrows
@@ -385,7 +392,9 @@
                 ]
               },
               "event": "swap_ammo_to_arrows"
-            }
+            },
+            "use_item": false,
+            "play_sounds": "block.click"
           },
           { //restore default ammo (phalanx shells)
             "interact_text": "action.interact.restore_default_ammo",
@@ -398,7 +407,9 @@
                 ]
               },
               "event": "restore_default_ammo"
-            }
+            },
+            "use_item": false,
+            "play_sounds": "block.fletching_table.use"
           }
         ]
       }
@@ -428,7 +439,7 @@
       },
 
       "ground_sentry_mode": {
-        "add": {"component_groups": ["ground_sentry_mode"]}
+        "add": {"component_groups": ["ground_sentry_mode"]} //relies on variant, not tags
       },
 
       "air_defense_mode": {
@@ -440,11 +451,13 @@
       },
 
       "swap_ammo_to_arrows": {
-        "add": {"component_groups": ["ammo_arrows"]}
+        "add": {"component_groups": ["ammo_arrows"]},
+        "queue_command": {"command": "tag @s add arrow_mode"}
       },
 
       "restore_default_ammo": {
-        "remove": {"component_groups": ["ammo_phalanx_shells"]}
+        "add": {"component_groups": ["ammo_phalanx_shells"]},
+        "queue_command": {"command": "tag @s remove arrow_mode"}
       },
 
       //debug things
