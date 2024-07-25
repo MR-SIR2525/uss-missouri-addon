@@ -2,15 +2,15 @@
   "format_version": "1.16.0",
   "minecraft:entity": {
     "description": {
+      "identifier": "us:mark7_shell",
+      "runtime_identifier": "minecraft:snowball",
+      "is_experimental": false,
+      "is_spawnable": false,
+      "is_summonable": true,
       "animations": {
         "hit": "animation.mark7_shell",
         "inwater": "controller.animation.406mm_inwater"
       },
-      "identifier": "us:mark7_shell",
-      "is_experimental": false,
-      "is_spawnable": false,
-      "is_summonable": true,
-      "runtime_identifier": "minecraft:snowball",
       "scripts": {
         "animate": [
           {
@@ -69,7 +69,11 @@
         }
       }
     },
+
     "components": {
+      "minecraft:type_family": {
+        "family": ["mark7_shell", "mark7_shell1"]
+      },
       "minecraft:collision_box": {
         "height": 0.1,
         "width": 0.1
@@ -125,9 +129,7 @@
       },
       "normal": {
         "add": {
-          "component_groups": [
-            "normal"
-          ]
+          "component_groups": ["normal"]
         }
       }
     }
