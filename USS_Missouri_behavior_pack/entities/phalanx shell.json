@@ -141,7 +141,7 @@
           0
         ],
         "particle": "explode",
-        "uncertainty_base": 1,
+        "uncertainty_base": 0.95,
         "power": 4.5,
         "reflect_on_hurt": false,
         "semi_random_diff_damage": false,
