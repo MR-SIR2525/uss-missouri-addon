@@ -13,7 +13,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 1,
           "attack_interval": 0.1,   //Consistent reload-time seconds when not using a charged shot.
-          "attack_radius": 50,       //Min distance to target before attempting to shoot.
+          "attack_radius": 50,
           "burst_interval": 0.05,   //Seconds between shots when firing a burst of shots from a charged up attack.
           "burst_shots": 250,      //was 10000. # of shots fired per charged up attack
           "charge_charged_trigger": 0,
@@ -25,7 +25,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 1,
           "attack_interval": 0.1,   //Consistent reload-time seconds when not using a charged shot.
-          "attack_radius": 75,       //Min distance to target before attempting to shoot.
+          "attack_radius": 75,
           "burst_interval": 0.05,   //Seconds between shots when firing a burst of shots from a charged up attack.
           "burst_shots": 250,      //was 10000. # of shots fired per charged up attack
           "charge_charged_trigger": 0,
@@ -37,7 +37,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 1,
           "attack_interval": 0.1,   //Consistent reload-time seconds when not using a charged shot.
-          "attack_radius": 100,       //Min distance to target before attempting to shoot.
+          "attack_radius": 100,
           "burst_interval": 0.05,   //Seconds between shots when firing a burst of shots from a charged up attack.
           "burst_shots": 250,      //was 10000. # of shots fired per charged up attack
           "charge_charged_trigger": 0,
@@ -49,7 +49,19 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 1,
           "attack_interval": 0.1,   //Consistent reload-time seconds when not using a charged shot.
-          "attack_radius": 125,       //Min distance to target before attempting to shoot.
+          "attack_radius": 125,
+          "burst_interval": 0.05,   //Seconds between shots when firing a burst of shots from a charged up attack.
+          "burst_shots": 250,      //was 10000. # of shots fired per charged up attack
+          "charge_charged_trigger": 0,
+          "charge_shoot_trigger": 0
+        }
+      },
+
+      "range_130": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 1,
+          "attack_interval": 0.1,   //Consistent reload-time seconds when not using a charged shot.
+          "attack_radius": 130,
           "burst_interval": 0.05,   //Seconds between shots when firing a burst of shots from a charged up attack.
           "burst_shots": 250,      //was 10000. # of shots fired per charged up attack
           "charge_charged_trigger": 0,
@@ -61,7 +73,7 @@
         "minecraft:behavior.ranged_attack": {
           "priority": 1,
           "attack_interval": 0.1,   //Consistent reload-time seconds when not using a charged shot.
-          "attack_radius": 135,       //Min distance to target before attempting to shoot.
+          "attack_radius": 135,
           "burst_interval": 0.05,   //Seconds between shots when firing a burst of shots from a charged up attack.
           "burst_shots": 250,      //was 10000. # of shots fired per charged up attack
           "charge_charged_trigger": 0,
@@ -100,14 +112,14 @@
                   }
                 ]
               },
-              "max_dist": 135
+              "max_dist": 130
             }
           ]
         },
         "minecraft:behavior.ranged_attack": {
           "priority": 1,
           "attack_interval": 0.1,   //Consistent reload-time seconds when not using a charged shot.
-          "attack_radius": 135,
+          "attack_radius": 130,
           "burst_interval": 0.05,   //Seconds between shots when firing a burst of shots from a charged up attack.
           "burst_shots": 250,      //was 10000. # of shots fired per charged up attack
           "charge_charged_trigger": 0,
@@ -128,7 +140,7 @@
         "minecraft:behavior.nearest_attackable_target": {
           "priority": 2,
           "must_see": true,
-          "must_see_forget_duration": 10,
+          "must_see_forget_duration": 7,
           "reselect_targets": true,
           "entity_types": [
             {
@@ -154,21 +166,21 @@
                   }
                 ]
               },
-              "max_dist": 35
+              "max_dist": 40
             }
           ]
         },
         "minecraft:behavior.ranged_attack": {
           "priority": 1,
           "attack_interval": 0.1,   //Consistent reload-time seconds when not using a charged shot.
-          "attack_radius": 35,
+          "attack_radius": 40,
           "burst_interval": 0.05,   //Seconds between shots when firing a burst of shots from a charged up attack.
           "burst_shots": 150,      //was 10000. # of shots fired per charged up attack
           "charge_charged_trigger": 0,
           "charge_shoot_trigger": 0
         },
         "minecraft:follow_range": {
-          "value": 35
+          "value": 50
         },
         "minecraft:shooter": {
           "def": "us:phalanx_shell"
@@ -476,6 +488,10 @@
 
       "range_125": {
         "add": {"component_groups": ["range_125"]}
+      },
+
+      "range_130": {
+        "add": {"component_groups": ["range_130"]}
       },
 
       "range_135": {
