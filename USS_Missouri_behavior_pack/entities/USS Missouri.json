@@ -2,6 +2,10 @@
   "format_version": "1.8.0",
   "minecraft:entity": {
     "description": {
+      "identifier": "us:missouri",
+      "is_experimental": false,
+      "is_spawnable": true,
+      "is_summonable": true,
       "animations": {
         "back": "animation.bb63_back",
         "forward": "animation.bb63_forward",
@@ -15,10 +19,6 @@
         "root": "animation.bb63_root",
         "shoot": "animation.bb63_shoot"
       },
-      "identifier": "us:missouri",
-      "is_experimental": false,
-      "is_spawnable": true,
-      "is_summonable": true,
       "scripts": {
         "animate": [
           {
@@ -189,7 +189,11 @@
         }
       }
     },
+
     "components": {
+      "minecraft:type_family": {
+        "family": ["uss_missouri", "missouri", "usa", "controller", "ship"]
+      },
       "minecraft:addrider": {
         "entity_type": "bb63:controller"
       },
@@ -225,6 +229,7 @@
       "minecraft:damage_sensor": {
         "triggers": [
           {
+            "cause": "all",
             "on_damage": {
               "event": "crash",
               "filters": {
@@ -236,13 +241,15 @@
                 ]
               }
             }
-          }
+          },
+          {"deals_damage": true, "cause": "fire"},
+          {"deals_damage": false, "cause": "suffocation"},
+          {"deals_damage": false, "cause": "contact"},
+          {"deals_damage": false, "cause": "fall"},
+          {"deals_damage": false, "cause": "fly_into_wall"},
+          {"deals_damage": false, "cause": "magma"}
         ]
       },
-      "minecraft:fall_damage": {
-        "value": 0
-      },
-      "minecraft:fire_immune": false,
       "minecraft:health": {
         "max": 500000,
         "value": 460000
@@ -285,13 +292,6 @@
       "minecraft:scale": {
         "value": 6
       },
-      "minecraft:type_family": {
-        "family": [
-          "missouri",
-          "usa",
-          "controller"
-        ]
-      },
       "minecraft:underwater_movement": {
         "value": 0
       },
@@ -301,121 +301,93 @@
     },
     
     "events": {
-      "back": {
-        "add": {
-          "component_groups": [
-            "back"
-          ]
-        },
-        "remove": {
-          "component_groups": [
-            "forward"
-          ]
-        }
-      },
-      "crash": {
-        "add": {
-          "component_groups": [
-            "crash"
-          ]
-        }
-      },
-      "forward": {
-        "add": {
-          "component_groups": [
-            "forward"
-          ]
-        },
-        "remove": {
-          "component_groups": [
-            "back"
-          ]
-        }
-      },
-      "left": {
-        "add": {
-          "component_groups": [
-            "left"
-          ]
-        },
-        "remove": {
-          "component_groups": [
-            "right"
-          ]
-        }
-      },
-      "mark12": {
-        "add": {
-          "component_groups": [
-            "shoot2"
-          ]
-        },
-        "remove": {
-          "component_groups": [
-            "weapon2"
-          ]
-        }
-      },
-      "mark7": {
-        "add": {
-          "component_groups": [
-            "shoot"
-          ]
-        }
-      },
       "minecraft:entity_spawned": {
         "add": {
-          "component_groups": [
-            "usa:flag"
-          ]
+          "component_groups": ["usa:flag"]
         },
         "remove": {
-          "component_groups": [
-            "shoot"
-          ]
+          "component_groups": ["shoot"]
         }
       },
+
+      "back": {
+        "add": {
+          "component_groups": ["back"]
+        },
+        "remove": {
+          "component_groups": ["forward"]
+        }
+      },
+
+      "forward": {
+        "add": {
+          "component_groups": ["forward"]
+        },
+        "remove": {
+          "component_groups": ["back"]
+        }
+      },
+
+      "crash": {
+        "add": {
+          "component_groups": ["crash"]
+        }
+      },
+      
+      "left": {
+        "add": {
+          "component_groups": ["left"]
+        },
+        "remove": {
+          "component_groups": ["right"]
+        }
+      },
+
       "right": {
         "add": {
-          "component_groups": [
-            "right"
-          ]
+          "component_groups": ["right"]
         },
         "remove": {
-          "component_groups": [
-            "left"
-          ]
+          "component_groups": ["left"]
         }
       },
+
+      "mark12": {
+        "add": {
+          "component_groups": ["shoot2"]
+        },
+        "remove": {
+          "component_groups": ["weapon2"]
+        }
+      },
+
+      "mark7": {
+        "add": {
+          "component_groups": ["shoot"]
+        }
+      },
+      
       "shoot": {
         "add": {
-          "component_groups": [
-            "weapon"
-          ]
+          "component_groups": ["weapon"]
         },
         "remove": {
-          "component_groups": [
-            "shoot"
-          ]
+          "component_groups": ["shoot"]
         }
       },
+
       "shoot2": {
         "add": {
-          "component_groups": [
-            "weapon2"
-          ]
+          "component_groups": ["weapon2"]
         },
         "remove": {
-          "component_groups": [
-            "shoot"
-          ]
+          "component_groups": ["shoot"]
         }
       },
+
       "stop": {
         "add": {
-          "component_groups": [
-            "normal"
-          ]
+          "component_groups": ["normal"]
         },
         "remove": {
           "component_groups": [
@@ -426,6 +398,7 @@
           ]
         }
       },
+
       "stop_right_left": {
         "add": {
           "component_groups": [
