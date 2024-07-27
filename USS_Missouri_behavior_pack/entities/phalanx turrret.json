@@ -146,7 +146,12 @@
             {
               "filters": {
                 "any_of": [
-                  {"test": "is_family", "subject": "other", "value": "monster"},
+                  {
+                    "all_of": [
+                      {"test": "is_family", "subject": "other", "value": "monster"},
+                      {"test": "is_family", "subject": "other", "operator": "!=", "value": "enderman"}
+                    ]
+                  },
                   {"test": "is_family", "subject": "other", "value": "ghast"},  //Ghasts aren't targetable for some reason
                   {"test": "is_family", "subject": "other", "value": "phantom"},
                   {"test": "is_family", "subject": "other", "value": "dragon"},
