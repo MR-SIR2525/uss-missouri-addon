@@ -380,7 +380,7 @@
               "event": "ground_sentry_mode"
             },
             "use_item": false,
-            "play_sounds": "armor.equip_leather"
+            "play_sounds": "block.click"
           },
           { //air defense mode
             "interact_text": "action.interact.air_defense_mode",
@@ -396,39 +396,39 @@
             },
             "use_item": false,
             "play_sounds": "armor.equip_chain"
-          }
+          },
 
           //-----------Too laggy, maybe another time-----------
-          // { //shoot arrows
-          //   "interact_text": "action.interact.swap_ammo_to_arrows",
-          //   "on_interact": {
-          //     "filters": {
-          //       "all_of": [
-          //         {"test": "has_tag", "subject": "self", "operator": "!=", "value": "arrow_mode"},
-          //         {"test": "is_family", "subject": "other", "value": "player"},
-          //         {"test": "has_equipment", "domain": "hand", "subject": "other", "value": "arrow"}
-          //       ]
-          //     },
-          //     "event": "swap_ammo_to_arrows"
-          //   },
-          //   "use_item": false,
-          //   "play_sounds": "block.click"
-          // },
-          // { //restore default ammo (phalanx shells)
-          //   "interact_text": "action.interact.restore_default_ammo",
-          //   "on_interact": {
-          //     "filters": {
-          //       "all_of": [
-          //         {"test": "has_tag", "subject": "self", "value": "arrow_mode"},
-          //         {"test": "is_family", "subject": "other", "value": "player"},
-          //         {"test": "has_equipment", "domain": "hand", "subject": "other", "value": "arrow"}
-          //       ]
-          //     },
-          //     "event": "restore_default_ammo"
-          //   },
-          //   "use_item": false,
-          //   "play_sounds": "block.fletching_table.use"
-          // }
+          { //shoot arrows
+            "interact_text": "action.interact.swap_ammo_to_arrows",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {"test": "has_tag", "subject": "self", "operator": "!=", "value": "arrow_mode"},
+                  {"test": "is_family", "subject": "other", "value": "player"},
+                  {"test": "has_equipment", "domain": "hand", "subject": "other", "value": "arrow"}
+                ]
+              },
+              "event": "swap_ammo_to_arrows"
+            },
+            "use_item": false,
+            "play_sounds": "block.click"
+          },
+          { //restore default ammo (phalanx shells)
+            "interact_text": "action.interact.restore_default_ammo",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {"test": "has_tag", "subject": "self", "value": "arrow_mode"},
+                  {"test": "is_family", "subject": "other", "value": "player"},
+                  {"test": "has_equipment", "domain": "hand", "subject": "other", "value": "arrow"}
+                ]
+              },
+              "event": "restore_default_ammo"
+            },
+            "use_item": false,
+            "play_sounds": "block.fletching_table.use"
+          }
         ]
       }
     },
@@ -453,11 +453,17 @@
 
       "arm": {
         "add": {"component_groups": ["auto_mode"]},
-        "queue_command": {"command": "tag @s remove disarmed"}
+        "queue_command": {
+          "command": [
+            "tag @s remove disarmed",
+            "msg @a[r=4] §eArmed"
+          ]
+        }
       },
 
       "ground_sentry_mode": {
-        "add": {"component_groups": ["ground_sentry_mode"]} //relies on variant, not tags
+        "add": {"component_groups": ["ground_sentry_mode"]}, //relies on variant, not tags
+        "queue_command": {"command": "msg @a[r=4] Set to §eGround Sentry Mode."}
       },
 
       "air_defense_mode": {
@@ -465,7 +471,8 @@
       },
 
       "auto_mode": {
-        "add": {"component_groups": ["auto_mode"]}
+        "add": {"component_groups": ["auto_mode"]},
+        "queue_command": {"command": "msg @a[r=4] Set to §eAir Defense Mode."}
       },
 
       "swap_ammo_to_arrows": {
