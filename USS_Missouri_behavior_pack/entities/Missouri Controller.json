@@ -2,6 +2,10 @@
   "format_version": "1.13.0",
   "minecraft:entity": {
     "description": {
+      "identifier": "bb63:controller",
+      "is_experimental": false,
+      "is_spawnable": false,
+      "is_summonable": true,
       "animations": {
         "back": "animation.back_root",
         "facing": "animation.bb63_gun_facing",
@@ -16,10 +20,6 @@
         "spawn": "controller.animation.missouri_spawn",
         "stop": "animation.stop_root"
       },
-      "identifier": "bb63:controller",
-      "is_experimental": false,
-      "is_spawnable": false,
-      "is_summonable": true,
       "scripts": {
         "animate": [
           {

@@ -448,7 +448,12 @@
 
       "disarm": {
         "remove": {"component_groups": ["auto_mode"]},
-        "queue_command": {"command": "tag @s add disarmed"}
+        "queue_command": {
+          "command": [
+            "tag @s add disarmed",
+            "msg @a[r=4] §eDisarmed"
+          ]
+        }
       },
 
       "arm": {
