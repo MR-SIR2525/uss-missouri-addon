@@ -6,6 +6,7 @@
 ## Entities
 entity.us:phalanx_turret.name=Phalanx Turret
 entity.us:phalanx.name=Phalanx Base
+entity.us:phalanx_shell.name=Phalanx Turret Shell
 
 ## Spawn Eggs
 item.spawn_egg.entity.us:phalanx_turret.name=Phalanx Turret
@@ -14,7 +15,7 @@ item.spawn_egg.entity.us:phalanx.name=Phalanx Base
 ## Actions
 action.interact.arm=Arm
 action.interact.disarm=Disarm
-action.interact.ground_sentry_mode=Ground Sentry Mode
-action.interact.air_defense_mode=Air Defense Mode
+action.interact.ground_sentry_mode=Change to Ground Sentry Mode
+action.interact.air_defense_mode=Change to Air Defense Mode
 action.interact.swap_ammo_to_arrows=Swap Ammo to Arrows
 action.interact.restore_default_ammo=Restore Default Ammo

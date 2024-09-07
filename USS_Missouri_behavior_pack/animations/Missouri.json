@@ -10,6 +10,7 @@
         ]
       }
     },
+
     "animation.bb63_back": {
       "animation_length": 0.01,
       "loop": true,
@@ -19,6 +20,7 @@
         ]
       }
     },
+
     "animation.bb63_forward": {
       "animation_length": 0.01,
       "loop": true,
@@ -28,21 +30,23 @@
         ]
       }
     },
+
     "animation.bb63_has_rider": {
       "animation_length": 1.0E-7,
       "loop": true,
       "timeline": {
         "0.0": [
-          "/execute @e[name=maingunaim2] ~~~ tp @s ^ ^ ^0.5 facing @e[name=maingunaim,c=1]",
-          "/execute @e[name=maingun] ~~~ tp @s ^ ^ ^ facing @e[name=maingunaim2]",
-          "/execute @e[name=maingun2] ~~~ tp @s ^ ^ ^ facing @e[name=maingunaim2]",
-          "/execute @e[name=maingun3] ~~~ tp @s ^ ^ ^ facing @e[name=maingunaim2]",
-          "/execute @e[type=us:mark12] ~~~ tp @s ^ ^ ^ facing @e[name=maingunaim]",
-          "/execute @e[type=bb63:controller] ~~~ tp @s ^ ^ ^ facing @e[name=maingunaim]",
-          "/execute @p[r=30]~~~ tp @e[name=maingunaim] ^ ^4 ^65"
+          "/execute as @e[name=maingunaim2] at @s run tp @s ^ ^ ^0.5 facing @e[name=maingunaim,c=1]",
+          "/execute as @e[name=maingunaim2] at @s run tp @s ^ ^ ^ facing @e[name=maingunaim2]",
+          "/execute as @e[name=maingunaim2] at @s run tp @s ^ ^ ^ facing @e[name=maingunaim2]",
+          "/execute as @e[name=maingunaim2] at @s run tp @s ^ ^ ^ facing @e[name=maingunaim2]",
+          "/execute as @e[name=maingunaim2] at @s run tp @s ^ ^ ^ facing @e[name=maingunaim]",
+          "/execute as @e[type=bb63:controller] at @s run tp @s ^ ^ ^ facing @e[name=maingunaim]",
+          "/execute as @p[r=30] at @s run tp @e[name=maingunaim] ^ ^4 ^65"
         ]
       }
     },
+
     "animation.bb63_left": {
       "animation_length": 0.01,
       "loop": true,
@@ -52,6 +56,7 @@
         ]
       }
     },
+
     "animation.bb63_menu": {
       "animation_length": 2,
       "loop": true,
@@ -61,6 +66,7 @@
         ]
       }
     },
+
     "animation.bb63_right": {
       "animation_length": 0.01,
       "loop": true,
@@ -70,64 +76,67 @@
         ]
       }
     },
+
     "animation.bb63_root": {
       "animation_length": 1.0E-7,
       "loop": true,
       "timeline": {
         "0.0": [
-          "/execute @s ~~~ tp @e[name=maingun,r=20] ^ ^3 ^13.9",
-          "/execute @s ~~~ tp @e[name=bofor,r=70] ^2.4 ^2 ^-43.1",
-          "/execute @s ~~~ tp @e[name=bofor2,r=70] ^-0.5 ^2 ^-43.1",
-          "/execute @s ~~~ tp @e[type=bb63:controller] ^ ^ ^",
-          "/execute @e[type=us:phalanx_turret] ~~~ tp @s ^ ^ ^ facing @e[family=rsmissile]",
-          "/execute @e[type=us:bofor] ~~~ tp @s ^ ^ ^ facing @e[family=rsmissile]",
-          "/execute @e[type=us:phalanx_turret] ~~~ tp @s ^ ^ ^ facing @e[family=rsaircraft]",
-          "/execute @e[type=us:bofor] ~~~ tp @s ^ ^ ^ facing @e[family=rsaircraft]",
-          "/execute @e[type=us:phalanx_turret] ~~~ tp @s ^ ^ ^ facing @e[family=jpaircraft]",
-          "/execute @e[type=us:bofor] ~~~ tp @s ^ ^ ^ facing @e[family=jpaircraft]",
-          "/execute @e[type=us:phalanx_turret] ~~~ tp @s ^ ^ ^ facing @e[type=phantom]",
-          "/execute @e[type=us:bofor] ~~~ tp @s ^ ^ ^ facing @e[type=phantom]",
-          "/execute @e[type=us:phalanx_turret] ~~~ tp @s ^ ^ ^ facing @e[type=ghast]",
-          "/execute @e[type=us:bofor] ~~~ tp @s ^ ^ ^ facing @e[type=ghast]",
-          "/execute @e[type=us:phalanx_turret] ~~~ tp @s ^ ^ ^ facing @e[type=blaze]",
-          "/execute @e[type=us:bofor] ~~~ tp @s ^ ^ ^ facing @e[type=blaze]",
-          "/execute @s ~~~ tp @e[name=maingun2,r=30] ^ ^1.7 ^21.4",
-          "/execute @s ~~~ tp @e[name=maingun3,r=40] ^ ^1.7 ^-22.1",
-          "/execute @s ~~~ tp @e[name=aim3] ^ ^3 ^-24",
-          "/execute @s ~~~ tp @e[name=aim2] ^ ^3 ^24",
-          "/execute @s ~~~ tp @e[name=aim] ^ ^5 ^16",
-          "/execute @s ~~~ tp @e[name=mark12gun] ^4.3 ^2.8 ^0.6",
-          "/execute @s ~~~ tp @e[name=mark12aim] ^4.3 ^2.8 ^2",
-          "/execute @s ~~~ tp @e[name=mark12gun2] ^-4.3 ^2.8 ^0.6",
-          "/execute @s ~~~ tp @e[name=mark12aim2] ^-4.3 ^2.8 ^2",
-          "/execute @s ~~~ tp @e[name=mark12gun3] ^2.78 ^3.6 ^3.58",
-          "/execute @s ~~~ tp @e[name=mark12aim3] ^2.78 ^3.6 ^5",
-          "/execute @s ~~~ tp @e[name=mark12gun4] ^-2.78 ^3.6 ^3.58",
-          "/execute @s ~~~ tp @e[name=mark12aim4] ^-2.78 ^3.6 ^5",
-          "/execute @s ~~~ tp @e[name=mark12gun5] ^4.3 ^2.8 ^-7.6",
-          "/execute @s ~~~ tp @e[name=mark12aim5] ^4.3 ^2.8 ^-9",
-          "/execute @s ~~~ tp @e[name=mark12aim6] ^-4.3 ^2.8 ^-9",
-          "/execute @s ~~~ tp @e[name=mark12gun6] ^-4.3 ^2.8 ^-7.6",
-          "/execute @s ~~~ tp @e[name=aabody] ^1.4 ^6.4 ^4",
-          "/execute @s ~~~ tp @e[name=aaturret] ^1.4 ^6.4 ^4",
-          "/execute @s ~~~ tp @e[name=aaaim] ^3 ^6.4 ^4",
-          "/execute @s ~~~ tp @e[name=aabody2] ^-1.4 ^6.4 ^4",
-          "/execute @s ~~~ tp @e[name=aaturret2] ^-1.4 ^6.4 ^4",
-          "/execute @s ~~~ tp @e[name=aaaim2] ^-3 ^6.4 ^4",
-          "/execute @s ~~~ tp @e[name=aabody3] ^2.2 ^6.4 ^-7",
-          "/execute @s ~~~ tp @e[name=aaturret3] ^2.2 ^6.4 ^-7",
-          "/execute @s ~~~ tp @e[name=aaaim3] ^3.5 ^6.4 ^-7",
-          "/execute @s ~~~ tp @e[name=aabody4] ^-2.2 ^6.4 ^-7",
-          "/execute @s ~~~ tp @e[name=aaturret4] ^-2.2 ^6.4 ^-7",
-          "/execute @s ~~~ tp @e[name=aaaim4] ^-3.5 ^6.4 ^-7"
+          "/execute as @s at @s run tp @e[name=maingun,r=20] ^ ^3 ^13.9",
+          "/execute as @s at @s run tp @e[name=bofor,r=70] ^2.4 ^2 ^-43.1",
+          "/execute as @s at @s run tp @e[name=bofor2,r=70] ^-0.5 ^2 ^-43.1",
+          "/execute as @s at @s run tp @e[type=bb63:controller] ^ ^ ^",
+          "/execute as @e[type=us:phalanx_turret] at @s run tp @s ^ ^ ^ facing @e[family=rsmissile]",
+          "/execute as @e[type=us:bofor] at @s run tp @s ^ ^ ^ facing @e[family=rsmissile]",
+          "/execute as @e[type=us:phalanx_turret] at @s run tp @s ^ ^ ^ facing @e[family=rsaircraft]",
+          "/execute as @e[type=us:bofor] at @s run tp @s ^ ^ ^ facing @e[family=rsaircraft]",
+          "/execute as @e[type=us:phalanx_turret] at @s run tp @s ^ ^ ^ facing @e[family=jpaircraft]",
+          "/execute as @e[type=us:bofor] at @s run tp @s ^ ^ ^ facing @e[family=jpaircraft]",
+          "/execute as @e[type=us:phalanx_turret] at @s run tp @s ^ ^ ^ facing @e[type=phantom]",
+          "/execute as @e[type=us:bofor] at @s run tp @s ^ ^ ^ facing @e[type=phantom]",
+          "/execute as @e[type=us:phalanx_turret] at @s run tp @s ^ ^ ^ facing @e[type=ghast]",
+          "/execute as @e[type=us:bofor] at @s run tp @s ^ ^ ^ facing @e[type=ghast]",
+          "/execute as @e[type=us:phalanx_turret] at @s run tp @s ^ ^ ^ facing @e[type=blaze]",
+          "/execute as @e[type=us:bofor] at @s run tp @s ^ ^ ^ facing @e[type=blaze]",
+          "/execute as @s at @s run tp @e[name=maingun2,r=30] ^ ^1.7 ^21.4",
+          "/execute as @s at @s run tp @e[name=maingun3,r=40] ^ ^1.7 ^-22.1",
+          "/execute as @s at @s run tp @e[name=aim3] ^ ^3 ^-24",
+          "/execute as @s at @s run tp @e[name=aim2] ^ ^3 ^24",
+          "/execute as @s at @s run tp @e[name=aim] ^ ^5 ^16",
+          "/execute as @s at @s run tp @e[name=mark12gun] ^4.3 ^2.8 ^0.6",
+          "/execute as @s at @s run tp @e[name=mark12aim] ^4.3 ^2.8 ^2",
+          "/execute as @s at @s run tp @e[name=mark12gun2] ^-4.3 ^2.8 ^0.6",
+          "/execute as @s at @s run tp @e[name=mark12aim2] ^-4.3 ^2.8 ^2",
+          "/execute as @s at @s run tp @e[name=mark12gun3] ^2.78 ^3.6 ^3.58",
+          "/execute as @s at @s run tp @e[name=mark12aim3] ^2.78 ^3.6 ^5",
+          "/execute as @s at @s run tp @e[name=mark12gun4] ^-2.78 ^3.6 ^3.58",
+          "/execute as @s at @s run tp @e[name=mark12aim4] ^-2.78 ^3.6 ^5",
+          "/execute as @s at @s run tp @e[name=mark12gun5] ^4.3 ^2.8 ^-7.6",
+          "/execute as @s at @s run tp @e[name=mark12aim5] ^4.3 ^2.8 ^-9",
+          "/execute as @s at @s run tp @e[name=mark12aim6] ^-4.3 ^2.8 ^-9",
+          "/execute as @s at @s run tp @e[name=mark12gun6] ^-4.3 ^2.8 ^-7.6",
+          "/execute as @s at @s run tp @e[name=aabody] ^1.4 ^6.4 ^4",
+          "/execute as @s at @s run tp @e[name=aaturret] ^1.4 ^6.4 ^4",
+          "/execute as @s at @s run tp @e[name=aaaim] ^3 ^6.4 ^4",
+          "/execute as @s at @s run tp @e[name=aabody2] ^-1.4 ^6.4 ^4",
+          "/execute as @s at @s run tp @e[name=aaturret2] ^-1.4 ^6.4 ^4",
+          "/execute as @s at @s run tp @e[name=aaaim2] ^-3 ^6.4 ^4",
+          "/execute as @s at @s run tp @e[name=aabody3] ^2.2 ^6.4 ^-7",
+          "/execute as @s at @s run tp @e[name=aaturret3] ^2.2 ^6.4 ^-7",
+          "/execute as @s at @s run tp @e[name=aaaim3] ^3.5 ^6.4 ^-7",
+          "/execute as @s at @s run tp @e[name=aabody4] ^-2.2 ^6.4 ^-7",
+          "/execute as @s at @s run tp @e[name=aaturret4] ^-2.2 ^6.4 ^-7",
+          "/execute as @s at @s run tp @e[name=aaaim4] ^-3.5 ^6.4 ^-7"
         ]
       }
     },
+
     "animation.bb63_shoot": {
       "animation_length": 10,
       "loop": true,
       "timeline": {}
     },
+
     "animation.bb63_spawn": {
       "animation_length": 1,
       "loop": false,
@@ -156,6 +165,7 @@
         ]
       }
     },
+
     "animation.bofor_root": {
       "animation_length": 2,
       "loop": true,
@@ -164,67 +174,68 @@
           "/event entity @s bofor:shoot_start"
         ],
         "0.01": [
-          "/fill ~~~ ~~~ light_block 9"
+          "/fill ~~~ ~~~ light_block [\"light_level\"=9] keep"
         ],
         "0.1": [
-          "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air 0 replace light_block 9",
-          "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air 0 replace light_block 9",
-          "/fill ~4 ~ ~4 ~1 ~ ~1 air 0 replace light_block 9",
-          "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air 0 replace light_block 9",
-          "/fill ~4 ~ ~-4 ~1 ~ ~-1 air 0 replace light_block 9",
-          "/fill ~-4 ~ ~4 ~-1 ~ ~1 air 0 replace light_block 9",
-          "/fill ~-4 ~ ~ ~-1 ~ ~ air 0 replace light_block 9",
-          "/fill ~4 ~ ~ ~1 ~ ~ air 0 replace light_block 9",
-          "/fill ~ ~ ~-4 ~ ~ ~-1 air 0 replace light_block 9",
-          "/fill ~ ~ ~4 ~ ~ ~1 air 0 replace light_block 9"
+          "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air replace light_block",
+          "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air replace light_block",
+          "/fill ~4 ~ ~4 ~1 ~ ~1 air replace light_block",
+          "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air replace light_block",
+          "/fill ~4 ~ ~-4 ~1 ~ ~-1 air replace light_block",
+          "/fill ~-4 ~ ~4 ~-1 ~ ~1 air replace light_block",
+          "/fill ~-4 ~ ~ ~-1 ~ ~ air replace light_block",
+          "/fill ~4 ~ ~ ~1 ~ ~ air replace light_block",
+          "/fill ~ ~ ~-4 ~ ~ ~-1 air replace light_block",
+          "/fill ~ ~ ~4 ~ ~ ~1 air replace light_block"
         ],
         "0.25": [
-          "/fill ~~~ ~~~ light_block 9"
+          "/fill ~~~ ~~~ light_block [\"light_level\"=9] keep"
         ],
         "0.35": [
-          "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air 0 replace light_block 9",
-          "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air 0 replace light_block 9",
-          "/fill ~4 ~ ~4 ~1 ~ ~1 air 0 replace light_block 9",
-          "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air 0 replace light_block 9",
-          "/fill ~4 ~ ~-4 ~1 ~ ~-1 air 0 replace light_block 9",
-          "/fill ~-4 ~ ~4 ~-1 ~ ~1 air 0 replace light_block 9",
-          "/fill ~-4 ~ ~ ~-1 ~ ~ air 0 replace light_block 9",
-          "/fill ~4 ~ ~ ~1 ~ ~ air 0 replace light_block 9",
-          "/fill ~ ~ ~-4 ~ ~ ~-1 air 0 replace light_block 9",
-          "/fill ~ ~ ~4 ~ ~ ~1 air 0 replace light_block 9"
+          "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air replace light_block",
+          "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air replace light_block",
+          "/fill ~4 ~ ~4 ~1 ~ ~1 air replace light_block",
+          "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air replace light_block",
+          "/fill ~4 ~ ~-4 ~1 ~ ~-1 air replace light_block",
+          "/fill ~-4 ~ ~4 ~-1 ~ ~1 air replace light_block",
+          "/fill ~-4 ~ ~ ~-1 ~ ~ air replace light_block",
+          "/fill ~4 ~ ~ ~1 ~ ~ air replace light_block",
+          "/fill ~ ~ ~-4 ~ ~ ~-1 air replace light_block",
+          "/fill ~ ~ ~4 ~ ~ ~1 air replace light_block"
         ],
         "0.5": [
-          "/fill ~~~ ~~~ light_block 9"
+          "/fill ~~~ ~~~ light_block [\"light_level\"=9] keep"
         ],
         "0.6": [
-          "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air 0 replace light_block 9",
-          "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air 0 replace light_block 9",
-          "/fill ~4 ~ ~4 ~1 ~ ~1 air 0 replace light_block 9",
-          "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air 0 replace light_block 9",
-          "/fill ~4 ~ ~-4 ~1 ~ ~-1 air 0 replace light_block 9",
-          "/fill ~-4 ~ ~4 ~-1 ~ ~1 air 0 replace light_block 9",
-          "/fill ~-4 ~ ~ ~-1 ~ ~ air 0 replace light_block 9",
-          "/fill ~4 ~ ~ ~1 ~ ~ air 0 replace light_block 9",
-          "/fill ~ ~ ~-4 ~ ~ ~-1 air 0 replace light_block 9",
-          "/fill ~ ~ ~4 ~ ~ ~1 air 0 replace light_block 9"
+          "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air replace light_block",
+          "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air replace light_block",
+          "/fill ~4 ~ ~4 ~1 ~ ~1 air replace light_block",
+          "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air replace light_block",
+          "/fill ~4 ~ ~-4 ~1 ~ ~-1 air replace light_block",
+          "/fill ~-4 ~ ~4 ~-1 ~ ~1 air replace light_block",
+          "/fill ~-4 ~ ~ ~-1 ~ ~ air replace light_block",
+          "/fill ~4 ~ ~ ~1 ~ ~ air replace light_block",
+          "/fill ~ ~ ~-4 ~ ~ ~-1 air replace light_block",
+          "/fill ~ ~ ~4 ~ ~ ~1 air replace light_block"
         ],
         "0.75": [
-          "/fill ~~~ ~~~ light_block 9"
+          "/fill ~~~ ~~~ light_block [\"light_level\"=9] keep"
         ],
         "0.85": [
-          "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air 0 replace light_block 9",
-          "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air 0 replace light_block 9",
-          "/fill ~4 ~ ~4 ~1 ~ ~1 air 0 replace light_block 9",
-          "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air 0 replace light_block 9",
-          "/fill ~4 ~ ~-4 ~1 ~ ~-1 air 0 replace light_block 9",
-          "/fill ~-4 ~ ~4 ~-1 ~ ~1 air 0 replace light_block 9",
-          "/fill ~-4 ~ ~ ~-1 ~ ~ air 0 replace light_block 9",
-          "/fill ~4 ~ ~ ~1 ~ ~ air 0 replace light_block 9",
-          "/fill ~ ~ ~-4 ~ ~ ~-1 air 0 replace light_block 9",
-          "/fill ~ ~ ~4 ~ ~ ~1 air 0 replace light_block 9"
+          "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air replace light_block",
+          "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air replace light_block",
+          "/fill ~4 ~ ~4 ~1 ~ ~1 air replace light_block",
+          "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air replace light_block",
+          "/fill ~4 ~ ~-4 ~1 ~ ~-1 air replace light_block",
+          "/fill ~-4 ~ ~4 ~-1 ~ ~1 air replace light_block",
+          "/fill ~-4 ~ ~ ~-1 ~ ~ air replace light_block",
+          "/fill ~4 ~ ~ ~1 ~ ~ air replace light_block",
+          "/fill ~ ~ ~-4 ~ ~ ~-1 air replace light_block",
+          "/fill ~ ~ ~4 ~ ~ ~1 air replace light_block"
         ]
       }
     },
+
     "animation.control_mark7": {
       "animation_length": 7,
       "loop": true,
@@ -234,6 +245,7 @@
         ]
       }
     },
+
     "animation.forward_root": {
       "animation_length": 2,
       "loop": true,
@@ -243,6 +255,7 @@
         ]
       }
     },
+
     "animation.left_root": {
       "animation_length": 2,
       "loop": true,
@@ -252,6 +265,7 @@
         ]
       }
     },
+
     "animation.mark12_root": {
       "animation_length": 2,
       "loop": true,
@@ -261,6 +275,7 @@
         ]
       }
     },
+
     "animation.mark12_shell": {
       "animation_length": 1,
       "loop": false,
@@ -273,76 +288,80 @@
         ]
       }
     },
+
     "animation.mark7_aim": {
       "animation_length": 1,
       "loop": true,
       "timeline": {
         "0.0": [
-          "/playnanimation @p[r=1] mark7"
+          "/playanimation @p[r=1] mark7"
         ]
       }
     },
+
     "animation.mark7_controller": {
       "animation_length": 1.0E-7,
       "loop": true,
       "timeline": {
         "0.0": [
-          "/execute @p[r=2] ~~~ tp @e[type=us:aim,r=10] ^ ^4.9 ^3",
+          "/execute as @p[r=2] at @s run tp @e[type=us:aim,r=10] ^ ^4.9 ^3",
           "/tp @s ^ ^ ^"
         ]
       }
     },
+
     "animation.mark7_firing": {
       "animation_length": 7,
       "loop": true,
       "timeline": {
         "0.0": [
-          "/setblock ~ ~ ~ light_block 12 keep"
+          "/setblock ~ ~ ~ light_block [\"light_level\"=12] keep"
         ],
         "0.1": [
-          "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air 0 replace light_block 12",
-          "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air 0 replace light_block 12",
-          "/fill ~4 ~ ~4 ~1 ~ ~1 air 0 replace light_block 12",
-          "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air 0 replace light_block 12",
-          "/fill ~4 ~ ~-4 ~1 ~ ~-1 air 0 replace light_block 12",
-          "/fill ~-4 ~ ~4 ~-1 ~ ~1 air 0 replace light_block 12",
-          "/fill ~-4 ~ ~ ~-1 ~ ~ air 0 replace light_block 12",
-          "/fill ~4 ~ ~ ~1 ~ ~ air 0 replace light_block 12",
-          "/fill ~ ~ ~-4 ~ ~ ~-1 air 0 replace light_block 12",
-          "/fill ~ ~ ~4 ~ ~ ~1 air 0 replace light_block 12"
+          "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air replace light_block [\"light_level\"=12]",
+          "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air replace light_block [\"light_level\"=12]",
+          "/fill ~4 ~ ~4 ~1 ~ ~1 air replace light_block [\"light_level\"=12]",
+          "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air replace light_block [\"light_level\"=12]",
+          "/fill ~4 ~ ~-4 ~1 ~ ~-1 air replace light_block [\"light_level\"=12]",
+          "/fill ~-4 ~ ~4 ~-1 ~ ~1 air replace light_block [\"light_level\"=12]",
+          "/fill ~-4 ~ ~ ~-1 ~ ~ air replace light_block [\"light_level\"=12]",
+          "/fill ~4 ~ ~ ~1 ~ ~ air replace light_block [\"light_level\"=12]",
+          "/fill ~ ~ ~-4 ~ ~ ~-1 air replace light_block [\"light_level\"=12]",
+          "/fill ~ ~ ~4 ~ ~ ~1 air replace light_block [\"light_level\"=12]"
         ],
         "0.15": [
-          "/setblock ~ ~ ~ light_block 12 keep"
+          "/setblock ~ ~ ~ light_block [\"light_level\"=12] keep"
         ],
         "0.25": [
-          "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air 0 replace light_block 12",
-          "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air 0 replace light_block 12",
-          "/fill ~4 ~ ~4 ~1 ~ ~1 air 0 replace light_block 12",
-          "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air 0 replace light_block 12",
-          "/fill ~4 ~ ~-4 ~1 ~ ~-1 air 0 replace light_block 12",
-          "/fill ~-4 ~ ~4 ~-1 ~ ~1 air 0 replace light_block 12",
-          "/fill ~-4 ~ ~ ~-1 ~ ~ air 0 replace light_block 12",
-          "/fill ~4 ~ ~ ~1 ~ ~ air 0 replace light_block 12",
-          "/fill ~ ~ ~-4 ~ ~ ~-1 air 0 replace light_block 12",
-          "/fill ~ ~ ~4 ~ ~ ~1 air 0 replace light_block 12"
+          "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air replace light_block",
+          "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air replace light_block",
+          "/fill ~4 ~ ~4 ~1 ~ ~1 air replace light_block",
+          "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air replace light_block",
+          "/fill ~4 ~ ~-4 ~1 ~ ~-1 air replace light_block",
+          "/fill ~-4 ~ ~4 ~-1 ~ ~1 air replace light_block",
+          "/fill ~-4 ~ ~ ~-1 ~ ~ air replace light_block",
+          "/fill ~4 ~ ~ ~1 ~ ~ air replace light_block",
+          "/fill ~ ~ ~-4 ~ ~ ~-1 air replace light_block",
+          "/fill ~ ~ ~4 ~ ~ ~1 air replace light_block"
         ],
         "0.35": [
-          "/setblock ~ ~ ~ light_block 12 keep"
+          "/setblock ~ ~ ~ light_block [\"light_level\"=12] keep"
         ],
         "0.45": [
-          "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air 0 replace light_block 12",
-          "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air 0 replace light_block 12",
-          "/fill ~4 ~ ~4 ~1 ~ ~1 air 0 replace light_block 12",
-          "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air 0 replace light_block 12",
-          "/fill ~4 ~ ~-4 ~1 ~ ~-1 air 0 replace light_block 12",
-          "/fill ~-4 ~ ~4 ~-1 ~ ~1 air 0 replace light_block 12",
-          "/fill ~-4 ~ ~ ~-1 ~ ~ air 0 replace light_block 12",
-          "/fill ~4 ~ ~ ~1 ~ ~ air 0 replace light_block 12",
-          "/fill ~ ~ ~-4 ~ ~ ~-1 air 0 replace light_block 12",
-          "/fill ~ ~ ~4 ~ ~ ~1 air 0 replace light_block 12"
+          "/fill ~4 ~1 ~4 ~-4 ~4 ~-4 air replace light_block",
+          "/fill ~4 ~-1 ~4 ~-4 ~-2 ~-4 air replace light_block",
+          "/fill ~4 ~ ~4 ~1 ~ ~1 air replace light_block",
+          "/fill ~-4 ~ ~-4 ~-1 ~ ~-1 air replace light_block",
+          "/fill ~4 ~ ~-4 ~1 ~ ~-1 air replace light_block",
+          "/fill ~-4 ~ ~4 ~-1 ~ ~1 air replace light_block",
+          "/fill ~-4 ~ ~ ~-1 ~ ~ air replace light_block",
+          "/fill ~4 ~ ~ ~1 ~ ~ air replace light_block",
+          "/fill ~ ~ ~-4 ~ ~ ~-1 air replace light_block",
+          "/fill ~ ~ ~4 ~ ~ ~1 air replace light_block"
         ]
       }
     },
+
     "animation.mark7_root": {
       "animation_length": 2,
       "loop": true,
@@ -352,6 +371,7 @@
         ]
       }
     },
+
     "animation.mark7_shell": {
       "animation_length": 1,
       "loop": false,
@@ -364,10 +384,11 @@
         ]
       }
     },
+
     "animation.missile_move": {
       "animation_length": 1.0E-7,
       "loop": true,
-      "timeline": {
+      "timeline": {   //what the heck is this abomination
         "0.0": [
           "/tp @s ^ ^ ^3",
           "/tp @s ^ ^ ^ facing @e[family=monster,c=1]",
@@ -380,6 +401,7 @@
         ]
       }
     },
+
     "animation.missile_target": {
       "animation_length": 1,
       "loop": false,
@@ -389,6 +411,7 @@
         ]
       }
     },
+
     "animation.missouri_crash": {
       "animation_length": 1,
       "loop": false,
@@ -420,42 +443,47 @@
         ]
       }
     },
+
     "animation.missouri_onfire1": {
       "animation_length": 0.1,
       "loop": true,
       "timeline": {
         "0.0": [
-          "/execute @e[type=us:missouri,r=10] ~~~ particle rah66:crash ^3 ^1.9 ^25"
+          "/execute as @e[type=us:missouri,r=10] at @s run particle rah66:crash ^3 ^1.9 ^25"
         ]
       }
     },
+
     "animation.missouri_onfire2": {
       "animation_length": 0.1,
       "loop": true,
       "timeline": {
         "0.0": [
-          "/execute @e[type=us:missouri,r=10] ~~~ particle rah66:crash ^ ^8 ^-1.8"
+          "/execute as @e[type=us:missouri,r=10] at @s run particle rah66:crash ^ ^8 ^-1.8"
         ]
       }
     },
+
     "animation.missouri_onfire3": {
       "animation_length": 0.1,
       "loop": true,
       "timeline": {
         "0.0": [
-          "/execute @e[type=us:missouri,r=10] ~~~ particle rah66:crash ^-3 ^1.9 ^-30"
+          "/execute as @e[type=us:missouri,r=10] at @s run particle rah66:crash ^-3 ^1.9 ^-30"
         ]
       }
     },
+
     "animation.missouri_onfire4": {
       "animation_length": 0.1,
       "loop": true,
       "timeline": {
         "0.0": [
-          "/execute @e[type=us:missouri,r=10] ~~~ particle rah66:crash ^ ^2.2 ^40"
+          "/execute as @e[type=us:missouri,r=10] at @s run particle rah66:crash ^ ^2.2 ^40"
         ]
       }
     },
+
     "animation.rah66": {
       "animation_length": 1.0E-7,
       "loop": true,
@@ -465,6 +493,7 @@
         ]
       }
     },
+
     "animation.rah66_crash": {
       "animation_length": 1.0E-4,
       "loop": true,
@@ -474,6 +503,7 @@
         ]
       }
     },
+
     "animation.rah66_crash2": {
       "animation_length": 0.1,
       "loop": false,
@@ -484,24 +514,28 @@
         ]
       }
     },
+
     "animation.rah66_in_bb63": {
       "animation_length": 1.0E-5,
       "loop": true,
       "timeline": {
         "0.0": [
-          "/execute @e[type=us:missouri,r=50] ~~~ tp @e[name=helicopter] ^ ^2 ^-37 facing @e[type=us:missouri,r=50]"
+          "/execute as @e[type=us:missouri,r=50] at @s run tp @e[name=helicopter] ^ ^2 ^-37 facing @e[type=us:missouri,r=50]"
         ]
       }
     },
+
     "animation.rah66_root": {
       "animation_length": 0.1,
       "loop": true,
       "timeline": {
         "0.0": [
-          "/execute @p[tag=rah66] ~~~ tp @e[type=us:aim2,r=30] ^ ^ ^10"
+          //should have a range limit, right?
+          "/execute as @p[tag=rah66] at @s run tp @e[type=us:aim2,r=30] ^ ^ ^10"
         ]
       }
     },
+
     "animation.right_root": {
       "animation_length": 2,
       "loop": true,
@@ -511,6 +545,7 @@
         ]
       }
     },
+
     "animation.rum139": {
       "animation_length": 1,
       "loop": false,
@@ -523,6 +558,7 @@
         ]
       }
     },
+
     "animation.rum139_root": {
       "animation_length": 2,
       "loop": true,
@@ -532,6 +568,7 @@
         ]
       }
     },
+
     "animation.stop_root": {
       "animation_length": 2,
       "loop": true,
